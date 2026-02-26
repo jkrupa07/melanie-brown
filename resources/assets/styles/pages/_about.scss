@@ -4,11 +4,17 @@
     .sub-hero-layer {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.2));
     }
+     @include media-breakpoint-down(up) {
+            height: 403px;
+        }
 }
 
 .left-right-image-section {
     .left-right-image {
         height: 655px;
+        @include media-breakpoint-down(up) {
+            height: 404px;
+        }
     }
 
     &.bg-49484F {
@@ -24,6 +30,10 @@
 
     padding-left: 38px;
     padding-right: 38px;
+    @include media-breakpoint-down(up) {
+          padding-left:0px;
+    padding-right:0px;
+        }
 
     .logo-item {
         height: 108px;

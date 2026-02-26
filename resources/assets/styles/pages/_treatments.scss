@@ -5,6 +5,9 @@
   .treatment-card {
     .treatment-image {
       height: 390px;
+      @include media-breakpoint-down(up) {
+         height: 345px;
+        }
     }
   }
 }

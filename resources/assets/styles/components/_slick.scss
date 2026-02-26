@@ -21,10 +21,25 @@
             padding-left: 35px;
             padding-right: 35px;
         }
+         @include media-breakpoint-down(up) {
+            margin-left: -15px;
+        margin-right: -15px;
+
+        .slick-slide {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+           
     }
+}
 
     .treatment-image {
         height: 390px;
+
+        @include media-breakpoint-down(up) {
+            height: 350px;
+            width: 300px;
+        }
     }
 }
 
@@ -37,6 +52,17 @@
         .slick-slide {
             padding-left: 120px;
             padding-right: 120px;
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-left: -20px;
+            margin-right: -20px;
+
+            .slick-slide {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
         }
     }
 

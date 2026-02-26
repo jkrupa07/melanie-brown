@@ -45,15 +45,15 @@
                         </iframe>
                     <?php endif; ?>
                 </div>
-                <div class="hero-content position-absolute bottom-0 dmb-60 w-100">
+                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-70 w-100">
                     <div class="container">
-                        <div class="col-7">
-                            <div class="tk-ivypresto-display fw-lighter font70 leading71_8 text-white dmb-20">
+                        <div class="col-lg-7">
+                            <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font40 res-leading45_8 text-white dmb-20">
                                 <?php if (!empty($hero_title)): ?>
                                     <?php echo $hero_title; ?>
                                 <?php endif; ?>
                             </div>
-                            <div class="satoshi-regular font18 leading27 text-white dmb-15">
+                            <div class="satoshi-regular font18 leading27 res-font16 res-leading20 text-white dmb-15 pe-lg-0 pe-sm-3">
                                 <?php if (!empty($hero_description)): ?>
                                     <?php echo $hero_description; ?>
                                 <?php endif; ?>
@@ -96,19 +96,19 @@
                                 </div>
                             <?php endif; ?>
                             <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
-                                <div class="col-lg-5 ms-4 me-auto left-image radius3 overflow-hidden">
+                                <div class="col-lg-5 ms-lg-4 me-auto left-image radius3 overflow-hidden dmb-25">
                                     <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
                                         src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
                                 </div>
                             <?php endif; ?>
-                            <div class="col-lg-6 pe-5">
+                            <div class="col-lg-6 pe-lg-5">
                                 <?php if (!empty($title)): ?>
-                                    <div class="tk-ivypresto-display font42 leading44_2 fw-lighter text-494850 dmb-20">
+                                    <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
                                         <?php echo $title; ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!empty($title)): ?>
-                                    <div class="satoshi-regular col-11 font14 leading22text-494850 dmb-20">
+                                    <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
                                         <?php echo $description; ?> </div>
                                 <?php endif; ?>
                                 <?php if (!empty($link)): ?>
@@ -150,23 +150,23 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <?php if ($media_direction == 'left'): ?>
-                            <div class="col-lg-5 pe-2 left-right-image">
+                            <div class="col-lg-5 col-12 order-1 pe-lg-2 left-right-image tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                             </div>
                         <?php endif; ?>
-                        <div class="col-lg-6 pe-1">
+                        <div class="col-lg-6 col-12 order-2 pe-lg-1">
                             <?php if (!empty($title)): ?>
-                                <div class="left-right-title col-9 tk-ivypresto-display font42 leading44_2 fw-lighter text-494850 dmb-20">
+                                <div class="left-right-title col-lg-9 tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_8 fw-lighter text-494850 dmb-20 tmb-15">
                                     <?php echo $title; ?>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($description)): ?>
-                                <div class="left-right-description satoshi-regular font14 leading22text-494850 dmb-20">
+                                <div class="left-right-description satoshi-regular font14 leading22 res-leading22_6 text-494850">
                                     <?php echo $description; ?> </div>
                             <?php endif; ?>
                         </div>
                         <?php if ($media_direction == 'right'): ?>
-                            <div class="col-lg-5 ps-2 left-right-image">
+                            <div class="col-lg-5 ps-lg-2 left-right-image dmb-20 tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                             </div>
                         <?php endif; ?>
@@ -184,17 +184,17 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <?php if (!empty($left_content['title'])): ?>
-                                <div class="tk-ivypresto-display font42 leading44_2 text-white fw-lighter dpb-25">
+                                <div class="tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-white fw-lighter dmb-25">
                                     <?php echo $left_content['title']; ?>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($left_content['title'])): ?>
-                                <div class="satoshi-regular font14 leading22 text-white dpb-25">
+                                <div class="satoshi-regular font14 leading22 text-white dmb-25 pe-lg-0 pe-5">
                                     <?php echo $left_content['content']; ?>
                                 </div>
                             <?php endif; ?>
 
-                            <a href="<?php echo $left_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                            <a href="<?php echo $left_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition tmb-60">
                                 <?php echo $left_content['link']['title']; ?>
                                 <div class="btn-arrow ms-2 transition">
                                     <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
@@ -202,7 +202,7 @@
                             </a>
                         </div>
 
-                        <div class="col-lg-8 offset-1">
+                        <div class="col-lg-8 offset-lg-1">
                             <div class="category-faq">
                                 <?php if (!empty($right_content)):
                                     foreach ($right_content as $contents):
@@ -210,12 +210,13 @@
                                         $content = $contents['content'];
                                 ?>
                                         <div class="closet-item white-border bg-268a85">
-                                            <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30">
-                                                <div class="satoshi-regular font20 leading32 text-white"><?php echo $title; ?></div>
-                                                <div class="icon-bg d-flex justify-content-center align-items-center"><img class="transition" src="assets/images/accordion-plus.svg" alt=""></div>
+                                            <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dmb-35 dmt-30 tmb-20 tmt-25">
+                                                <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
+                                                <div class="icon-bg d-flex justify-content-center align-items-center">
+                                                    <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon"></div>
                                             </div>
-                                            <div class="closet-content dpb-75">
-                                                <div class="satoshi-light font16 leading25_6 text-white pb-4">
+                                            <div class="closet-content ">
+                                                <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white pb-lg-4 dmb-75 tmb-30">
                                                     <?php echo $content; ?>
                                                 </div>
                                             </div>
@@ -241,11 +242,11 @@
                         <div class="col-lg-6">
                             <div class="left-content position-relative bg-49484F dpt-135 dpb-135">
 
-                                <div class="image-wrapper col-5 mx-auto mx-auto">
+                                <div class="image-wrapper d-flex align-items-center col-lg-5 mx-auto my-auto">
                                     <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
                                     <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
                                     <div class="text-wrapper w-100 position-absolute top-left-center">
-                                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 text-white text-center col-7 mx-auto">
+                                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font40 res-leading45_8 text-white text-center col-lg-7 mx-auto">
                                             <?php echo $left_content['title']; ?>
                                         </div>
                                     </div>
@@ -264,15 +265,15 @@
                                         $description = $contents['description'];
                                 ?>
 
-                                        <div class="content-item col-8 mx-auto dpt-105 dpb-130 ">
+                                        <div class="content-item col-lg-8 col-11 mx-auto dmt-105 dmb-130 tmt-65 tmb-65 ">
                                             <div class="content-img text-center">
                                                 <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
                                             </div>
                                             <div
-                                                class="content-title tk-ivypresto-display fw-lighter font32 leading28_8 text-white dpt-30 text-center">
+                                                class="content-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 text-center">
                                                 <?php echo $title; ?>
                                             </div>
-                                            <div class="content-desc satoshi-regular font14 leading19 text-white dpt-20 text-center px-3">
+                                            <div class="content-desc satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
                                                 <?php echo $description; ?>
                                             </div>
                                         </div>
@@ -295,16 +296,16 @@
                 <div class="container">
 
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 col-12 order-1">
                             <?php if (!empty($title)) : ?>
-                                <div class="tk-ivypresto-display font41 leading44_2 fw-lighter text-494850 dmb-50">
+                                <div class="tk-ivypresto-display font41 leading44_2 res-font28 res-leading40 fw-lighter text-494850 dmb-50 tmb-30">
                                     <?php echo esc_html($title); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
 
-                        <div class="col-lg-6 d-flex align-items-center justify-content-end">
-                            <div class="slick-arrows-wrapper d-flex align-items-center justify-content-center pe-4">
+                        <div class="col-lg-6 col-12 order-3 order-lg-3 d-lg-flex d-block align-items-center justify-content-end">
+                            <div class="slick-arrows-wrapper d-flex align-items-center justify-content-center pe-lg-4 pt-lg-0 tmb-40">
                                 <div class="prev-arrow cursor-pointer me-3">
                                     <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
                                 </div>
@@ -313,17 +314,19 @@
                                 </div>
                             </div>
                             <?php if (!empty($link)): ?>
+                                <div class="text-center">
                                 <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                     <?php echo $link['title']; ?>
                                     <div class="btn-arrow ms-2 transition">
                                         <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                                     </div>
                                 </a>
+                                </div>
                             <?php endif; ?>
                         </div>
-                    </div>
+                    
 
-                    <div class="explore-treatment-slider">
+                    <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
 
                         <?php if ($slider_select === 'all') : ?>
 
@@ -345,23 +348,23 @@
                                         <a href="<?php the_permalink(); ?>" class="text-decoration-none">
 
                                             <?php if (has_post_thumbnail()) : ?>
-                                                <div class="treatment-image">
+                                                <div class="treatment-image dmb-25">
                                                     <?php the_post_thumbnail('medium', [
                                                         'class' => 'w-100 h-100 object-cover radius3'
                                                     ]); ?>
                                                 </div>
                                             <?php endif; ?>
 
-                                            <div class="treatment-content pt-4">
+                                            <div class="treatment-content">
                                                 <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
                                                     <?php the_title(); ?>
                                                 </div>
 
-                                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
-                                                <div class="btnB link-btn satoshi-regular font14 leading14 d-flex align-items-center transition">
+                                                <div class="btnB link-btn satoshi-regular font14 space1 leading14 d-flex align-items-center transition">
                                                     Learn more
                                                     <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                         <img class="w-100"
@@ -388,14 +391,14 @@
                                     <a href="<?php the_permalink(); ?>" class="text-decoration-none">
 
                                         <?php if (has_post_thumbnail()) : ?>
-                                            <div class="treatment-image">
+                                            <div class="treatment-image dmb-25">
                                                 <?php the_post_thumbnail('medium', [
                                                     'class' => 'w-100 h-100 object-cover radius3'
                                                 ]); ?>
                                             </div>
                                         <?php endif; ?>
 
-                                        <div class="treatment-content pt-4">
+                                        <div class="treatment-content">
                                             <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
                                                 <?php the_title(); ?>
                                             </div>
@@ -404,7 +407,7 @@
                                                 <?php echo wp_trim_words(get_the_content(), 20); ?>
                                             </div>
 
-                                            <div class="btnB link-btn satoshi-regular font14 leading14 d-flex align-items-center transition">
+                                            <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
                                                 Learn more
                                                 <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                     <img class="w-100"
@@ -423,6 +426,7 @@
                         <?php endif; ?>
 
                     </div>
+                    </div>
 
                 </div>
             </section>
@@ -435,7 +439,7 @@
         ?>
             <section class="qualification-section">
                 <div class="container">
-                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 text-494850 dpb-25"><?php echo $main_title; ?></div>
+                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dmb-25 tmb-45"><?php echo $main_title; ?></div>
                     <?php if ($qualitifications_group): ?>
                         <?php foreach ($qualitifications_group as $qualitifications):
                             $degree_name     = $qualitifications['degree_name'];
@@ -443,14 +447,14 @@
                             $year             = $qualitifications['year'];
                         ?>
                             <div class="row dark-border dpt-20 dpb-25">
-                                <div class="col-lg-5">
-                                    <div class="satoshi-regular font16 leading25_6 text-black"><?php echo $degree_name; ?></div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="satoshi-regular font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $degree_name; ?></div>
                                 </div>
-                                <div class="col-lg-3 offset-1">
-                                    <div class="satoshi-light font16 leading25_6 text-black"><?php echo $university_name; ?></div>
+                                <div class="col-lg-3 col-6 offset-lg-1">
+                                    <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $university_name; ?></div>
                                 </div>
-                                <div class="col-lg-3 text-end">
-                                    <div class="satoshi-light font16 leading25_6 text-black"><?php echo $year; ?></div>
+                                <div class="col-lg-3 col-6 text-end">
+                                    <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $year; ?></div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -473,9 +477,9 @@
 
             <section class="center-content-section">
                 <div class="container">
-                    <div class="col-5 mx-auto">
+                    <div class="col-lg-5 mx-auto">
                         <?php if (!empty(($title))): ?>
-                            <div class="tk-ivypresto-display fw-lighter font60 leading61_8 text-49484F text-center dmb-20">
+                            <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-49484F text-center dmb-25">
                                 <?php echo $title; ?>
                             </div>
                         <?php endif; ?>
@@ -517,7 +521,7 @@
 
                                 <div class="item d-inline-flex align-items-center px-2">
                                     <button
-                                        class="satoshi-regular border-0 bg-transparent font14 leading22_4 text-F1DDD3 text-decoration-none faq-trigger"
+                                        class="satoshi-regular border-0 bg-transparent font14 leading22_4 res-font12 res-leading20_4 text-F1DDD3 text-decoration-none faq-trigger"
                                         data-index="<?php echo esc_attr($i); ?>">
                                         <?php echo esc_html(get_the_title($post_id)); ?>
                                     </button>
@@ -658,17 +662,17 @@
         ?>
             <section class="treatments-cards-section">
                 <div class="container">
-                    <div class="row align-items-center justify-content-between dmb-90">
-                        <div class="col-lg-5">
+                    <div class="row align-items-center justify-content-between dmb-90 tmb-55">
+                        <div class="col-lg-5 col-8">
                             <?php if (!empty($title)): ?>
-                                <div class="tk-ivypresto-display font60 leading61_8 fw-lighter text-49484F">
+                                <div class="tk-ivypresto-display font60 leading61_8 res-font35 res-leading40_8 fw-lighter text-49484F tmb-25">
                                     <?php echo $title; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="col-lg-5 offset-1">
+                        <div class="col-lg-5 offset-lg-1">
                             <?php if (!empty($description)): ?>
-                                <div class="right-description satoshi-regular font14 leading22 text-666666 pe-4">
+                                <div class="right-description satoshi-regular font14 leading22 text-666666 pe-lg-4">
                                     <?php echo $description; ?>
                                 </div>
                             <?php endif; ?>
@@ -693,9 +697,9 @@
                                 while ($the_query->have_posts()) : $the_query->the_post();
                             ?>
 
-                                    <div class="col-4 treatment-card dmb-110">
+                                    <div class="col-lg-4 treatment-card dmb-110 tmb-45">
                                         <a href="<?php the_permalink(); ?>" class="text-decoration-none">
-                                            <div class="treatment-image">
+                                            <div class="treatment-image dmb-25">
                                                 <?php if (has_post_thumbnail()) : ?>
                                                     <img class="w-100 h-100 object-cover radius3"
                                                         src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
@@ -703,7 +707,7 @@
                                                 <?php endif; ?>
                                             </div>
 
-                                            <div class="treatment-content pt-4">
+                                            <div class="treatment-content">
                                                 <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
                                                     <?php the_title(); ?>
                                                 </div>
@@ -712,7 +716,7 @@
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
-                                                <div class="btnB link-btn satoshi-regular font14 leading14 d-flex align-items-center transition">
+                                                <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
                                                     Learn more
                                                     <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                         <img class="w-100"
@@ -735,7 +739,7 @@
 
                                 <div class="col-4 treatment-card">
                                     <a href="<?php the_permalink(); ?>" class="text-decoration-none">
-                                        <div class="treatment-image">
+                                        <div class="treatment-image dmb-25">
                                             <?php if (has_post_thumbnail()) : ?>
                                                 <img class="w-100 h-100 object-cover radius3"
                                                     src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>"
@@ -743,7 +747,7 @@
                                             <?php endif; ?>
                                         </div>
 
-                                        <div class="treatment-content pt-4">
+                                        <div class="treatment-content">
                                             <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
                                                 <?php the_title(); ?>
                                             </div>
@@ -779,30 +783,30 @@
 
             <section class="testimonial-slider-section bg-F1DDD3 overflow-hidden">
                 <div class="container">
-                    <div class="testimonial-slider col-7">
+                    <div class="testimonial-slider col-lg-7 col-12">
 
                         <?php if (!empty($testimonial_group)):
                             foreach ($testimonial_group as $group):
                                 $overview = $group['overview'];
                                 $name = $group['name'];
                         ?>
-                                <div class="testimonial d-inline-flex">
-                                    <div class="quote">
+                                <div class="testimonial d-lg-inline-flex">
+                                    <div class="quote dmb-15">
                                         <img src="<?php echo get_template_directory_uri() ?>/templates/icons/quote.svg" alt="Quote Icon">
                                     </div>
-                                    <div class="devider"></div>
+                                    <div class="devider d-lg-block d-none"></div>
                                     <div class="content">
-                                        <div class="tk-ivypresto-display font32 leading43 fst-italic text-49484F dmb-40 pe-3">
+                                        <div class="tk-ivypresto-display font32 leading43 res-font25 res-leading32 fst-italic text-49484F dmb-40 tmb-25 pe-lg-3">
                                             <?php echo $overview; ?>
                                         </div>
-                                        <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dpb-45"> <?php echo $name; ?></div>
+                                        <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dmb-45 tmb-60"> <?php echo $name; ?></div>
                                     </div>
                                 </div>
                         <?php endforeach;
                         endif; ?>
 
                     </div>
-                    <div class="slick-arrows-wrapper d-inline-flex align-items-center gap-5 ps-5 dmt-160">
+                    <div class="slick-arrows-wrapper d-inline-flex align-items-center justify-content-center col-12 col-lg-2 gap-5 ps-lg-5">
                         <div class="prev-arrow cursor-pointer">
                             <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
                         </div>
@@ -841,26 +845,26 @@
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-8">
                             <?php if (!empty($main_title)): ?>
-                                <div class="tk-ivypresto-display font50 leading71_2 fw-lighter text-capitalize text-white">
+                                <div class="tk-ivypresto-display font50 leading71_2 res-font35 res-leading40_2 fw-lighter text-capitalize text-white dmb-70 tmb-60">
                                     <?php echo $main_title; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
                     </div>
 
-                    <div class="treatment-journey-slider dpt-70">
+                    <div class="treatment-journey-slider d-lg-flex">
                         <?php if (!empty($journey_group)):
                             $i = 01;
                             foreach ($journey_group as $journey):
                                 $title = $journey['title'];
                                 $content = $journey['content'];
                         ?>
-                                <div class="treatment-journey">
+                                <div class="treatment-journey tmb-70">
                                     <div class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center dpb-20 text-white text-capitalize pb-3">
-                                        <em class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center text-999999 d-inline-flex  me-1"><?php echo  0 . $i; ?></em>
+                                        <em class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center text-999999 d-inline-flex me-1"><?php echo  0 . $i; ?></em>
                                         <?php echo $title; ?>
                                     </div>
-                                    <div class="satoshi-regular text-center font14 leading19 text-white">
+                                    <div class="satoshi-regular text-center font14 leading19 text-white col-10 px-2 mx-auto">
                                         <?php echo $content; ?>
 
                                     </div>
@@ -870,7 +874,7 @@
                         endif; ?>
                     </div>
                     <?php if (!empty($link)): ?>
-                        <div class="d-flex align-items-center justify-content-center dpt-90">
+                        <div class="d-lg-flex d-none align-items-center justify-content-center dpt-90">
                             <a href="  <?php echo $link['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                 <?php echo $link['title']; ?>
                                 <div class="btn-arrow ms-2 transition">
@@ -888,16 +892,16 @@
             $main_title = get_sub_field('main_title');
             $philosophy_group = get_sub_field('philosophy_group');
         ?>
-            <section class="philosophy-block-section bg-49484F dpt-90 dpb-170">
+            <section class="philosophy-block-section bg-49484F dpt-90 dpb-170 tpb-80">
                 <div class="container">
 
                     <?php if (!empty($main_title)): ?>
-                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 text-white text-center dpb-90">
+                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dbb-90 tmb-60">
                             <?php echo $main_title; ?>
                         </div>
                     <?php endif; ?>
 
-                    <div class="philosophy-cards d-flex align-items-center justify-content-around">
+                    <div class="philosophy-cards d-lg-flex align-items-center justify-content-around">
                         <?php if (!empty($philosophy_group)):
                             foreach ($philosophy_group as $philosophy):
                                 $title = $philosophy['title'];
@@ -905,16 +909,16 @@
                                 $image = $philosophy['image'];
                         ?>
 
-                                <div class="philosophy-card">
+                                <div class="philosophy-card tmb-50">
                                     <?php if (!empty($image)): ?>
-                                        <div class="philosophy-icon text-center">
+                                        <div class="philosophy-icon text-center dmb-20">
                                             <img class="h-100 object-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
                                         </div>
                                     <?php endif; ?>
-                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white text-center dpt-20">
+                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white text-center dmb-20">
                                         <?php echo $title; ?>
                                     </div>
-                                    <div class="psatoshi-regular font14 leading19 text-white text-center dpt-20 mx-auto col-10">
+                                    <div class="psatoshi-regular font14 leading19 text-white text-center mx-auto col-10">
                                         <?php echo $content; ?>
                                     </div>
                                 </div>
@@ -945,13 +949,13 @@
                     <?php endif; ?>
 
                 </div>
-                <div class="hero-content position-absolute bottom-0 dmb-60 w-100">
+                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-40 w-100">
                     <div class="container">
-                        <div class="col-7">
-                            <div class="tk-ivypresto-display fw-lighter font70 leading71_8 text-white dmb-20">
+                        <div class="col-lg-7">
+                            <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading34_2 text-white dmb-20 tmb-10">
                                 <?php echo $sub_title; ?>
                             </div>
-                            <div class="satoshi-regular font18 leading27 text-white dmb-15">
+                            <div class="satoshi-regular font18 leading27 res-font14 res-leading22 text-white dmb-15">
                                 <?php echo $sub_hero_description; ?>
 
                             </div>
@@ -979,14 +983,14 @@
                         <?php if (!empty($information_content)): ?>
                             <div class="col-lg-5 offset-lg-1">
 
-                                <div class="contact-info-card bg-FFFFFF0A radius3 px-5 dpt-50 dpb-95">
+                                <div class="contact-info-card bg-FFFFFF0A radius3 px-5 dpt-50 dpb-95 tpb-50">
 
                                     <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white dmb-30">
                                         Clinic Information
                                     </div>
                                     <?php if (!empty($information_content['address'])): ?>
                                         <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Address</div>
-                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2 col-6">
+                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2 col-lg-6">
                                             <?php echo $information_content['address']; ?>
                                         </div>
                                     <?php endif; ?>

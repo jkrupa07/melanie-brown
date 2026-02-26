@@ -5,7 +5,6 @@ export class Plugins {
   init() {
     this.ExploreTreatmentSlider();
     this.TestimonialSlider();
-    this.TreatmentJourney();
     this.FooterSlider();
     this.LogoSlider();
   }
@@ -43,17 +42,18 @@ export class Plugins {
       infinite: false,
       prevArrow: '.testimonial-slider-section .prev-arrow',
       nextArrow: '.testimonial-slider-section .next-arrow',
+      responsive: [
+
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
     });
   }
 
-  TreatmentJourney() {
-    $('.treatment-journey-slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
-      infinite: true,
-    });
-  }
 
   FooterSlider() {
     $('.footer-slider').slick({
