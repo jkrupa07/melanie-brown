@@ -22,7 +22,7 @@ $header_button = get_field('header_button', 'option');
                     </div>
                 </div>
             <?php endif; ?>
-            <nav class="col-8 navigation d-flex justify-content-end">
+            <nav class="col-xl-8 col-lg-6 navigation d-none d-lg-flex justify-content-end">
                 <ul class="list-none d-flex justify-content-end align-items-center ps-0 mb-0">
                     <?php if (!empty($header_links)):
                         foreach ($header_links as $links):
@@ -36,8 +36,13 @@ $header_button = get_field('header_button', 'option');
                     endif; ?>
                 </ul>
             </nav>
+            <div class="res-burger-menu col-6 d-lg-none d-flex justify-content-end">
+                <div class="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-burger-menu.svg" alt="Burger-menu">
+                </div>
+            </div>
             <?php if (!empty($header_button)): ?>
-                <div class="col header-btn d-flex justify-content-end">
+                <div class="col header-btn d-none d-lg-flex justify-content-end">
                     <a class="header-link btnA white-border-btn satoshi-regular font14 space1 d-inline-flex justify-content-center align-items-center text-decoration-none transition"
                         href="<?php echo $header_button['url']; ?>"><?php echo $header_button['title']; ?></a>
 
