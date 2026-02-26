@@ -1,0 +1,90 @@
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.btnA {
+  height: 51px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: $radius50;
+
+
+  .btn-arrow {
+    width: 22px;
+  }
+
+  &:hover {
+    .btn-arrow {
+      transform: translateX(3px);
+    }
+  }
+
+  &.white-border-btn {
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      border: 1px solid transparent;
+      color: $color-494850;
+    }
+  }
+
+  &.border-49484F-btn {
+    background-color: transparent;
+    border: 1px solid $color-49484F;
+    color: $color-49484F;
+
+    &:hover {
+      background-color: $color-49484F;
+      border: 1px solid transparent;
+      color: $white;
+    }
+  }
+
+  &.border-494850-btn {
+    background-color: transparent;
+    border: 1px solid $color-494850;
+    color: $color-494850;
+
+    &:hover {
+      background-color: $color-494850;
+      border: 1px solid transparent;
+      color: $color-FFFFFF;
+    }
+  }
+
+  &.bg-AF9064-btn {
+    background-color: $color-AF9064;
+    color: $white;
+
+    &:hover {
+      background-color: $color-9f8560;
+      color: $white;
+    }
+  }
+
+}
+
+.btnB {
+  &.link-btn {
+    padding: 0;
+    color: $color-494850;
+
+    .btn-arrow {
+      width: 21px;
+    }
+
+    &:hover {
+      .btn-arrow {
+        transform: translateX(3px);
+      }
+    }
+  }
+}

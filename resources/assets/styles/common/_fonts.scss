@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "barlow-black";
+  src: url("/wp-content/themes/melanie-brown/assets/fonts/barlow-black.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "satoshi-light";
+  src: url("/wp-content/themes/melanie-brown/assets/fonts/satoshi-light.otf");
+}
+@font-face {
+  font-family: "satoshi-regular";
+  src: url("/wp-content/themes/melanie-brown/assets/fonts/satoshi-regular.otf");
+}
+@font-face {
+  font-family: "helvetica-neue-medium";
+  src: url("/wp-content/themes/melanie-brown/assets/fonts/helveticaneuemedium.otf");
+}
+
+.satoshi-light {
+  font-family: "satoshi-light";
+}
+.satoshi-regular {
+  font-family: "satoshi-regular";
+}
+.helvetica-neue-medium {
+  font-family: "helvetica-neue-medium";
+}
+
+// .tk-ivypresto-display

@@ -1,0 +1,16 @@
+.category-hero-section {
+    height: 541px;
+
+    .category-hero-layer {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2));
+    }
+
+    .prev-arrow {
+        transform: rotate(180deg);
+    }
+}
+.category-section{
+    .category-image{
+        height: 135px;
+    }
+}

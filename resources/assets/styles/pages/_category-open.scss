@@ -1,0 +1,40 @@
+.treatments-timeline-section {
+  .timeline-card {
+    padding-left: 40px;
+  }
+}
+
+.faq-section {
+  .category-faq {
+    .closet-content {
+      display: none;
+    }
+
+    .icon-bg {
+      width: 14px;
+      height: 14px;
+      position: relative;
+      padding-right: 30px;
+
+      img {
+        height: 20px;
+      }
+    }
+
+    .closet-header.active {
+      .icon-bg img {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .closet-item:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  &.dark-bg-faq {
+    .closet-item:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  }
+}
