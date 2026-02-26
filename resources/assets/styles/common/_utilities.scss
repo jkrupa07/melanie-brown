@@ -259,6 +259,35 @@
 
 
 @include media-breakpoint-down(lg) {
+
+    .res-font12 {
+        font-size: $res-font12;
+    }
+
+    .res-font24 {
+        font-size: $res-font24;
+    }
+
+    .res-font25 {
+        font-size: $res-font25;
+    }
+
+    .res-font28 {
+        font-size: $res-font28;
+    }
+
+    .res-font30 {
+        font-size: $res-font30;
+    }
+
+    .res-font35 {
+        font-size: $res-font35;
+    }
+
+    .res-font40 {
+        font-size: $res-font40;
+    }
+
     .res-leading19 {
         line-height: $leading19;
     }
@@ -333,6 +362,46 @@
 
     .res-leading71_8 {
         line-height: $leading71_8;
+    }
+
+    .res-leading24_6 {
+        line-height: $res-leading24_6;
+    }
+
+    .res-leading30 {
+        line-height: $res-leading30;
+    }
+
+    .res-leading40 {
+        line-height: $res-leading40;
+    }
+
+    .res-leading30_8 {
+        line-height: $res-leading30_8;
+    }
+
+    .res-leading34_2 {
+        line-height: $res-leading34_2;
+    }
+
+    .res-leading34_4 {
+        line-height: $res-leading34_4;
+    }
+
+    .res-leading35_2 {
+        line-height: $res-leading35_2;
+    }
+
+    .res-leading35_8 {
+        line-height: $res-leading35_8;
+    }
+
+    .res-leading40_8 {
+        line-height: $res-leading40_8;
+    }
+
+    .res-leading45_8 {
+        line-height: $res-leading45_8;
     }
 
     .res-font14 {

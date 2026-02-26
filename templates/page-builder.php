@@ -563,7 +563,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="closet-content dpb-230 hero-style-content bg-000000A">
+                                        <div class="closet-content hero-style-content bg-000000A">
                                             <?php if ($image) : ?>
                                                 <div class="image-faq-hero position-relative overflow-hidden">
                                                     <div class="image-faq-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
