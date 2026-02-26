@@ -9,22 +9,22 @@ $faq_group = get_field("faq_group");
 <section class="category-hero-section position-relative ">
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="" class="w-100 h-100 object-cover">
 
-    <div class="hero-content position-absolute bottom-0 dmb-65 w-100">
+    <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">
         <div class="container">
             <div class="row">
 
-                <div class="col-7">
-                    <div class="tk-ivypresto-display fw-lighter font70 leading71_8 text-white dmb-20">
+                <div class="col-lg-7 col-12">
+                    <div class="col-lg-12 col-9 tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading35 text-white dmb-20">
                         <?php echo get_the_title(); ?>
                     </div>
                     <div class="satoshi-regular font18 leading27 text-white">
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
-                <div class="col-4 d-flex align-items-end justify-content-end">
+                <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
                     <a href="#" class="btnA link-btn satoshi-regular font14 space1 text-white d-flex align-items-end text-decoration-none transition">
                         <div class="btn-arrow pe-2 transition">
-                            <img class="prev-arrow w-100" src="assets/images/white-arrow.svg" alt="">
+                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                         </div>
                         Back to treatments
                     </a>
@@ -38,15 +38,15 @@ $faq_group = get_field("faq_group");
 <section class="treatments-cards-section">
     <div class="container">
 
-        <div class="col-6 mx-auto align-items-center dmb-60">
+        <div class="col-lg-6 col-12 mx-auto align-items-center dmb-60 tmb-45">
             <?php if (!empty($sub_treatment_title)): ?>
-                <div class="col-10 tk-ivypresto-display font60 leading61_8 fw-lighter text-center text-49484F dmb-20">
+                <div class="col-lg-10 col-12 tk-ivypresto-display font60 leading61_8 res-font35 res-leading40_2 fw-lighter text-center text-49484F dmb-20">
                     <?php echo $sub_treatment_title; ?>
                 </div>
             <?php endif; ?>
 
             <?php if (!empty($sub_treatment_description)): ?>
-                <div class="right-description satoshi-regular font14 leading22 text-center text-666666 pe-4">
+                <div class="right-description satoshi-regular font14 leading22 text-center text-666666 pe-lg-4">
                     <?php echo $sub_treatment_description; ?>
                 </div>
             <?php endif; ?>
@@ -60,8 +60,8 @@ $faq_group = get_field("faq_group");
                     $description = $sub_treatment['description'];
                     $link = $sub_treatment['link'];
             ?>
-                    <div class="col-4 treatment-card dmb-110">
-                        <div class="treatment-image">
+                    <div class="col-lg-4 col-md-6 col-12 treatment-card dmb-110 tmb-55">
+                        <div class="treatment-image dmb-30">
                             <?php if (has_post_thumbnail()) : ?>
                                 <img class="w-100 h-100 object-cover radius3"
                                     src="<?php echo $image['url']; ?>"
@@ -69,15 +69,15 @@ $faq_group = get_field("faq_group");
                             <?php endif; ?>
                         </div>
 
-                        <div class="treatment-content pt-4">
+                        <div class="treatment-content">
                             <?php if (!empty($title)): ?>
-                                <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
+                                <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light dmb-15">
                                     <?php echo $title; ?>
                                 </div>
 
                             <?php endif; ?>
                             <?php if (!empty($description)): ?>
-                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
+                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F dmb-20">
                                     <?php echo $description; ?>
                                 </div>
                             <?php endif; ?>
@@ -100,32 +100,31 @@ $faq_group = get_field("faq_group");
 </section>
 
 <?php if (!empty($transformation_timeline['duration_group'])): ?>
-    <section class="treatments-timeline-section dpt-105 dpb-185 bg-49484F">
+    <section class="treatments-timeline-section dpt-105 dpb-185 tpt-85 tpb-50 bg-49484F">
         <div class="container">
-            <div class="tk-ivypresto-display fw-lighter font60 leading61_8 text-white text-center dpb-75">
+            <div class="col-lg-12 col-10 mx-auto tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dmb-75 tmb-60">
                 <?php if (!empty($transformation_timeline['main_title'])): ?>
                     <?php echo $transformation_timeline['main_title']; ?>
                 <?php endif; ?>
             </div>
 
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-5 tmb-55">
                     <?php foreach ($transformation_timeline['duration_group'] as $grp):
                         $title = $grp['title'];
                         $content = $grp['content'];
                     ?>
-                        <div class="timeline-item">
+                        <div class="timeline-item white-border dpt-20 dpb-25 tpt-25 tpb-25">
                             <?php if (!empty($title)): ?>
-                                <div class="tk-ivypresto-display fw-lighter font26 leading28_8 text-white dpt-20"><?php echo $title; ?></div>
+                                <div class="tk-ivypresto-display fw-lighter font26 leading28_8 res-font22 res-leading25_8 text-white dmb-20 tmb-15"><?php echo $title; ?></div>
                             <?php endif; ?>
                             <?php if (!empty($content)): ?>
-                                <div class="satoshi-regular font14 leading19 text-white pt-1">
-                                    <?php echo $content; ?>.
+                                <div class="satoshi-regular font14 leading19 text-white pe-3 pe-lg-0">
+                                    <?php echo $content; ?>
                                 </div>
                             <?php endif; ?>
                         </div>
-                        <div class="white-bottom-border3 dpt-25"></div>
-                        <?php endforeach ?>;
+                    <?php endforeach ?>
                 </div>
 
                 <div class="col-lg-6 offset-lg-1">
@@ -135,14 +134,14 @@ $faq_group = get_field("faq_group");
                             $about_timeline = $timeline_grp['about_timeline'];
                     ?>
 
-                            <div class="timeline-card dpt-40 dpb-50 bg-FFFFFF1A radius3 dmb-15">
+                            <div class="timeline-card dpt-40 dpb-50 tpt-25 tpb-30 px-lg-5 px-3 bg-FFFFFF1A radius3 dmb-15">
                                 <?php if (!empty($title)): ?>
-                                    <div class="satoshi-regular font20 leading32 text-white">
+                                    <div class="satoshi-regular font20 leading32 res-font18 res-leading26 text-white dmb-10">
                                         <?php echo $title; ?>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!empty($about_timeline)): ?>
-                                    <div class="satoshi-light font16 leading25_6 text-white pt-1">
+                                    <div class="satoshi-light font16 leading25_6 res-font14 res-leading25_6 text-white">
                                         <?php echo $about_timeline; ?>
                                     </div>
                                 <?php endif; ?>
@@ -155,16 +154,14 @@ $faq_group = get_field("faq_group");
     </section>
 <?php endif; ?>
 
-<?php if (!empty($about_treatment_card['card_group'])): ?>
-    <section class="treatment-experience-section position-relative dpt-135 dpb-230">
+<!-- <?php if (!empty($about_treatment_card['card_group'])): ?>
+    <section class="treatment-experience-section position-relative dpt-135 dpb-230 tpt-75">
         <div class="container">
-            <div class="row justify-content-center text-center dpb-60">
-                <div class="col-lg-6">
-                    <div class="col-7 mx-auto tk-ivypresto-display font42 leading44_2 fw-lighter text-494850">
-                        <?php if (!empty($about_treatment_card['main_title'])): ?>
-                            <?php echo $about_treatment_card['main_title']; ?>
-                        <?php endif; ?>
-                    </div>
+            <div class="col-lg-6 mx-auto dmb-60 tmb-35">
+                <div class="col-lg-7 col-12 mx-auto tk-ivypresto-display font42 leading44_2 res-font25 res-leading35 text-center fw-lighter text-494850">
+                    <?php if (!empty($about_treatment_card['main_title'])): ?>
+                        <?php echo $about_treatment_card['main_title']; ?>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -177,10 +174,10 @@ $faq_group = get_field("faq_group");
                             $title       = $card_groups['title'] ?? '';
                             $description = $card_groups['description'] ?? '';
                     ?>
-                            <div class="experience-card bg-F1DDD3 radius3 dpt-40 dpb-70 px-5 dmb-20">
+                            <div class="experience-card bg-F1DDD3 radius3 dpt-40 dpb-70 dpt-30 dpb-30 px-lg-5 px-3 dmb-20">
                                 <?php if (!empty($title)): ?>
-                                    <div class="tk-ivypresto-display d-flex font32 leading28_8 fw-lighter text-49484F dpb-55">
-                                        <div class="fst-italic text-999999 me-2">
+                                    <div class="tk-ivypresto-display d-flex font32 leading28_8 res-font25 res-leading25_8 fw-lighter text-49484F dmb-55 tmb-25">
+                                        <div class="fst-italic font32 leading28_8 res-font25 res-leading25_8 text-999999 me-2">
                                             <?php echo str_pad($count, 2, '0', STR_PAD_LEFT); ?>.
                                         </div>
                                         <?php echo esc_html($title); ?>
@@ -188,7 +185,7 @@ $faq_group = get_field("faq_group");
                                 <?php endif; ?>
 
                                 <?php if (!empty($description)): ?>
-                                    <div class="experience-card-description pe-3">
+                                    <div class="experience-card-description pe-lg-3">
                                         <div class="satoshi-regular font14 leading25_6 text-49484F">
                                             <?php echo wp_kses_post($description); ?>
                                         </div>
@@ -203,14 +200,14 @@ $faq_group = get_field("faq_group");
             </div>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; ?> -->
 
 <?php if (!empty($faq_group)):
 ?>
-    <section class="faq-section dpb-185">
+    <section class="faq-section dpb-185 tpt-105">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-3 tmb-55">
                     <?php
                     if (!empty($faq_group['faq_left_content'])):
 
@@ -222,7 +219,7 @@ $faq_group = get_field("faq_group");
                     ?>
 
                         <?php if (!empty($title)): ?>
-                            <div class="tk-ivypresto-display font42 leading44_2 text-494850 fw-lighter dpb-25">
+                            <div class="col-lg-12 col-10 tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-494850 fw-lighter dmb-25 tmb-15">
                                 <?php echo esc_html($title); ?>
                             </div>
                         <?php endif; ?>
@@ -249,7 +246,7 @@ $faq_group = get_field("faq_group");
                         <?php endif; ?>
                     <?php endif; ?>
                 </div>
-                <div class="col-lg-8 offset-1">
+                <div class="col-lg-8 ms-lg-auto">
                     <div class="category-faq">
 
                         <?php if (!empty($faq_group['faq_right_content'])):
@@ -258,17 +255,18 @@ $faq_group = get_field("faq_group");
                                 $description = $row['description'];
                         ?>
                                 <div class="closet-item dark-border bg-268a85">
-                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30">
+                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between pe-2 pe-lg-4 me-lg-2 dpb-35 dpt-30 tpt-25 tpb-20">
                                         <?php if (!empty($row['title'])): ?>
-                                            <div class="satoshi-regular font20 leading32 text-black">
+                                            <div class="satoshi-regular font20 leading32 res-font18 res-leading26 text-black">
                                                 <?php echo $row['title']; ?>
                                             </div>
                                         <?php endif; ?>
-                                        <div class="icon-bg d-flex justify-content-center align-items-center"><img class="transition" src="assets/images/accordion-plus.svg" alt=""></div>
+                                        <div class="icon-bg d-flex justify-content-center align-items-center">
+                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt=""></div>
                                     </div>
                                     <div class="closet-content dpb-75">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 text-black pb-4">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22 text-black pb-4">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>

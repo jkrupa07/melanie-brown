@@ -1,7 +1,12 @@
 footer {
-    .footer-logo{
+    .footer-logo {
         height: 110px;
+
+        @include media-breakpoint-down(lg) {
+            height: 54px;
+        }
     }
+
     .media-bg {
         width: 42px;
         height: 42px;

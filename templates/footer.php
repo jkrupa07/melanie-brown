@@ -1,5 +1,6 @@
 <?php
 $consultation_content = get_field('consultation_content', 'option');
+$consultation_content_selection = get_field('consultation_content_selection');
 $follow_by = get_field('follow_by', 'option');
 $footer_logo = get_field('footer_logo', 'option');
 $address = get_field('address', 'option');
@@ -10,7 +11,7 @@ $social_media_content = get_field('social_media_content', 'option');
 $footer_left_content = get_field('footer_left_content', 'option');
 $site_by = get_field('site_by', 'option');
 ?>
-<?php if ($consultation_content == 'yes'): ?>
+<?php if ($consultation_content_selection == 'yes'): ?>
 
     <section class="get-in-touch-block-section bg-AF9064 dpt-110 dpb-110">
         <div class="container">
@@ -53,16 +54,13 @@ $site_by = get_field('site_by', 'option');
 <footer class="footer dpt-100 bg-49484F overflow-hidden">
     <div class="container">
         <?php if (!empty($follow_by)): ?>
-            <div class="dmb-55">
-                <div class="d-flex">
-                    <div class="fst-italic tk-ivypresto-display fw-lighter font32 leading28_8 text-white me-2">
-                        Follow along:
-                    </div>
-                    <a href="<?php echo $follow_by['url']; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font32 leading28_8 text-white">
-                        <?php echo $follow_by['title']; ?>
-                    </a>
+            <div class="d-flex flex-lg-row flex-column dmb-55 tmb-25">
+                <div class="fst-italic tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading28_8 text-white me-2">
+                    Follow along:
                 </div>
-
+                <a href="<?php echo $follow_by['url']; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading28_8 text-white">
+                    <?php echo $follow_by['title']; ?>
+                </a>
             </div>
         <?php endif; ?>
 
@@ -90,36 +88,36 @@ $site_by = get_field('site_by', 'option');
             </div>
         </div>
 
-        <div class="row justify-content-between align-items-start dpt-50 dpb-50">
+        <div class="row justify-content-between align-items-start dpt-50 dpb-50 tpb-40">
 
-            <div class="col-lg-5">
-                <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-6">
+                <div class="row justify-content-between tmb-45">
                     <?php if (!empty($footer_logo)): ?>
-                        <div class="col-lg-2 footer-logo">
+                        <div class="col-lg-2 footer-logo tmb-15">
                             <img class="h-100" src="<?php echo esc_url($footer_logo['url']); ?>" alt="<?php echo esc_attr($footer_logo['title']); ?>">
                         </div>
                     <?php endif; ?>
 
                     <div class="col-lg-8">
                         <?php if (!empty($address)): ?>
-                            <div class="tk-ivypresto-display fw-lighter font18 leading25 text-white">
+                            <div class="tk-ivypresto-display fw-lighter font18 leading25 res-font16 res-leading20 text-white dmb-15 tmb-15">
                                 <?php echo $address; ?>
                             </div>
                         <?php endif; ?>
 
-                        <div class="tk-ivypresto-display fw-lighter font18 leading38 text-white mt-2">
+                        <div class="tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                             <?php if (!empty($contact_no)): ?>
-                                <div class="tk-ivypresto-display fw-lighter font18 leading38 text-white dpt-25">
+                                <div class="tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                     Phone:
-                                    <a href="tel:<?php echo $contact_no; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 text-white">
+                                    <a href="tel:<?php echo $contact_no; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                         <?php echo $contact_no; ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($email)): ?>
-                                <div class="tk-ivypresto-display fw-lighter font18 leading38 text-white dpt-25">
+                                <div class="tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                     Email:
-                                    <a href="mailto:<?php echo esc_attr($email); ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 text-white">
+                                    <a href="mailto:<?php echo esc_attr($email); ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                         <?php echo esc_html($email); ?>
                                     </a>
                                 </div>
@@ -129,8 +127,8 @@ $site_by = get_field('site_by', 'option');
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="row justify-content-between ps-2">
-                    <div class="col-7">
+                <div class="row justify-content-between ps-lg-2">
+                    <div class="col-xl-7 col-lg-8 col-md-6 col-12">
                         <?php if (!empty($footer_link)): ?>
 
                             <?php
@@ -142,7 +140,7 @@ $site_by = get_field('site_by', 'option');
                             <div class="row">
                                 <?php for ($i = 0; $i < $columns; $i++): ?>
 
-                                    <div class="col-lg-4 col-md-4 col-4">
+                                    <div class="col-lg-4 col-md-4 col-6 tmb-45">
                                         <ul class="list-none ps-0">
 
                                             <?php
@@ -152,7 +150,7 @@ $site_by = get_field('site_by', 'option');
                                             for ($j = $start; $j < $end; $j++):
                                                 $link = $footer_link[$j]['link'];
                                             ?>
-                                                <li class="mb-3">
+                                                <li class="tmb-20">
                                                     <a href="<?php echo $link['url']; ?>"
                                                         target="<?php echo ($link['target'] == '_blank') ? '_blank' : ''; ?>"
                                                         class="tk-ivypresto-display fw-lighter font16 leading28 text-decoration-none text-white text-capitalize">
@@ -170,7 +168,7 @@ $site_by = get_field('site_by', 'option');
                         <?php endif; ?>
                     </div>
 
-                    <div class="social-media-content col-lg-5 d-flex justify-content-end">
+                    <div class="social-media-content col-xl-5 col-lg-4 col-12 d-flex justify-content-lg-end justify-content-start">
                         <?php if (!empty($social_media_content)):
                             foreach ($social_media_content as $media_content):
                                 $image = $media_content['image'];
@@ -191,18 +189,18 @@ $site_by = get_field('site_by', 'option');
 
         </div>
 
-        <div class="row justify-content-between dpt-25 dpb-25 white-top-border1">
+        <div class="row justify-content-between dpt-25 dpb-25 tpt-30 tpb-40 white-top-border1">
             <?php if (!empty($footer_left_content)): ?>
                 <div class="col-md-6">
-                    <div class="helvetica-medium font14 leading28 text-999999 text-capitalize">
+                    <div class="helvetica-medium res-font12 res-leading28 font14 leading28 text-999999 text-lg-start text-center text-capitalize">
                         <?php echo $footer_left_content; ?>
                     </div>
                 </div>
             <?php endif; ?>
             <?php if (!empty($site_by)): ?>
 
-                <div class="col-md-6 d-flex justify-content-end">
-                    <a href="<?php echo $site_by['url']; ?>" class="helvetica-medium text-decoration-none font14 leading28 text-999999 text-uppercase text-end" target="<?php echo $site_by["target"] == "_blank" ? "_blank" : ''; ?>">
+                <div class="col-md-6 d-flex justify-content-lg-end justify-content-center">
+                    <a href="<?php echo $site_by['url']; ?>" class="helvetica-medium text-decoration-none res-font12 res-leading28 font14 leading28 text-999999 text-uppercase text-lg-end text-center" target="<?php echo $site_by["target"] == "_blank" ? "_blank" : ''; ?>">
                         <?php echo $site_by['title']; ?>
                     </a>
                 </div>
