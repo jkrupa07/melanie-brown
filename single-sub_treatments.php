@@ -6,7 +6,8 @@ $transformation_timeline = get_field("transformation_timeline");
 $about_treatment_card = get_field("about_treatment_card");
 $faq_group = get_field("faq_group");
 ?>
-<section class="category-hero-section position-relative ">
+<section class="category-hero-section position-relative">
+    <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="" class="w-100 h-100 object-cover">
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">

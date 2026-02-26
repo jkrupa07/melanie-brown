@@ -13,18 +13,18 @@ $site_by = get_field('site_by', 'option');
 ?>
 <?php if ($consultation_content_selection == 'yes'): ?>
 
-    <section class="get-in-touch-block-section bg-AF9064 dpt-110 dpb-110">
+    <section class="get-in-touch-block-section bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
         <div class="container">
-            <div class="col-10 mx-auto">
+            <div class="col-lg-10 col-11 mx-auto">
 
                 <?php if (! empty($consultation_content['title'])) : ?>
-                    <div class="tk-ivypresto-display font50 leading71 fw-lighter text-white text-center mb-2">
+                    <div class="tk-ivypresto-display font50 leading71 res-font30 res-leading40 fw-lighter text-white text-center dmb-25">
                         <?php echo esc_html($consultation_content['title']); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if (! empty($consultation_content['description'])) : ?>
-                    <div class="col-5 mx-auto satoshi-regular font16 leading20 text-white text-center dmb-40">
+                    <div class="col-lg-5 col-12 mx-auto satoshi-regular font16 leading20 res-font14 res-leading19 text-white text-center dmb-40 tmb-25">
                         <?php echo esc_html($consultation_content['description']); ?>
                     </div>
                 <?php endif; ?>
@@ -51,7 +51,7 @@ $site_by = get_field('site_by', 'option');
 
 <?php endif; ?>
 
-<footer class="footer dpt-100 bg-49484F overflow-hidden">
+<footer class="footer dpt-100 tpt-70 bg-49484F overflow-hidden">
     <div class="container">
         <?php if (!empty($follow_by)): ?>
             <div class="d-flex flex-lg-row flex-column dmb-55 tmb-25">

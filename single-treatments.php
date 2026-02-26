@@ -5,6 +5,7 @@ $category_left_content = get_field('category_left_content');
 
 
 <section class="category-hero-section position-relative">
+    <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="Hero image" class="w-100 h-100 object-cover">
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">

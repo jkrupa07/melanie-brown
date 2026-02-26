@@ -240,7 +240,7 @@
                     <?php if (!empty($left_content)): ?>
 
                         <div class="col-lg-6">
-                            <div class="left-content position-relative bg-49484F dpt-135 dpb-135">
+                            <div class="left-content position-relative bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
 
                                 <div class="image-wrapper d-flex align-items-center col-lg-5 mx-auto my-auto">
                                     <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
@@ -839,7 +839,7 @@
             $journey_group = get_sub_field('journey_group');
             $link = get_sub_field('link');
         ?>
-            <section class="treatment-journey-section bg-7E7C8B dpt-85 dpb-110">
+            <section class="treatment-journey-section bg-7E7C8B dpt-85 dpb-110 tpb-20">
                 <div class="container">
 
                     <div class="row justify-content-center text-center">
