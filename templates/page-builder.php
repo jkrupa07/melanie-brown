@@ -87,7 +87,7 @@
             <section class="left-right-media-section bg-F1DDD3">
                 <div class="container">
                     <div class="col-11 mx-auto">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s"">
                             <?php if ($media_select == 'image' && $media_direction == 'left'): ?>
                                 <div class="col-lg-4">
                                     <div class="left-image">
@@ -148,7 +148,7 @@
 
             <section class="left-right-image-section <?php echo ($background_color == "bg-49484F") ? 'bg-49484F' : 'bg-F1DDD3'; ?>">
                 <div class="container">
-                    <div class="row justify-content-between align-items-center">
+                    <div class="row justify-content-between align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($media_direction == 'left'): ?>
                             <div class="col-lg-5 col-12 order-1 pe-lg-2 left-right-image tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
@@ -181,7 +181,7 @@
 
             <section class="faq-section dark-bg-faq bg-7E7C8B dpt-95 dpb-90">
                 <div class="container">
-                    <div class="row">
+                    <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s"">
                         <div class="col-lg-3">
                             <?php if (!empty($left_content['title'])): ?>
                                 <div class="tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-white fw-lighter dmb-25">
@@ -237,7 +237,7 @@
 
             <section class="sticky-content-section h-100">
 
-                <div class="row">
+                <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <?php if (!empty($left_content)): ?>
 
                         <div class="col-lg-6">
@@ -296,7 +296,7 @@
             <section class="treatment-slider-section overflow-hidden">
                 <div class="container">
 
-                    <div class="row">
+                    <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <div class="col-lg-6 col-12 order-1">
                             <?php if (!empty($title)) : ?>
                                 <div class="tk-ivypresto-display font41 leading44_2 res-font28 res-leading40 fw-lighter text-494850 dmb-50 tmb-30">
@@ -440,7 +440,8 @@
         ?>
             <section class="qualification-section">
                 <div class="container">
-                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dmb-25 tmb-45"><?php echo $main_title; ?></div>
+                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dpb-25 tmb-45 wow animated animate__fadeInUp" data-wow-duration="1.5s"><?php echo $main_title; ?></div>
+                    <div class="wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <?php if ($qualitifications_group): ?>
                         <?php foreach ($qualitifications_group as $qualitifications):
                             $degree_name     = $qualitifications['degree_name'];
@@ -467,6 +468,7 @@
                             </div>
                         </div>
                     </div>
+                    </div>
                 </div>
             </section>
 
@@ -478,7 +480,7 @@
 
             <section class="center-content-section">
                 <div class="container">
-                    <div class="col-lg-5 mx-auto">
+                    <div class="col-lg-5 mx-auto wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty(($title))): ?>
                             <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-49484F text-center dmb-25">
                                 <?php echo $title; ?>
@@ -751,7 +753,7 @@
         ?>
             <section class="treatments-cards-section">
                 <div class="container">
-                    <div class="row align-items-center justify-content-between dmb-90 tmb-55">
+                    <div class="row align-items-center justify-content-between dmb-90 tmb-55 wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <div class="col-lg-5 col-8">
                             <?php if (!empty($title)): ?>
                                 <div class="tk-ivypresto-display font60 leading61_8 res-font35 res-leading40_8 fw-lighter text-49484F tmb-25">
@@ -767,7 +769,7 @@
                             <?php endif; ?>
                         </div>
                     </div>
-                    <div class="row row36">
+                    <div class="row row36 wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
 
                         <?php if ($card_group == 'all'): ?>
 
@@ -872,7 +874,7 @@
 
             <section class="testimonial-slider-section bg-F1DDD3 overflow-hidden">
                 <div class="container">
-                    <div class="testimonial-slider col-lg-7 col-12">
+                    <div class="testimonial-slider col-lg-7 col-12 dmb-125 tmb-60 wow animated animate__fadeInUp" data-wow-duration="1.5s">
 
                         <?php if (!empty($testimonial_group)):
                             foreach ($testimonial_group as $group):
@@ -888,7 +890,7 @@
                                         <div class="tk-ivypresto-display font32 leading43 res-font25 res-leading32 fst-italic text-49484F dmb-40 tmb-25 pe-lg-3">
                                             <?php echo $overview; ?>
                                         </div>
-                                        <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dmb-45 tmb-60"> <?php echo $name; ?></div>
+                                        <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dmb-45"> <?php echo $name; ?></div>
                                     </div>
                                 </div>
                         <?php endforeach;
@@ -931,7 +933,7 @@
             <section class="treatment-journey-section bg-7E7C8B dpt-85 dpb-110 tpb-20">
                 <div class="container">
 
-                    <div class="row justify-content-center text-center">
+                    <div class="row justify-content-center text-center wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <div class="col-lg-8">
                             <?php if (!empty($main_title)): ?>
                                 <div class="tk-ivypresto-display font50 leading71_2 res-font35 res-leading40_2 fw-lighter text-capitalize text-white dmb-70 tmb-60">
@@ -941,7 +943,7 @@
                         </div>
                     </div>
 
-                    <div class="treatment-journey-slider d-lg-flex">
+                    <div class="treatment-journey-slider d-lg-flex wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty($journey_group)):
                             $i = 01;
                             foreach ($journey_group as $journey):
@@ -963,7 +965,7 @@
                         endif; ?>
                     </div>
                     <?php if (!empty($link)): ?>
-                        <div class="d-lg-flex d-none align-items-center justify-content-center dpt-90">
+                        <div class="d-lg-flex d-none align-items-center justify-content-center dpt-90 wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                             <a href="  <?php echo $link['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                 <?php echo $link['title']; ?>
                                 <div class="btn-arrow ms-2 transition">
@@ -983,14 +985,14 @@
         ?>
             <section class="philosophy-block-section bg-49484F dpt-90 dpb-170 tpb-80">
                 <div class="container">
-
+                
                     <?php if (!empty($main_title)): ?>
-                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dbb-90 tmb-60">
+                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dpb-90 tpb-60 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                             <?php echo $main_title; ?>
                         </div>
                     <?php endif; ?>
 
-                    <div class="philosophy-cards d-lg-flex align-items-center justify-content-around">
+                    <div class="philosophy-cards d-lg-flex align-items-center justify-content-around wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty($philosophy_group)):
                             foreach ($philosophy_group as $philosophy):
                                 $title = $philosophy['title'];
@@ -1038,9 +1040,9 @@
                     <?php endif; ?>
 
                 </div>
-                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-40 w-100">
+                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-40 w-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <div class="container">
-                        <div class="col-lg-7">
+                        <div class="col-lg-7 ">
                             <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading34_2 text-white dmb-20 tmb-10">
                                 <?php echo $sub_title; ?>
                             </div>
