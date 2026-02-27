@@ -26,20 +26,47 @@ export class Accordion {
 
             });
 
+            // $('.closet-header').on('click', function () {
+
+            //     const $this = $(this);
+            //     const $parent = $this.closest('.closet-item');
+            //     const $container = $parent.parent();
+
+            //     $container.find('.closet-header')
+            //         .not($this)
+            //         .removeClass('active')
+            //         .next('.closet-content')
+            //         .slideUp();
+
+            //     $this.toggleClass('active');
+            //     $this.next('.closet-content').stop(true, true).slideToggle();
+
+            // });
             $('.closet-header').on('click', function () {
 
                 const $this = $(this);
                 const $parent = $this.closest('.closet-item');
                 const $container = $parent.parent();
+                const $content = $this.next('.closet-content');
 
-                $container.find('.closet-header')
-                    .not($this)
-                    .removeClass('active')
-                    .next('.closet-content')
-                    .slideUp();
+                if ($this.hasClass('active')) {
 
-                $this.toggleClass('active');
-                $this.next('.closet-content').stop(true, true).slideToggle();
+                    $content.stop(true, true).slideUp(300, function () {
+                        $this.removeClass('active');
+                    });
+
+                } else {
+
+                    $container.find('.closet-header.active')
+                        .removeClass('active')
+                        .next('.closet-content')
+                        .stop(true, true)
+                        .slideUp(300);
+
+                    $this.addClass('active');
+                    $content.stop(true, true).slideDown(300);
+
+                }
 
             });
 
