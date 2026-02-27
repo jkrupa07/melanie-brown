@@ -66,7 +66,7 @@ export class Plugins {
       autoplaySpeed: 1500,
       responsive: [
         { breakpoint: 992, settings: { slidesToShow: 3 } },
-        { breakpoint: 576, settings: { slidesToShow: 2 } }
+        { breakpoint: 576, settings: { slidesToShow: 3 } }
       ]
     });
   }
