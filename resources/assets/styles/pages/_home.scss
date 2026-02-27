@@ -57,7 +57,7 @@
 
         .inner-content {
             height: 742px;
-            overscroll-behavior: contain;
+            // overscroll-behavior: contain;
 
             @include media-breakpoint-down(lg) {
                 height: 375px;

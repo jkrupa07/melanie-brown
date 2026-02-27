@@ -45,7 +45,7 @@
                         </iframe>
                     <?php endif; ?>
                 </div>
-                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-70 w-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                <div class="hero-content position-absolute bottom-0 dmb-80 tmb-70 w-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <div class="container">
                         <div class="col-lg-7">
                             <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font40 res-leading45_8 text-white dmb-20">
@@ -53,7 +53,7 @@
                                     <?php echo $hero_title; ?>
                                 <?php endif; ?>
                             </div>
-                            <div class="satoshi-regular font18 leading27 res-font16 res-leading20 text-white dmb-15 pe-lg-0 pe-sm-3">
+                            <div class="satoshi-regular font18 leading27 res-font16 res-leading20 text-white dmb-30 pe-lg-0 pe-sm-3">
                                 <?php if (!empty($hero_description)): ?>
                                     <?php echo $hero_description; ?>
                                 <?php endif; ?>
@@ -243,13 +243,13 @@
                         <div class="col-lg-6">
                             <div class="left-content position-relative bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
 
-                                <div class="image-wrapper d-flex align-items-center col-lg-5 mx-auto my-auto">
+                                <div class="image-wrapper position-relative d-flex align-items-center col-lg-5 mx-auto my-auto">
                                     <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
                                     <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
-                                    <div class="text-wrapper w-100 position-absolute top-left-center">
-                                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font40 res-leading45_8 text-white text-center col-lg-7 mx-auto">
-                                            <?php echo $left_content['title']; ?>
-                                        </div>
+                                </div>
+                                <div class="text-wrapper w-100 position-absolute top-left-center">
+                                    <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font40 res-leading45_8 text-white text-center col-lg-8 mx-auto">
+                                        <?php echo $left_content['title']; ?>
                                     </div>
                                 </div>
                             </div>
@@ -316,18 +316,19 @@
                             </div>
                             <?php if (!empty($link)): ?>
                                 <div class="text-center">
-                                    <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                                    <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 space1 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                         <?php echo $link['title']; ?>
                                         <div class="btn-arrow ms-2 transition">
                                             <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                                         </div>
                                     </a>
+                                    
                                 </div>
                             <?php endif; ?>
                         </div>
 
 
-                        <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
+                        <div class="explore-treatment-slider col-lg-11 col-10 order-2 order-lg-3 tmb-70">
 
                             <?php if ($slider_select === 'all') : ?>
 
@@ -887,7 +888,7 @@
                                     </div>
                                     <div class="devider d-lg-block d-none"></div>
                                     <div class="content">
-                                        <div class="tk-ivypresto-display font32 leading43 res-font25 res-leading32 fst-italic text-49484F dmb-40 tmb-25 pe-lg-3">
+                                        <div class="tk-ivypresto-display font32 leading43 res-font25 res-leading32 fst-italic text-49484F dmb-30 tmb-25 pe-lg-3">
                                             <?php echo $overview; ?>
                                         </div>
                                         <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dmb-45"> <?php echo $name; ?></div>

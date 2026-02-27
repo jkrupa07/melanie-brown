@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 export class App {
   init() {
     this.setupScrollAnimation();
+    this.stickyContentScroll();
   }
 
   setupScrollAnimation() {
@@ -23,4 +24,18 @@ export class App {
       });
     });
   }
+  stickyContentScroll() {
+    const innerContent = document.querySelector(".inner-content");
+
+ScrollTrigger.create({
+  trigger: innerContent,
+  start: "top 200px",
+  end: () => innerContent.scrollHeight - innerContent.offsetHeight + window.innerHeight,
+  pin: ".sticky-content-section",  // pin container, not the inner scroll
+  scrub: true,
+  anticipatePin: 1,
+  markers: true,
+});
+  }
+
 }
