@@ -213,7 +213,8 @@
                                             <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dmb-35 dmt-30 tmb-20 tmt-25">
                                                 <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                                 <div class="icon-bg d-flex justify-content-center align-items-center">
-                                                    <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon"></div>
+                                                    <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
+                                                </div>
                                             </div>
                                             <div class="closet-content ">
                                                 <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white pb-lg-4 dmb-75 tmb-30">
@@ -315,34 +316,77 @@
                             </div>
                             <?php if (!empty($link)): ?>
                                 <div class="text-center">
-                                <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
-                                    <?php echo $link['title']; ?>
-                                    <div class="btn-arrow ms-2 transition">
-                                        <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
-                                    </div>
-                                </a>
+                                    <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                                        <?php echo $link['title']; ?>
+                                        <div class="btn-arrow ms-2 transition">
+                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                                        </div>
+                                    </a>
                                 </div>
                             <?php endif; ?>
                         </div>
-                    
 
-                    <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
 
-                        <?php if ($slider_select === 'all') : ?>
+                        <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
 
-                            <?php
-                            $args = array(
-                                'post_type'      => 'treatments',
-                                'posts_per_page' => -1,
-                                'orderby'        => 'date',
-                                'order'          => 'ASC',
-                            );
+                            <?php if ($slider_select === 'all') : ?>
 
-                            $query = new WP_Query($args);
+                                <?php
+                                $args = array(
+                                    'post_type'      => 'treatments',
+                                    'posts_per_page' => -1,
+                                    'orderby'        => 'date',
+                                    'order'          => 'ASC',
+                                );
 
-                            if ($query->have_posts()) :
-                                while ($query->have_posts()) : $query->the_post();
-                            ?>
+                                $query = new WP_Query($args);
+
+                                if ($query->have_posts()) :
+                                    while ($query->have_posts()) : $query->the_post();
+                                ?>
+
+                                        <div class="treatment-card">
+                                            <a href="<?php the_permalink(); ?>" class="text-decoration-none">
+
+                                                <?php if (has_post_thumbnail()) : ?>
+                                                    <div class="treatment-image dmb-25">
+                                                        <?php the_post_thumbnail('medium', [
+                                                            'class' => 'w-100 h-100 object-cover radius3'
+                                                        ]); ?>
+                                                    </div>
+                                                <?php endif; ?>
+
+                                                <div class="treatment-content">
+                                                    <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
+                                                        <?php the_title(); ?>
+                                                    </div>
+
+                                                    <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
+                                                        <?php echo wp_trim_words(get_the_content(), 20); ?>
+                                                    </div>
+
+                                                    <div class="btnB link-btn satoshi-regular font14 space1 leading14 d-flex align-items-center transition">
+                                                        Learn more
+                                                        <div class="btn-arrow d-flex align-items-center ms-2 transition">
+                                                            <img class="w-100"
+                                                                src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
+                                                                alt="Arrow Icon">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </a>
+                                        </div>
+
+                                <?php
+                                    endwhile;
+                                    wp_reset_postdata();
+                                endif;
+                                ?>
+
+                            <?php elseif ($slider_select === 'select' && !empty($select_treatment)) : ?>
+
+                                <?php foreach ($select_treatment as $post) : setup_postdata($post); ?>
 
                                     <div class="treatment-card">
                                         <a href="<?php the_permalink(); ?>" class="text-decoration-none">
@@ -360,16 +404,16 @@
                                                     <?php the_title(); ?>
                                                 </div>
 
-                                                <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
-                                                <div class="btnB link-btn satoshi-regular font14 space1 leading14 d-flex align-items-center transition">
+                                                <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
                                                     Learn more
                                                     <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                         <img class="w-100"
                                                             src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                            alt="Arrow Icon">
+                                                            alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -377,55 +421,12 @@
                                         </a>
                                     </div>
 
-                            <?php
-                                endwhile;
-                                wp_reset_postdata();
-                            endif;
-                            ?>
+                                <?php endforeach;
+                                wp_reset_postdata(); ?>
 
-                        <?php elseif ($slider_select === 'select' && !empty($select_treatment)) : ?>
+                            <?php endif; ?>
 
-                            <?php foreach ($select_treatment as $post) : setup_postdata($post); ?>
-
-                                <div class="treatment-card">
-                                    <a href="<?php the_permalink(); ?>" class="text-decoration-none">
-
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <div class="treatment-image dmb-25">
-                                                <?php the_post_thumbnail('medium', [
-                                                    'class' => 'w-100 h-100 object-cover radius3'
-                                                ]); ?>
-                                            </div>
-                                        <?php endif; ?>
-
-                                        <div class="treatment-content">
-                                            <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
-                                                <?php the_title(); ?>
-                                            </div>
-
-                                            <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
-                                                <?php echo wp_trim_words(get_the_content(), 20); ?>
-                                            </div>
-
-                                            <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
-                                                Learn more
-                                                <div class="btn-arrow d-flex align-items-center ms-2 transition">
-                                                    <img class="w-100"
-                                                        src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                        alt="">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </a>
-                                </div>
-
-                            <?php endforeach;
-                            wp_reset_postdata(); ?>
-
-                        <?php endif; ?>
-
-                    </div>
+                        </div>
                     </div>
 
                 </div>
@@ -499,160 +500,248 @@
                 </div>
             </section>
 
-            <?php elseif (get_row_layout() == 'treatment_filter_section') :
 
-            $filter_selection = get_sub_field('filter_selection');
+            <!-- END -->
 
-            if (!empty($filter_selection) && is_array($filter_selection)) :
-            ?>
-                <div class="sticky-bar-section ps-lg-0 ps-3 bg-49484F73 position-fixed bottom-0 z-3 w-100">
-                    <div class="container px-p-0">
-                        <div class="sticky-bar-wraper ps-lg-0 ps-2 col-lg-10 mx-auto d-flex justify-content-center col-12 overflow-auto">
+        <?php elseif (get_row_layout() == 'treatment_filter_section') :
+
+            $filter_selection  = get_sub_field('filter_selection');
+            $filter_price_card = get_sub_field('filter_price_card');
+        ?>
+
+            <?php if (!empty($filter_price_card) || !empty($filter_selection)) : ?>
+
+                <!-- ===================== -->
+                <!-- STICKY BAR -->
+                <!-- ===================== -->
+
+                <div class="sticky-bar-section position-fixed bottom-0 w-100 bg-49484F73 z-3">
+                    <div class="container">
+                        <div class="sticky-bar-wraper col-lg-10 mx-auto d-flex justify-content-center overflow-auto">
 
                             <?php
-                            $i = 0;
+                            $price_index = 0;
 
-                            foreach ($filter_selection as $item) :
-
-                                $post_id = is_object($item) ? $item->ID : $item;
-
-                                if (!$post_id) continue;
+                            // FILTER PRICE CARD TITLES
+                            if (!empty($filter_price_card)) :
+                                foreach ($filter_price_card as $card) :
+                                    if (!empty($card['title'])) :
                             ?>
+                                        <div class="item px-2">
+                                            <button
+                                                class="faq-trigger"
+                                                data-target="price-card-<?php echo $price_index; ?>">
+                                                <?php echo esc_html($card['title']); ?>
+                                            </button>
+                                        </div>
+                                    <?php
+                                        $price_index++;
+                                    endif;
+                                endforeach;
+                            endif;
 
-                                <div class="item d-flex justify-content-center align-items-center px-2">
-                                    <button
-                                        class="satoshi-regular text-nowrap border-0 bg-transparent font14 leading22_4 res-font12 res-leading20_4 text-F1DDD3 text-decoration-none faq-trigger"
-                                        data-index="<?php echo esc_attr($i); ?>">
-                                        <?php echo esc_html(get_the_title($post_id)); ?>
-                                    </button>
-                                </div>
 
+                            // FILTER SELECTION POSTS
+                            if (!empty($filter_selection)) :
+                                foreach ($filter_selection as $post_id) :
+                                    $post_id = is_object($post_id) ? $post_id->ID : $post_id;
+                                    ?>
+                                    <div class="item px-2">
+                                        <button
+                                            class="faq-trigger"
+                                            data-target="post-<?php echo esc_attr($post_id); ?>">
+                                            <?php echo esc_html(get_the_title($post_id)); ?>
+                                        </button>
+                                    </div>
                             <?php
-                                $i++;
-                            endforeach;
+                                endforeach;
+                            endif;
                             ?>
 
                         </div>
                     </div>
                 </div>
-                <section class="image-faq-section">
-                    <div class="container">
-                        <div class="col-10 mx-auto">
-                            <div class="image-faq">
 
-                                <?php
-                                $i = 0;
 
-                                foreach ($filter_selection as $item) :
+                <!-- ===================== -->
+                <!-- FILTER PRICE CARDS -->
+                <!-- ===================== -->
 
-                                    $post_id = is_object($item) ? $item->ID : $item;
+                <?php
+                $consultation_index = 0;
 
-                                    if (!$post_id) continue;
+                if (!empty($filter_price_card)) :
+                    foreach ($filter_price_card as $item) :
 
-                                    $image = get_the_post_thumbnail_url($post_id, 'large');
-                                    $content = get_post_field('post_content', $post_id);
+                        $title   = $item['title'];
+                        $price   = $item['price'];
+                        $content = $item['content'];
+                ?>
 
-                                    $standard_areas = get_field('treatment_standard_area', $post_id);
-                                ?>
+                        <div class="consultation-card-wrapper col-10 mx-auto dmb-95"
+                            id="price-card-<?php echo esc_attr($consultation_index); ?>">
 
-                                    <div class="closet-item position-relative dmb-20" data-index="<?php echo esc_attr($i); ?>">
-                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between">
-                                            <div class="closet-header-title tk-ivypresto-display fw-lighter font32 leading28_8 text-black">
-                                                <?php echo esc_html(get_the_title($post_id)); ?>
-                                            </div>
-                                            <div class="icon-bg d-flex justify-content-center align-items-center">
-                                                <img class="transition"
-                                                    src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg"
-                                                    alt="Accordion Icon">
-                                            </div>
-                                        </div>
+                            <div class="d-flex align-items-center justify-content-between dpt-35 dpb-20">
 
-                                        <div class="closet-content hero-style-content bg-000000A">
-                                            <?php if ($image) : ?>
-                                                <div class="image-faq-hero position-relative overflow-hidden">
-                                                    <div class="image-faq-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
-
-                                                    <div class="faq-img">
-                                                        <img src="<?php echo esc_url($image); ?>"
-                                                            alt="<?php echo esc_attr(get_the_title($post_id)); ?>"
-                                                            class="w-100 h-100 object-cover">
-                                                    </div>
-
-                                                    <div class="image-faq-hero-content position-absolute bottom-0 dmb-60 w-100 px-5">
-                                                        <div class="col-8 pe-3">
-                                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white dmb-25">
-                                                                <?php echo esc_html(get_the_title($post_id)); ?>
-                                                            </div>
-                                                            <div class="satoshi-regular font14 leading22 text-white">
-                                                                <?php echo wp_kses_post($content); ?>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <?php endif; ?>
-
-                                            <?php if (!empty($standard_areas)): ?>
-
-                                                <?php foreach ($standard_areas as $area) :
-
-                                                    $title       = $area['title'] ?? '';
-                                                    $content = $area['content'] ?? '';
-                                                    $price_group = $area['price_group'] ?? [];
-                                                ?>
-
-                                                    <div class="image-faq-areas dpt-90 dpb-30 mx-5">
-
-                                                        <?php if ($title) : ?>
-                                                            <div class="tk-ivypresto-display fw-lighter font26 leading25_6 text-49484F pb-1">
-                                                                <?php echo esc_html($title); ?>
-                                                            </div>
-                                                        <?php endif; ?>
-
-                                                        <?php if ($content) : ?>
-                                                            <div class="satoshi-regular font14 leading22 text-666666">
-                                                                <?php echo esc_html($content); ?>
-                                                            </div>
-                                                        <?php endif; ?>
-
-                                                        <?php if (!empty($price_group)) : ?>
-
-                                                            <?php foreach ($price_group as $price) :
-
-                                                                $price_title   = $price['title'] ?? '';
-                                                                $price_content = $price['content'] ?? '';
-                                                            ?>
-
-                                                                <div class="area d-flex align-items-center justify-content-between">
-                                                                    <div class="satoshi-regular font20 leading32 text-49484F text-capitalize"><?php echo esc_html($price_title); ?></div>
-                                                                    <div class="satoshi-regular font22 leading38_4 text-49484F"><?php echo esc_html($price_content); ?></div>
-                                                                </div>
-
-                                                            <?php endforeach; ?>
-
-                                                        <?php endif; ?>
-
-                                                    </div>
-
-                                                <?php endforeach; ?>
-
-                                            <?php endif; ?>
-
-                                        </div>
+                                <?php if (!empty($title)) : ?>
+                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-49484F">
+                                        <?php echo esc_html($title); ?>
                                     </div>
+                                <?php endif; ?>
 
-                                <?php
-                                    $i++;
-                                endforeach;
-                                ?>
+                                <?php if (!empty($price)) : ?>
+                                    <div class="satoshi-regular font22 leading38_4 text-494850">
+                                        <?php echo esc_html($price); ?>
+                                    </div>
+                                <?php endif; ?>
 
                             </div>
-                        </div>
-                    </div>
-                </section>
 
-            <?php
-            endif;
-            ?>
+                            <?php if (!empty($content)) : ?>
+                                <div class="consultation-card-content dpb-70 col-10">
+                                    <div class="satoshi-regular font14 leading22 text-494850 dpb-20">
+                                        <?php echo wp_kses_post($content); ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
+                        </div>
+
+                <?php
+                        $consultation_index++;
+                    endforeach;
+                endif;
+                ?>
+
+                <?php if (!empty($filter_selection)) : ?>
+
+                    <section class="image-faq-section">
+                        <div class="container">
+                            <div class="col-lg-10 col-11 mx-auto">
+                                <div class="image-faq">
+
+                                    <?php foreach ($filter_selection as $post_id) :
+
+                                        $post_id = is_object($post_id) ? $post_id->ID : $post_id;
+
+                                        $image          = get_the_post_thumbnail_url($post_id, 'large');
+                                        $content        = get_post_field('post_content', $post_id);
+                                        $standard_areas = get_field('treatment_standard_area', $post_id);
+                                    ?>
+
+                                        <div class="closet-item dmb-20"
+                                            id="post-<?php echo esc_attr($post_id); ?>">
+
+                                            <!-- HEADER -->
+                                            <div class="closet-header d-flex align-items-center justify-content-between cursor-pointer">
+
+                                                <div class="closet-header-title tk-ivypresto-display fw-lighter font32 leading28_8 text-black">
+                                                    <?php echo esc_html(get_the_title($post_id)); ?>
+                                                </div>
+
+                                                <div class="icon-bg">
+                                                    <img
+                                                        src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg"
+                                                        alt="Accordion Icon">
+                                                </div>
+                                            </div>
+
+
+                                            <!-- CONTENT -->
+                                            <div class="closet-content hero-style-content">
+
+                                                <?php if ($image) : ?>
+                                                    <div class="image-faq-hero position-relative overflow-hidden">
+
+                                                        <div class="faq-img">
+                                                            <img src="<?php echo esc_url($image); ?>"
+                                                                alt="<?php echo esc_attr(get_the_title($post_id)); ?>"
+                                                                class="w-100">
+                                                        </div>
+
+                                                        <div class="image-faq-hero-content position-absolute bottom-0 w-100 px-lg-5 px-3">
+
+                                                            <div class="tk-ivypresto-display fw-lighter font32 text-white dmb-25">
+                                                                <?php echo esc_html(get_the_title($post_id)); ?>
+                                                            </div>
+
+                                                            <div class="satoshi-regular font14 text-white">
+                                                                <?php echo wp_kses_post($content); ?>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                <?php endif; ?>
+
+
+                                                <?php if (!empty($standard_areas)) : ?>
+
+                                                    <?php foreach ($standard_areas as $area) :
+
+                                                        $area_title   = $area['title'] ?? '';
+                                                        $area_content = $area['content'] ?? '';
+                                                        $price_group  = $area['price_group'] ?? [];
+                                                    ?>
+
+                                                        <div class="image-faq-areas dpt-90 dpb-30">
+
+                                                            <?php if ($area_title) : ?>
+                                                                <div class="tk-ivypresto-display fw-lighter font26 text-49484F dmb-5">
+                                                                    <?php echo esc_html($area_title); ?>
+                                                                </div>
+                                                            <?php endif; ?>
+
+                                                            <?php if ($area_content) : ?>
+                                                                <div class="satoshi-regular font14 text-666666">
+                                                                    <?php echo esc_html($area_content); ?>
+                                                                </div>
+                                                            <?php endif; ?>
+
+
+                                                            <?php if (!empty($price_group)) : ?>
+
+                                                                <?php foreach ($price_group as $price) :
+
+                                                                    $price_title   = $price['title'] ?? '';
+                                                                    $price_content = $price['content'] ?? '';
+                                                                ?>
+
+                                                                    <div class="area d-flex justify-content-between py-2">
+                                                                        <div class="satoshi-regular font20 text-49484F">
+                                                                            <?php echo esc_html($price_title); ?>
+                                                                        </div>
+                                                                        <div class="satoshi-regular font22 text-49484F">
+                                                                            <?php echo esc_html($price_content); ?>
+                                                                        </div>
+                                                                    </div>
+
+                                                                <?php endforeach; ?>
+
+                                                            <?php endif; ?>
+
+                                                        </div>
+
+                                                    <?php endforeach; ?>
+
+                                                <?php endif; ?>
+
+                                            </div>
+
+                                        </div>
+
+                                    <?php endforeach; ?>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                <?php endif; ?>
+
+            <?php endif; ?>
+
+
+            <!-- END -->
 
         <?php elseif (get_row_layout() == 'treatment_card_section'):
             $title = get_sub_field('title');

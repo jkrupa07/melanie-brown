@@ -52,12 +52,20 @@
                     filter: invert(1);
                 }
             }
+
+            @include media-breakpoint-down(lg) {
+                padding: 15px;
+            }
         }
 
 
         .image-faq-areas {
             &:last-child {
                 padding-bottom: 230px !important;
+
+                @include media-breakpoint-down(lg){
+                    padding-bottom: 50px !important;
+                }
             }
         }
 
@@ -76,7 +84,6 @@
         }
 
         .area {
-            height: 80px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 

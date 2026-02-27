@@ -1,18 +1,24 @@
 export class Accordion {
+
     init() {
-        this.Accordion();
+        this.bindAccordion();
     }
-    Accordion() {
+
+    bindAccordion() {
 
         $(document).ready(function () {
 
-            $('.closet-item').each(function () {
+            /* -----------------------------
+               DEFAULT OPEN FIRST ACCORDION
+            ------------------------------*/
 
-                const $container = $(this).parent();
+            $('.image-faq').each(function () {
+
+                const $container = $(this);
 
                 $container.find('.closet-item').each(function (index) {
 
-                    const $header = $(this).find('.closet-header');
+                    const $header  = $(this).find('.closet-header');
                     const $content = $(this).find('.closet-content');
 
                     if (index === 0) {
@@ -26,43 +32,66 @@ export class Accordion {
 
             });
 
-            $('.closet-header').on('click', function () {
 
-                const $this = $(this);
-                const $parent = $this.closest('.closet-item');
-                const $container = $parent.parent();
+            /* -----------------------------
+               ACCORDION CLICK
+            ------------------------------*/
+
+            $(document).on('click', '.closet-header', function () {
+
+                const $this      = $(this);
+                const $parent    = $this.closest('.closet-item');
+                const $container = $parent.closest('.image-faq');
 
                 $container.find('.closet-header')
                     .not($this)
                     .removeClass('active')
                     .next('.closet-content')
+                    .stop(true, true)
                     .slideUp();
 
                 $this.toggleClass('active');
-                $this.next('.closet-content').stop(true, true).slideToggle();
+                $this.next('.closet-content')
+                    .stop(true, true)
+                    .slideToggle();
 
             });
 
 
-            $('.faq-trigger').on('click', function () {
+            /* -----------------------------
+               STICKY BUTTON CLICK
+            ------------------------------*/
 
-                const index = $(this).data('index');
-                const $targetItem = $('.closet-item[data-index="' + index + '"]');
-                const $targetHeader = $targetItem.find('.closet-header');
+            $(document).on('click', '.faq-trigger', function () {
 
-                if ($targetHeader.length) {
+                const targetId = $(this).data('target');
+                const $target  = $('#' + targetId);
 
-                    $targetHeader.trigger('click');
+                if (!$target.length) return;
 
-                    $('html, body').animate({
-                        scrollTop: $targetItem.offset().top - 200
-                    }, 600);
+                // Smooth scroll
+                $('html, body').animate({
+                    scrollTop: $target.offset().top - 150
+                }, 600);
+
+
+                /* If target is accordion post → open it */
+                if ($target.hasClass('closet-item')) {
+
+                    const $header = $target.find('.closet-header');
+
+                    if (!$header.hasClass('active')) {
+                        $header.trigger('click');
+                    }
 
                 }
+
+                /* If target is price card → do nothing else */
 
             });
 
         });
 
     }
+
 }
