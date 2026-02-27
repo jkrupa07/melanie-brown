@@ -7,6 +7,9 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+import "../../node_modules/wow.js"
+import WOW from 'wow.js';
+
 import '../../node_modules/flatpickr/dist/flatpickr.js';
 import '../../node_modules/flatpickr/dist/flatpickr.min.css';
 
@@ -60,3 +63,12 @@ $(function () {
 });
 
 // ===========================================================================
+
+jQuery(document).ready(function ($) {
+  new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    once: true,
+    mobile: true,
+  }).init();
+});

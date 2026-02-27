@@ -63,6 +63,9 @@
     "gsap": "^3.14.2",
     "jquery": "^3.7.0",
     "popper.js": "^1.16.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "wow": "^0.0.7",
+    "wow.js": "^1.2.2",
+    "wowjs": "^1.1.3"
   }
 }

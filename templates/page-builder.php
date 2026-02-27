@@ -45,7 +45,7 @@
                         </iframe>
                     <?php endif; ?>
                 </div>
-                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-70 w-100">
+                <div class="hero-content position-absolute bottom-0 dmb-60 tmb-70 w-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <div class="container">
                         <div class="col-lg-7">
                             <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font40 res-leading45_8 text-white dmb-20">
@@ -972,9 +972,9 @@
             <section class="contact-us-section bg-49484F">
                 <div class="container">
                     <div class="row align-items-start">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 tmb-60">
                             <?php if (!empty($contact_title)): ?>
-                                <div class="tk-ivypresto-display fw-lighter font62 leading28_8 text-white dpb-70">
+                                <div class="tk-ivypresto-display fw-lighter font62 leading28_8 res-font35 res-leading28_8 text-white dmb-70 tmb-45">
                                     <?php echo $contact_title; ?>
                                 </div>
                             <?php endif; ?>
@@ -983,9 +983,9 @@
                         <?php if (!empty($information_content)): ?>
                             <div class="col-lg-5 offset-lg-1">
 
-                                <div class="contact-info-card bg-FFFFFF0A radius3 px-5 dpt-50 dpb-95 tpb-50">
+                                <div class="contact-info-card bg-FFFFFF0A radius3 px-lg-5 px-4 dpt-50 dpb-95 tpb-50">
 
-                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white dmb-30">
+                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-capitalize text-white dmb-30">
                                         Clinic Information
                                     </div>
                                     <?php if (!empty($information_content['address'])): ?>
@@ -995,7 +995,7 @@
                                         </div>
                                     <?php endif; ?>
                                     <?php if (!empty($information_content['link_text'])): ?>
-                                        <div class="satoshi-regular font14 leading22 text-white dmt-30">
+                                        <div class="link-text satoshi-regular font14 leading22 text-white dmt-30">
                                             <?php echo $information_content['link_text']; ?>
                                         </div>
                                     <?php endif; ?>
