@@ -14,20 +14,26 @@ $faq_group = get_field("faq_group");
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-7 col-12">
+                <div class="col-lg-6 col-12">
                     <div class="col-lg-12 col-9 tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading35 text-white dmb-20">
                         <?php echo get_the_title(); ?>
                     </div>
-                    <div class="satoshi-regular font18 leading27 text-white">
+                    <div class="satoshi-regular font18 leading27 res-font14 res-leading22 text-white tmb-25">
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
-                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 d-flex align-items-center text-decoration-none transition">
+                    <a href="/treatment" class="btnA d-none white-border-btn back-btn satoshi-regular font14 space1 d-lg-flex align-items-center text-decoration-none transition">
                         <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
-                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                         </div>
                         Back to treatments
+                    </a>
+                    <a href="/treatment" class="btnA white-border-btn res-white-btn satoshi-regular font14 space1 d-lg-none d-flex align-items-center text-decoration-none transition">
+                        Back to treatments
+                        <div class="btn-arrow back-btn-arrow d-flex align-items-center ms-2 transition">
+                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                        </div>
                     </a>
                 </div>
             </div>
@@ -155,7 +161,7 @@ $faq_group = get_field("faq_group");
     </section>
 <?php endif; ?>
 
-<!-- <?php if (!empty($about_treatment_card['card_group'])): ?>
+<?php if (!empty($about_treatment_card['card_group'])): ?>
     <section class="treatment-experience-section position-relative dpt-135 dpb-230 tpt-75">
         <div class="container">
             <div class="col-lg-6 mx-auto dmb-60 tmb-35">
@@ -175,7 +181,7 @@ $faq_group = get_field("faq_group");
                             $title       = $card_groups['title'] ?? '';
                             $description = $card_groups['description'] ?? '';
                     ?>
-                            <div class="experience-card bg-F1DDD3 radius3 dpt-40 dpb-70 dpt-30 dpb-30 px-lg-5 px-3 dmb-20">
+                            <div class="experience-card position-sticky bg-F1DDD3 radius3 dpt-40 dpb-70 dpt-30 dpb-30 px-lg-5 px-3 dmb-20">
                                 <?php if (!empty($title)): ?>
                                     <div class="tk-ivypresto-display d-flex font32 leading28_8 res-font25 res-leading25_8 fw-lighter text-49484F dmb-55 tmb-25">
                                         <div class="fst-italic font32 leading28_8 res-font25 res-leading25_8 text-999999 me-2">
@@ -201,11 +207,11 @@ $faq_group = get_field("faq_group");
             </div>
         </div>
     </section>
-<?php endif; ?> -->
+<?php endif; ?>
 
 <?php if (!empty($faq_group)):
 ?>
-    <section class="faq-section dpb-185 dpt-230 tpt-105">
+    <section class="faq-section dpb-185">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 tmb-55">
@@ -263,7 +269,8 @@ $faq_group = get_field("faq_group");
                                             </div>
                                         <?php endif; ?>
                                         <div class="icon-bg d-flex justify-content-center align-items-center">
-                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Arrow Icon"></div>
+                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Arrow Icon">
+                                        </div>
                                     </div>
                                     <div class="closet-content dpb-50">
                                         <?php if (!empty($row['description'])): ?>
