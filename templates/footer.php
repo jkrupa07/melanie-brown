@@ -58,7 +58,7 @@ $site_by = get_field('site_by', 'option');
                 <div class="fst-italic tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading28_8 text-white me-2">
                     Follow along:
                 </div>
-                <a href="<?php echo $follow_by['url']; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading28_8 text-white">
+                <a href="<?php echo $follow_by['url']; ?>" target="_blank" class="text-decoration-none tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading28_8 text-white">
                     <?php echo $follow_by['title']; ?>
                 </a>
             </div>
@@ -174,10 +174,12 @@ $site_by = get_field('site_by', 'option');
                                 $image = $media_content['image'];
                                 $url = $media_content['url'];
                         ?>
-                                <div class="media-bg d-flex justify-content-center align-items-center rounded-circle me-2">
+                                <div class="">
                                     <a href="<?php echo $url; ?>">
-                                        <div class="media-img d-flex justify-content-center align-items-center">
-                                            <img class="h-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+                                        <div class="media-bg d-flex justify-content-center align-items-center rounded-circle me-2">
+                                            <div class="media-img d-flex justify-content-center align-items-center">
+                                                <img class="h-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
+                                            </div>
                                         </div>
                                     </a>
                                 </div>
