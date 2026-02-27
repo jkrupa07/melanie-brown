@@ -21,22 +21,23 @@
             padding-left: 35px;
             padding-right: 35px;
         }
-         @include media-breakpoint-down(up) {
-            margin-left: -15px;
-        margin-right: -15px;
 
-        .slick-slide {
-            padding-left: 15px;
-            padding-right: 15px;
+        @include media-breakpoint-down(lg) {
+            margin-left: -15px;
+            margin-right: -15px;
+
+            .slick-slide {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
         }
-           
     }
-}
 
     .treatment-image {
         height: 390px;
 
-        @include media-breakpoint-down(up) {
+        @include media-breakpoint-down(lg) {
             height: 350px;
             width: 300px;
         }
@@ -86,5 +87,9 @@ footer {
 
     .footer-slider-image {
         height: 208px;
+
+        @include media-breakpoint-down(lg) {
+            height: 110px;
+        }
     }
 }

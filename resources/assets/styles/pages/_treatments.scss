@@ -2,7 +2,7 @@
   .treatment-card {
     .treatment-image {
       height: 390px;
-      @include media-breakpoint-down(up) {
+      @include media-breakpoint-down(lg) {
          height: 345px;
         }
     }

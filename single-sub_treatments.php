@@ -23,8 +23,8 @@ $faq_group = get_field("faq_group");
                     </div>
                 </div>
                 <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
-                    <a href="#" class="btnA link-btn satoshi-regular font14 space1 text-white d-flex align-items-end text-decoration-none transition">
-                        <div class="btn-arrow pe-2 transition">
+                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 d-flex align-items-center text-decoration-none transition">
+                        <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                         </div>
                         Back to treatments
@@ -205,7 +205,7 @@ $faq_group = get_field("faq_group");
 
 <?php if (!empty($faq_group)):
 ?>
-    <section class="faq-section dpb-185 tpt-105">
+    <section class="faq-section dpb-185 dpt-230 tpt-105">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 tmb-55">
@@ -238,10 +238,10 @@ $faq_group = get_field("faq_group");
 
                                 <?php echo esc_html($link['title']); ?>
 
-                                <div class="btn-arrow ms-2 transition">
+                                <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                     <img class="w-100"
-                                        src="<?php echo esc_url(get_template_directory_uri() . '/templates/icons/gray-arrow.svg'); ?>"
-                                        alt="">
+                                        src="<?php echo esc_url(get_template_directory_uri() . '/templates/icons/grey-btn-arrow.svg'); ?>"
+                                        alt="Arrow Icon">
                                 </div>
                             </a>
                         <?php endif; ?>
@@ -263,9 +263,9 @@ $faq_group = get_field("faq_group");
                                             </div>
                                         <?php endif; ?>
                                         <div class="icon-bg d-flex justify-content-center align-items-center">
-                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt=""></div>
+                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Arrow Icon"></div>
                                     </div>
-                                    <div class="closet-content dpb-75">
+                                    <div class="closet-content dpb-50">
                                         <?php if (!empty($row['description'])): ?>
                                             <div class="satoshi-light font16 leading25_6 res-font14 res-leading22 text-black pb-4">
                                                 <?php echo $row['description']; ?>

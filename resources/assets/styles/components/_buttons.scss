@@ -33,6 +33,12 @@ button,
       background-color: $white;
       border: 1px solid transparent;
       color: $color-494850;
+
+      .btn-arrow {
+        img {
+          filter: invert(1);
+        }
+      }
     }
   }
 
@@ -57,7 +63,14 @@ button,
       background-color: $color-494850;
       border: 1px solid transparent;
       color: $color-FFFFFF;
+
+      .btn-arrow {
+        img {
+          filter: invert(1);
+        }
+      }
     }
+
   }
 
   &.bg-AF9064-btn {
@@ -79,11 +92,19 @@ button,
 
     .btn-arrow {
       width: 21px;
+
+      &.back-btn-arrow {
+        width: 24px;
+      }
     }
 
     &:hover {
       .btn-arrow {
         transform: translateX(3px);
+      }
+
+      &.back-btn-arrow {
+        transform: translateX(-3px);
       }
     }
   }

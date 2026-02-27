@@ -115,7 +115,7 @@
                                     <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                         <?php echo $link['title']; ?>
                                         <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg" alt="">
+                                            <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
                                 <?php endif; ?>
@@ -197,7 +197,7 @@
                             <a href="<?php echo $left_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition tmb-60">
                                 <?php echo $left_content['link']['title']; ?>
                                 <div class="btn-arrow ms-2 transition">
-                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
+                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                                 </div>
                             </a>
                         </div>
@@ -507,9 +507,9 @@
 
             if (!empty($filter_selection) && is_array($filter_selection)) :
             ?>
-                <div class="sticky-bar-section bg-49484F73 position-fixed bottom-0 z-3 w-100">
-                    <div class="container">
-                        <div class="sticky-bar-wraper d-flex align-items-center justify-content-center gap-3">
+                <div class="sticky-bar-section ps-lg-0 ps-3 bg-49484F73 position-fixed bottom-0 z-3 w-100">
+                    <div class="container px-p-0">
+                        <div class="sticky-bar-wraper ps-lg-0 ps-2 col-lg-10 mx-auto d-flex justify-content-center col-12 overflow-auto">
 
                             <?php
                             $i = 0;
@@ -521,9 +521,9 @@
                                 if (!$post_id) continue;
                             ?>
 
-                                <div class="item d-inline-flex align-items-center px-2">
+                                <div class="item d-flex justify-content-center align-items-center px-2">
                                     <button
-                                        class="satoshi-regular border-0 bg-transparent font14 leading22_4 res-font12 res-leading20_4 text-F1DDD3 text-decoration-none faq-trigger"
+                                        class="satoshi-regular text-nowrap border-0 bg-transparent font14 leading22_4 res-font12 res-leading20_4 text-F1DDD3 text-decoration-none faq-trigger"
                                         data-index="<?php echo esc_attr($i); ?>">
                                         <?php echo esc_html(get_the_title($post_id)); ?>
                                     </button>

@@ -21,8 +21,8 @@ $category_left_content = get_field('category_left_content');
                     </div>
                 </div>
                 <div class="col-lg-4 col-12 d-flex align-items-end justify-content-lg-end">
-                    <a href="#" class="btnB link-btn satoshi-regular font14 space1 res-font12 text-white d-flex align-items-end text-decoration-none transition">
-                        <div class="btn-arrow pe-2">
+                    <a href="/treatment" class="btnB link-btn satoshi-regular font14 space1 res-font12 text-white d-flex align-items-center text-decoration-none transition">
+                        <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                         </div>
                         Back to treatments
@@ -52,11 +52,11 @@ $category_left_content = get_field('category_left_content');
                     <?php endif; ?>
 
                     <?php if (!empty($category_left_content['link'])): ?>
-                        <a href="<?php echo $category_left_content['link']['url']; ?>"
+                        <a href="<?php echo $category_left_content['link']['url']; ?>" target="<?php echo $category_left_content['link']['target'] == "_blank" ? "_blank" : ''; ?>"
                             class="btnA border-494850-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                             <?php echo $category_left_content['link']['title']; ?>
-                            <div class="btn-arrow">
-                                <img class="w-100 ms-2" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
+                            <div class="btn-arrow d-flex align-items-center transition ms-2">
+                                <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
                             </div>
                         </a>
                     <?php endif; ?>
@@ -91,7 +91,7 @@ $category_left_content = get_field('category_left_content');
                                     </div>
                                     <a href="<?php echo get_permalink($post_id); ?>" class="btnB link-btn satoshi-regular font14 space1 text-494850 d-flex text-decoration-none transition">
                                         Learn more
-                                        <div class="btn-arrow ms-2 transition">
+                                        <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                             <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
