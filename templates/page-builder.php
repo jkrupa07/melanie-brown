@@ -161,7 +161,7 @@
                                 </div>
                             <?php endif; ?>
                             <?php if (!empty($description)): ?>
-                                <div class="left-right-description satoshi-regular font14 leading22 res-leading22_6 text-494850">
+                                <div class="left-right-description satoshi-regular font14 leading22 res-leading22_6 text-666666">
                                     <?php echo $description; ?> </div>
                             <?php endif; ?>
                         </div>
@@ -210,14 +210,14 @@
                                     $content = $contents['content'];
                             ?>
                                     <div class="closet-item white-border bg-268a85">
-                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dmb-35 dmt-30 tmb-20 tmt-25">
+                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tmb-20 tmt-25 transition">
                                             <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                             <div class="icon-bg d-flex justify-content-center align-items-center">
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
                                             </div>
                                         </div>
-                                        <div class="closet-content ">
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white pb-lg-4 dmb-75 tmb-30">
+                                        <div class="closet-content dpt-15 dpb-50 tpb-30">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white">
                                                 <?php echo $content; ?>
                                             </div>
                                         </div>
@@ -244,7 +244,7 @@
                             <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
 
                                 <div class="image-wrapper position -relative d-flex align-items-center col-lg-6 mx-auto ">
-                                    <!-- <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div> -->
+                                    <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
                                     <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
                                 </div>
                                 <div class="text-wrapper w-100 position-absolute top-left-center">
@@ -643,7 +643,7 @@
                                         $standard_areas = get_field('treatment_standard_area', $post_id);
                                     ?>
 
-                                        <div class="closet-item dmb-20"
+                                        <div class="closet-item radius3 dmb-20"
                                             id="post-<?php echo esc_attr($post_id); ?>">
 
                                             <div class="closet-header d-flex align-items-center justify-content-between cursor-pointer">
@@ -654,6 +654,7 @@
 
                                                 <div class="icon-bg d-flex align-items-center">
                                                     <img
+                                                        class="w-100"
                                                         src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg"
                                                         alt="Accordion Icon">
                                                 </div>
@@ -666,16 +667,16 @@
                                                         <div class="faq-img">
                                                             <img src="<?php echo esc_url($image); ?>"
                                                                 alt="<?php echo esc_attr(get_the_title($post_id)); ?>"
-                                                                class="w-100 h-100 object-cover">
+                                                                class="w-100 h-100 object-cover radius3">
                                                         </div>
 
                                                         <div class="image-faq-hero-content position-absolute bottom-0 dmb-60 tmb-20 w-100 px-lg-5 px-3">
 
-                                                            <div class="tk-ivypresto-display fw-lighter font32 res-font22 res-leading24_6 text-white text-capitalize dmb-25 tmb-10">
+                                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading24_6 text-white text-capitalize dmb-20 tmb-10">
                                                                 <?php echo esc_html(get_the_title($post_id)); ?>
                                                             </div>
 
-                                                            <div class="satoshi-regular font14 res-font12 res-leading16 text-white">
+                                                            <div class="satoshi-regular font14 leading22 res-font12 res-leading16 text-white">
                                                                 <?php echo wp_kses_post($content); ?>
                                                             </div>
 
@@ -693,7 +694,7 @@
                                                         $price_group  = $area['price_group'] ?? [];
                                                     ?>
 
-                                                        <div class="image-faq-areas dpt-90 dpb-30 tpt-25 mx-lg-5 mx-3">
+                                                        <div class="image-faq-areas dpt-80 dpb-30 tpt-25 ">
 
                                                             <?php if ($area_title) : ?>
                                                                 <div class="tk-ivypresto-display fw-lighter font26 res-font18 res-leading20_4 text-49484F dmb-5">
@@ -762,7 +763,7 @@
             <section class="treatments-cards-section">
                 <div class="container">
                     <div class="row align-items-center justify-content-between dmb-90 tmb-55 wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
-                        <div class="col-lg-5 col-8">
+                        <div class="col-lg-4 col-8">
                             <?php if (!empty($title)): ?>
                                 <div class="tk-ivypresto-display font60 leading61_8 res-font35 res-leading40_8 fw-lighter text-49484F tmb-25">
                                     <?php echo $title; ?>
@@ -1017,7 +1018,7 @@
                                     <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-white text-center dmb-20">
                                         <?php echo $title; ?>
                                     </div>
-                                    <div class="psatoshi-regular font14 leading19 text-white text-center mx-auto col-10">
+                                    <div class="satoshi-regular font14 leading19 text-white text-center mx-auto col-10">
                                         <?php echo $content; ?>
                                     </div>
                                 </div>
@@ -1038,7 +1039,7 @@
             <section class="sub-hero-section position-relative h-vh overflow-hidden">
 
                 <div class="sub-hero-wrapper position-relative h-100">
-                    <div class="hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
+                    <div class="sub-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
                     <?php if ($media_select == 'image'): ?>
                         <img class="w-100 h-100 object-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['titile']; ?>">
                     <?php endif; ?>
@@ -1051,10 +1052,10 @@
                 <div class="hero-content position-absolute bottom-0 dmb-60 tmb-40 w-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <div class="container">
                         <div class="col-lg-7 ">
-                            <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading34_2 text-white dmb-20 tmb-10">
+                            <div class="tk-ivypresto-display fw-lighter font60 leading44_2 res-font30 res-leading34_2 text-white dmb-20 tmb-10">
                                 <?php echo $sub_title; ?>
                             </div>
-                            <div class="satoshi-regular font18 leading27 res-font14 res-leading22 text-white dmb-15">
+                            <div class="satoshi-regular font16 leading22 res-font14 text-white dmb-15">
                                 <?php echo $sub_hero_description; ?>
 
                             </div>

@@ -13,10 +13,10 @@ $category_left_content = get_field('category_left_content');
             <div class="row">
 
                 <div class="col-lg-7 col-12">
-                    <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading40_8 text-white text-capitalize dmb-20 tmb-10">
+                    <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font30 res-leading40_8 text-white text-capitalize dmb-20 tmb-10">
                         <?php echo get_the_title(); ?>
                     </div>
-                    <div class="satoshi-regular font18 leading27 res-font14 res-leading22 tmb-25 text-white">
+                    <div class="satoshi-regular font14 leading22 tmb-25 text-white">
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>

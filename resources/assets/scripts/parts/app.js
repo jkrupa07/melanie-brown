@@ -54,8 +54,8 @@ export class App {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top +100px",
-          end: () => "bottom +100px",
+          start: "top +60px",
+          end: () => "bottom +60px",
           scrub: true,
           pin: true,
           pinSpacing: true,   // important

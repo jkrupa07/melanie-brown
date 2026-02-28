@@ -23,11 +23,9 @@
 
         .icon-bg {
             width: 14px;
-            height: 14px;
             position: relative;
 
             img {
-                height: 20px;
                 transition: transform 0.3s ease;
             }
         }
@@ -35,6 +33,9 @@
         .closet-item {
             border: 1px solid rgba(0, 0, 0, 0.1);
 
+            &.active {
+                border: none !important;
+            }
 
             .closet-header {
                 padding: 40px;
@@ -52,6 +53,8 @@
                     z-index: 1;
                     width: 100%;
                     justify-content: end !important;
+
+
 
                     .closet-header-title {
                         opacity: 0;
@@ -78,6 +81,9 @@
 
 
         .image-faq-areas {
+            padding-left: 41px;
+            padding-right: 41px;
+            
             &:last-child {
                 padding-bottom: 230px !important;
 

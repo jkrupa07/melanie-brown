@@ -1,8 +1,8 @@
 .faq-section {
   .category-faq {
-    .closet-content {
-      display: none;
-    }
+    // .closet-content {
+    //   display: none;
+    // }
 
     .icon-bg {
       width: 14px;
@@ -13,11 +13,19 @@
       }
     }
 
-    .closet-header.active {
-      .icon-bg img {
-        transform: rotate(45deg);
+    .closet-header {
+      &.active {
+        padding-bottom: 0px !important;
+
+        .icon-bg img {
+          transform: rotate(45deg);
+        }
       }
     }
+  }
+
+  .closet-content {
+    display: none;
   }
 
   .closet-item:last-child {
