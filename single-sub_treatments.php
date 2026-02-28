@@ -6,28 +6,28 @@ $transformation_timeline = get_field("transformation_timeline");
 $about_treatment_card = get_field("about_treatment_card");
 $faq_group = get_field("faq_group");
 ?>
-<section class="category-hero-section position-relative">
+<section class="category-hero-section sub-category-hero-section position-relative">
     <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
-    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="" class="w-100 h-100 object-cover">
+    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="Hero Image" class="w-100 h-100 object-cover">
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
 
                 <div class="col-lg-6 col-12">
-                    <div class="col-lg-12 col-9 tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading35 text-white dmb-20">
+                    <div class="col-lg-10 col-9 tk-ivypresto-display fw-lighter font60 leading61_8 res-font30 res-leading35 text-white dmb-20">
                         <?php echo get_the_title(); ?>
                     </div>
-                    <div class="satoshi-regular font18 leading27 res-font14 res-leading22 text-white tmb-25">
+                    <div class="satoshi-regular font14 leading22 text-white tmb-25">
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
-                    <a href="/treatment" class="btnA d-none white-border-btn back-btn satoshi-regular font14 space1 d-lg-flex align-items-center text-decoration-none transition">
-                        <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
+                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 leading14 d-lg-flex justify-content-center align-items-center text-decoration-none transition">
+                        Back to treatments
+                        <div class="btn-arrow ms-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                         </div>
-                        Back to treatments
                     </a>
                     <a href="/treatment" class="btnA white-border-btn res-white-btn satoshi-regular font14 space1 d-lg-none d-flex align-items-center text-decoration-none transition">
                         Back to treatments
@@ -40,71 +40,76 @@ $faq_group = get_field("faq_group");
         </div>
     </div>
 </section>
-<div class="spacing dpb-135"></div>
+<?php if (!empty($sub_treatment_group)): ?>
 
-<section class="treatments-cards-section">
-    <div class="container">
+    <section class="treatments-cards-section dpt-135">
+        <div class="container">
 
-        <div class="col-lg-6 col-12 mx-auto align-items-center dmb-60 tmb-45">
-            <?php if (!empty($sub_treatment_title)): ?>
-                <div class="col-lg-10 col-12 tk-ivypresto-display font60 leading61_8 res-font35 res-leading40_2 fw-lighter text-center text-49484F dmb-20">
-                    <?php echo $sub_treatment_title; ?>
-                </div>
-            <?php endif; ?>
-
-            <?php if (!empty($sub_treatment_description)): ?>
-                <div class="right-description satoshi-regular font14 leading22 text-center text-666666 pe-lg-4">
-                    <?php echo $sub_treatment_description; ?>
-                </div>
-            <?php endif; ?>
-        </div>
-
-        <div class="row row36">
-            <?php if (!empty($sub_treatment_group)):
-                foreach ($sub_treatment_group as $sub_treatment):
-                    $image = $sub_treatment['image'];
-                    $title = $sub_treatment['title'];
-                    $description = $sub_treatment['description'];
-                    $link = $sub_treatment['link'];
-            ?>
-                    <div class="col-lg-4 col-md-6 col-12 treatment-card dmb-110 tmb-55">
-                        <div class="treatment-image dmb-30">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <img class="w-100 h-100 object-cover radius3"
-                                    src="<?php echo $image['url']; ?>"
-                                    alt="<?php echo $image['title']; ?>">
-                            <?php endif; ?>
-                        </div>
-
-                        <div class="treatment-content">
-                            <?php if (!empty($title)): ?>
-                                <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light dmb-15">
-                                    <?php echo $title; ?>
-                                </div>
-
-                            <?php endif; ?>
-                            <?php if (!empty($description)): ?>
-                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F dmb-20">
-                                    <?php echo $description; ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if (!empty($link)): ?>
-                                <a href="<?php echo $link['url']; ?>" class="btnB link-btn satoshi-regular font14 leading14 d-flex align-items-center text-decoration-none transition">
-                                    <?php echo $link['title']; ?>
-                                    <div class="btn-arrow d-flex align-items-center ms-2 transition">
-                                        <img class="w-100"
-                                            src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                            alt="">
-                                    </div>
-                                </a>
-                            <?php endif; ?>
-                        </div>
+            <div class="col-lg-6 col-12 mx-auto align-items-center dmb-60 tmb-45">
+                <?php if (!empty($sub_treatment_title)): ?>
+                    <div class="col-lg-6 mx-auto col-12 tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 fw-lighter text-center text-49484F dmb-20">
+                        <?php echo $sub_treatment_title; ?>
                     </div>
-            <?php endforeach;
-            endif; ?>
-        </div>
-</section>
+                <?php endif; ?>
+
+                <?php if (!empty($sub_treatment_description)): ?>
+                    <div class="right-description satoshi-regular font14 leading22 text-center text-666666 pe-lg-4">
+                        <?php echo $sub_treatment_description; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="row row36">
+                <?php if (!empty($sub_treatment_group)):
+                    foreach ($sub_treatment_group as $sub_treatment):
+                        $image = $sub_treatment['image'];
+                        $title = $sub_treatment['title'];
+                        $description = $sub_treatment['description'];
+                        $link = $sub_treatment['link'];
+                ?>
+                        <div class="col-lg-4 col-md-6 col-12 treatment-card dmb-110 tmb-55">
+                            <a href="<?php echo $link['url']; ?>" class="text-decoration-none">
+
+
+                                <div class="treatment-image dmb-30">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <img class="w-100 h-100 object-cover radius3"
+                                            src="<?php echo $image['url']; ?>"
+                                            alt="<?php echo $image['title']; ?>">
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="treatment-content">
+                                    <?php if (!empty($title)): ?>
+                                        <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light dmb-15">
+                                            <?php echo $title; ?>
+                                        </div>
+
+                                    <?php endif; ?>
+                                    <?php if (!empty($description)): ?>
+                                        <div class="treatment-description satoshi-regular font14 leading19 pe-5 me-2 text-49484F dmb-20">
+                                            <?php echo $description; ?>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($link)): ?>
+                                        <div class="btnB link-btn satoshi-regular font14 leading14 d-flex align-items-center text-decoration-none transition">
+                                            <?php echo $link['title']; ?>
+                                            <div class="btn-arrow d-flex align-items-center ms-2 transition">
+                                                <img class="w-100"
+                                                    src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
+                                                    alt="Arrow Icon">
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </a>
+                        </div>
+                <?php endforeach;
+                endif; ?>
+            </div>
+    </section>
+<?php endif; ?>
 
 <?php if (!empty($transformation_timeline['duration_group'])): ?>
     <section class="treatments-timeline-section dpt-105 dpb-185 tpt-85 tpb-50 bg-49484F">
@@ -226,7 +231,7 @@ $faq_group = get_field("faq_group");
                     ?>
 
                         <?php if (!empty($title)): ?>
-                            <div class="col-lg-12 col-10 tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-494850 fw-lighter dmb-25 tmb-15">
+                            <div class="col-lg-11 col-10 tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-494850 fw-lighter dmb-25 tmb-15">
                                 <?php echo esc_html($title); ?>
                             </div>
                         <?php endif; ?>
@@ -274,7 +279,7 @@ $faq_group = get_field("faq_group");
                                     </div>
                                     <div class="closet-content dpb-50">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22 text-black pb-4">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22 text-black pb-4 pe-5">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>

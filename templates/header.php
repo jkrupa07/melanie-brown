@@ -5,7 +5,7 @@ $header_dark_logo = get_field('header_dark_logo', 'option');
 $header_links = get_field('header_links', 'option');
 $header_button = get_field('header_button', 'option');
 ?>
-<header class="header <?php echo ($header_color == 'dark' ? 'black-header' : ''); ?> py-4 position-fixed top-0 w-100 transition">
+<header class="header <?php echo ($header_color == 'dark' ? 'black-header' : ''); ?> position-fixed top-0 w-100 transition">
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <?php if (!empty($header_logo)): ?>

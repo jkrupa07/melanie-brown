@@ -56,15 +56,15 @@
                             <div class="satoshi-regular font18 leading27 res-font16 res-leading20 text-white dmb-30 pe-lg-0 pe-sm-3">
                                 <?php if (!empty($hero_description)): ?>
                                     <?php echo $hero_description; ?>
-                                <?php endif; ?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                             <?php if (!empty($hero_link)): ?>
                                 <div class="">
-                                    <a class="btnA bg-AF9064-btn satoshi-regular font14 space1 d-inline-flex justify-content-center align-items-center text-decoration-none transition"
+                                    <a class="btnA bg-AF9064-btn d-inline-flex satoshi-regular font14 space1 leading14 justify-content-center align-items-center text-decoration-none transition"
                                         href="<?php echo $hero_link['url']; ?>">
                                         <?php echo $hero_link['title']; ?>
-                                        <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                                        <div class="btn-arrow d-flex align-items-end ms-2">
+                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
                                 </div>
@@ -86,54 +86,53 @@
 
             <section class="left-right-media-section bg-F1DDD3">
                 <div class="container">
-                    <div class="col-11 mx-auto">
-                        <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s"">
+                    <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s"">
                             <?php if ($media_select == 'image' && $media_direction == 'left'): ?>
                                 <div class=" col-lg-4">
-                            <div class="left-image">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
-                            </div>
+                        <div class="left-image">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                         </div>
-                    <?php endif; ?>
-                    <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
-                        <div class="col-lg-5 ms-lg-4 me-auto left-image radius3 overflow-hidden dmb-25">
-                            <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
-                                src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
-                        </div>
-                    <?php endif; ?>
-                    <div class="col-lg-6 pe-lg-5">
-                        <?php if (!empty($title)): ?>
-                            <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
-                                <?php echo $title; ?>
-                            </div>
-                        <?php endif; ?>
-                        <?php if (!empty($title)): ?>
-                            <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
-                                <?php echo $description; ?> </div>
-                        <?php endif; ?>
-                        <?php if (!empty($link)): ?>
-                            <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
-                                <?php echo $link['title']; ?>
-                                <div class="btn-arrow ms-2 transition">
-                                    <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
-                                </div>
-                            </a>
-                        <?php endif; ?>
                     </div>
-                    <?php if ($media_select == 'image' && $media_direction == 'right'): ?>
-                        <div class="col-lg-4 offset-1">
-                            <div class="left-image">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($media_select == 'video' && $media_direction == 'right'): ?>
-                        <div class="col-lg-5 left-image radius3 overflow-hidden">
-                            <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
-                                src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
-                        </div>
-                    <?php endif; ?>
+                <?php endif; ?>
+                <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
+                    <div class="col-lg-5 mx-auto pe-5 left-image radius3 overflow-hidden dmb-25">
+                        <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
+                            src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
                     </div>
+                <?php endif; ?>
+                <div class="col-lg-6 ps-3 pe-lg-5">
+                    <?php if (!empty($title)): ?>
+                        <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
+                            <?php echo $title; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($title)): ?>
+                        <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
+                            <?php echo $description; ?> </div>
+                    <?php endif; ?>
+                    <?php if (!empty($link)): ?>
+                        <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 space1 leading14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                            <?php echo $link['title']; ?>
+                          
+                            <div class="btn-arrow d-flex align-items-center ms-2 transition">
+                                <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
+                            </div>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <?php if ($media_select == 'image' && $media_direction == 'right'): ?>
+                    <div class="col-lg-4 offset-1">
+                        <div class="left-image">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
+                        </div>
+                    </div>
+                <?php endif; ?>
+                <?php if ($media_select == 'video' && $media_direction == 'right'): ?>
+                    <div class="col-lg-5 left-image radius3 overflow-hidden">
+                        <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
+                            src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
+                    </div>
+                <?php endif; ?>
                 </div>
                 </div>
             </section>
@@ -317,98 +316,57 @@
             <section class="treatment-slider-section overflow-hidden">
                 <div class="container">
 
-                    <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s">
-                        <div class="col-lg-6 col-12 order-1">
+                    <div class="row dmb-60 tmb-0 wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                        <div class="col-lg-6 col-12 tmb-30">
                             <?php if (!empty($title)) : ?>
-                                <div class="tk-ivypresto-display font41 leading44_2 res-font28 res-leading40 fw-lighter text-494850 dmb-50 tmb-30">
+                                <div class="tk-ivypresto-display font41 leading44_2 res-font28 res-leading40 fw-lighter text-494850">
                                     <?php echo esc_html($title); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
 
-                        <div class="col-lg-6 col-12 order-3 order-lg-3 d-lg-flex d-block align-items-center justify-content-end">
+                        <div class="col-lg-6 col-12 d-lg-flex d-none align-items-center justify-content-end">
                             <div class="slick-arrows-wrapper d-flex align-items-center justify-content-center pe-lg-4 pt-lg-0 tmb-40">
-                                <div class="prev-arrow cursor-pointer me-3">
-                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
+                                <div class="prev-arrow d-flex align-items-center cursor-pointer me-3">
+                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
                                 </div>
-                                <div class="next-arrow cursor-pointer">
-                                    <img class=" w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
+                                <div class="next-arrow d-flex align-items-center cursor-pointer">
+                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
                                 </div>
                             </div>
                             <?php if (!empty($link)): ?>
                                 <div class="text-center">
-                                    <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 space1 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
-                                        <?php echo $link['title']; ?>
+                                    <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn  d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                                        <div class="satoshi-regular font14 leading14">
+                                            <?php echo $link['title']; ?>
+                                        </div>
                                         <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
                                     
                                 </div>
                             <?php endif; ?>
                         </div>
+                    </div>
 
+                    <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
 
-                        <div class="explore-treatment-slider col-lg-11 col-10 order-2 order-lg-3 tmb-70">
+                        <?php if ($slider_select === 'all') : ?>
 
-                            <?php if ($slider_select === 'all') : ?>
+                            <?php
+                            $args = array(
+                                'post_type'      => 'treatments',
+                                'posts_per_page' => -1,
+                                'orderby'        => 'date',
+                                'order'          => 'ASC',
+                            );
 
-                                <?php
-                                $args = array(
-                                    'post_type'      => 'treatments',
-                                    'posts_per_page' => -1,
-                                    'orderby'        => 'date',
-                                    'order'          => 'ASC',
-                                );
+                            $query = new WP_Query($args);
 
-                                $query = new WP_Query($args);
-
-                                if ($query->have_posts()) :
-                                    while ($query->have_posts()) : $query->the_post();
-                                ?>
-
-                                        <div class="treatment-card">
-                                            <a href="<?php the_permalink(); ?>" class="text-decoration-none">
-
-                                                <?php if (has_post_thumbnail()) : ?>
-                                                    <div class="treatment-image dmb-25">
-                                                        <?php the_post_thumbnail('medium', [
-                                                            'class' => 'w-100 h-100 object-cover radius3'
-                                                        ]); ?>
-                                                    </div>
-                                                <?php endif; ?>
-
-                                                <div class="treatment-content">
-                                                    <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
-                                                        <?php the_title(); ?>
-                                                    </div>
-
-                                                    <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
-                                                        <?php echo wp_trim_words(get_the_content(), 20); ?>
-                                                    </div>
-
-                                                    <div class="btnB link-btn satoshi-regular font14 space1 leading14 d-flex align-items-center transition">
-                                                        Learn more
-                                                        <div class="btn-arrow d-flex align-items-center ms-2 transition">
-                                                            <img class="w-100"
-                                                                src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                                alt="Arrow Icon">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </a>
-                                        </div>
-
-                                <?php
-                                    endwhile;
-                                    wp_reset_postdata();
-                                endif;
-                                ?>
-
-                            <?php elseif ($slider_select === 'select' && !empty($select_treatment)) : ?>
-
-                                <?php foreach ($select_treatment as $post) : setup_postdata($post); ?>
+                            if ($query->have_posts()) :
+                                while ($query->have_posts()) : $query->the_post();
+                            ?>
 
                                     <div class="treatment-card">
                                         <a href="<?php the_permalink(); ?>" class="text-decoration-none">
@@ -426,16 +384,16 @@
                                                     <?php the_title(); ?>
                                                 </div>
 
-                                                <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
-                                                <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
+                                                <div class="btnB link-btn satoshi-regular font14 space1 leading14 d-flex align-items-center transition">
                                                     Learn more
                                                     <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                         <img class="w-100"
                                                             src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                            alt="">
+                                                            alt="Arrow Icon">
                                                     </div>
                                                 </div>
                                             </div>
@@ -443,13 +401,77 @@
                                         </a>
                                     </div>
 
-                                <?php endforeach;
-                                wp_reset_postdata(); ?>
+                            <?php
+                                endwhile;
+                                wp_reset_postdata();
+                            endif;
+                            ?>
 
-                            <?php endif; ?>
+                        <?php elseif ($slider_select === 'select' && !empty($select_treatment)) : ?>
 
-                        </div>
+                            <?php foreach ($select_treatment as $post) : setup_postdata($post); ?>
+
+                                <div class="treatment-card">
+                                    <a href="<?php the_permalink(); ?>" class="text-decoration-none">
+
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <div class="treatment-image dmb-25">
+                                                <?php the_post_thumbnail('medium', [
+                                                    'class' => 'w-100 h-100 object-cover radius3'
+                                                ]); ?>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <div class="treatment-content">
+                                            <div class="treatment-title tk-ivypresto-display font26 leading25_6 text-49484F fw-light mb-2">
+                                                <?php the_title(); ?>
+                                            </div>
+
+                                            <div class="treatment-description satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <?php echo wp_trim_words(get_the_content(), 20); ?>
+                                            </div>
+
+                                            <div class="btnB link-btn satoshi-regular space1 font14 leading14 d-flex align-items-center transition">
+                                                Learn more
+                                                <div class="btn-arrow d-flex align-items-center ms-2 transition">
+                                                    <img class="w-100"
+                                                        src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
+                                                        alt="Arrow Icon">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </a>
+                                </div>
+
+                            <?php endforeach;
+                            wp_reset_postdata(); ?>
+
+                        <?php endif; ?>
+
                     </div>
+
+                    <div class="col-lg-6 col-12 d-lg-none d-flex flex-column align-items-center justify-content-end">
+                        <div class="slick-arrows-wrapper d-flex align-items-center justify-content-center pe-lg-4 pt-lg-0 tmb-40">
+                            <div class="prev-arrow cursor-pointer me-3">
+                                <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
+                            </div>
+                            <div class="next-arrow cursor-pointer">
+                                <img class=" w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
+                            </div>
+                        </div>
+                        <?php if (!empty($link)): ?>
+                            <div class="text-center">
+                                <a href="<?php echo $link['url']; ?>" class="btnA bg-AF9064-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                                    <?php echo $link['title']; ?>
+                                    <div class="btn-arrow ms-2 transition">
+                                        <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
 
                 </div>
             </section>
@@ -821,7 +843,7 @@
                                                     <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                         <img class="w-100"
                                                             src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                            alt="">
+                                                            alt="Arrow Icon">
                                                     </div>
                                                 </div>
                                             </div>
@@ -861,7 +883,7 @@
                                                 <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                                     <img class="w-100"
                                                         src="<?php echo get_template_directory_uri(); ?>/templates/icons/dark-btn-arrow.svg"
-                                                        alt="">
+                                                        alt="Arrow Icon">
                                                 </div>
                                             </span>
                                         </div>
@@ -908,10 +930,10 @@
                     </div>
                     <div class="slick-arrows-wrapper d-inline-flex align-items-center justify-content-center col-12 col-lg-2 gap-5 ps-lg-5">
                         <div class="prev-arrow cursor-pointer">
-                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
+                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
                         </div>
                         <div class="next-arrow cursor-pointer">
-                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="">
+                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/gray-arrow.svg" alt="Arrow Icon">
                         </div>
                     </div>
 
@@ -978,7 +1000,7 @@
                             <a href="  <?php echo $link['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                                 <?php echo $link['title']; ?>
                                 <div class="btn-arrow ms-2 transition">
-                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Srrow Icon">
                                 </div>
                             </a>
                         </div>
@@ -1103,7 +1125,7 @@
                                     <a href="<?php echo $information_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition dmt-30">
                                         <?php echo $information_content['link']['title'] ?>
                                         <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
+                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
 

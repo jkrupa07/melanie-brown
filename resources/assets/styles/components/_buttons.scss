@@ -13,14 +13,39 @@ button,
   padding-right: 25px;
   border-radius: $radius50;
 
-
   .btn-arrow {
-    width: 22px;
+    width: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: visible;
+
+    img {
+      width: 100%;
+      display: block;
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      image-rendering: -webkit-optimize-contrast;
+    }
+  }
+
+  .arrow-svg {
+    height: auto;
+    transform-origin: left center;
+    transition: transform 0.3s ease;
   }
 
   &:hover {
+    .arrow-svg {
+      transform: scaleX(1.25);
+    }
+
     .btn-arrow {
-      transform: translateX(3px);
+      img {
+        transform: scaleX(1.25);
+      }
     }
   }
 
@@ -70,7 +95,6 @@ button,
         }
       }
     }
-
   }
 
   &.bg-AF9064-btn {
@@ -82,7 +106,6 @@ button,
       color: $white;
     }
   }
-
 
   &.res-white-btn {
     .btn-arrow {
@@ -99,7 +122,6 @@ button,
       }
     }
   }
-
 }
 
 .btnB {
@@ -107,30 +129,63 @@ button,
     padding: 0;
     color: $color-494850;
 
-    .btn-arrow {
-      width: 21px;
-
-      &.back-btn-arrow {
-        width: 24px;
-      }
+    &.back-btn-arrow {
+      width: 24px;
     }
 
-    &:hover {
-      .btn-arrow {
-        transform: translateX(3px);
-      }
+    // &:hover {
+    //   .btn-arrow {
+    //     transform: translateX(3px);
+    //   }
 
-      &.back-btn-arrow {
-        transform: translateX(-3px);
-      }
-    }
+    //   &.back-btn-arrow {
+    //     transform: translateX(-3px);
+    //   }
+    // }
   }
 
   &.back-btn {
     .back-btn-arrow {
+      width: 24px;
+
       .prev-arrow {
         transform: rotate(180deg);
       }
     }
+
+    &:hover {
+      .prev-arrow {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
   }
+
+  .btn-arrow {
+    transform-origin: left center;
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    image-rendering: -webkit-optimize-contrast;
+
+    img {
+      width: 100%;
+      display: block;
+      transform-origin: left center;
+      transition: transform 0.3s ease;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+  }
+
+  &:hover {
+    .btn-arrow {
+      img {
+        transform: scaleX(1.25);
+      }
+    }
+  }
+
+
 }

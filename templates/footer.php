@@ -11,21 +11,21 @@ $social_media_content = get_field('social_media_content', 'option');
 $footer_left_content = get_field('footer_left_content', 'option');
 $site_by = get_field('site_by', 'option');
 ?>
-<?php if ($consultation_content_selection == 'yes'): ?>
+<?php if (is_single() || $consultation_content_selection === 'yes') : ?>
 
-    <section class="get-in-touch-block-section bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
+    <section class="get-in-touch-block-section position-relative bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
         <div class="container">
             <div class="col-lg-10 col-11 mx-auto">
 
                 <?php if (! empty($consultation_content['title'])) : ?>
-                    <div class="tk-ivypresto-display font50 leading71 res-font30 res-leading40 fw-lighter text-white text-center dmb-25">
+                    <div class="tk-ivypresto-display font50 leading71_2 res-font30 res-leading40 fw-lighter text-white text-center dmb-25">
                         <?php echo esc_html($consultation_content['title']); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if (! empty($consultation_content['description'])) : ?>
                     <div class="col-lg-5 col-12 mx-auto satoshi-regular font16 leading20 res-font14 res-leading19 text-white text-center dmb-40 tmb-25">
-                        <?php echo esc_html($consultation_content['description']); ?>
+                        <?php echo  esc_html($consultation_content['description']); ?>
                     </div>
                 <?php endif; ?>
 
@@ -39,7 +39,7 @@ $site_by = get_field('site_by', 'option');
                             <div class="btn-arrow ms-2 transition">
                                 <img class="w-100"
                                     src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg"
-                                    alt="">
+                                    alt="Arrow Icon">
                             </div>
                         </a>
                     </div>
@@ -48,7 +48,6 @@ $site_by = get_field('site_by', 'option');
             </div>
         </div>
     </section>
-
 <?php endif; ?>
 
 <footer class="footer dpt-100 tpt-70 bg-49484F overflow-hidden">
