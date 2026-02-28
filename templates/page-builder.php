@@ -155,7 +155,7 @@
                         <?php endif; ?>
                         <div class="col-lg-6 col-12 order-2 pe-lg-1">
                             <?php if (!empty($title)): ?>
-                                <div class="left-right-title col-lg-9 tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_8 fw-lighter text-494850 dmb-20 tmb-15">
+                                <div class="left-right-title col-lg-9 tk-ivypresto-display font42 leading44_2 res-font25 res-leading30 fw-lighter text-494850 dmb-20 tmb-15">
                                     <?php echo $title; ?>
                                 </div>
                             <?php endif; ?>
@@ -178,9 +178,9 @@
             $right_content = get_sub_field('right_content');
         ?>
 
-            <section class="faq-section dark-bg-faq bg-7E7C8B dpt-95 dpb-90">
+            <section class="faq-section dark-bg-faq bg-7E7C8B dpt-95 dpb-90 tpt-65 tpb-50">
                 <div class="container">
-                    <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s"">
+                    <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <div class=" col-lg-3">
                         <?php if (!empty($left_content['title'])): ?>
                             <div class="tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-white fw-lighter dmb-25">
@@ -188,7 +188,7 @@
                             </div>
                         <?php endif; ?>
                         <?php if (!empty($left_content['title'])): ?>
-                            <div class="satoshi-regular font14 leading22 text-white dmb-25 pe-lg-0 pe-5">
+                            <div class="satoshi-regular font14 leading22 text-white dmb-25 pe-lg-0">
                                 <?php echo $left_content['content']; ?>
                             </div>
                         <?php endif; ?>
@@ -209,7 +209,7 @@
                                     $content = $contents['content'];
                             ?>
                                     <div class="closet-item white-border bg-268a85">
-                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tmb-20 tmt-25 transition">
+                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25 transition">
                                             <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                             <div class="icon-bg d-flex justify-content-center align-items-center">
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
@@ -239,10 +239,10 @@
                 <div class="row h-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <?php if (!empty($left_content)): ?>
 
-                        <div class="col-lg-6 position-relative h-100">
+                        <div class="col-lg-6 col-12 position-relative h-100">
                             <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
 
-                                <div class="image-wrapper position -relative d-flex align-items-center col-lg-6 mx-auto ">
+                                <div class="image-wrapper position-relative d-flex align-items-center col-lg-6 mx-auto ">
                                     <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
                                     <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
                                 </div>
@@ -254,7 +254,7 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    <div class="col-lg-6 bg-7E7C8B">
+                    <div class="col-lg-6 bg-7E7C8B col-12">
                         <div class="right-scroll-content h-100 position-relative overflow-hidden">
                             <div class="inner-content-layer position-absolute bottom-0 start-0 w-100"></div>
                             <div class="inner-content h-100 overflow- hidden">
@@ -384,7 +384,7 @@
                                                     <?php the_title(); ?>
                                                 </div>
 
-                                                <div class="treatment-description col-lg-8 col-9 satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <div class="treatment-description col-lg-8 col-11 satoshi-regular font14 leading19 text-49484F mb-3">
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
@@ -484,7 +484,7 @@
         ?>
             <section class="qualification-section">
                 <div class="container">
-                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dpb-25 tmb-45 wow animated animate__fadeInUp" data-wow-duration="1.5s"><?php echo $main_title; ?></div>
+                    <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dpb-25 tpb-45 wow animated animate__fadeInUp" data-wow-duration="1.5s"><?php echo $main_title; ?></div>
                     <div class="wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($qualitifications_group): ?>
                             <?php foreach ($qualitifications_group as $qualitifications):
@@ -492,9 +492,9 @@
                                 $university_name  = $qualitifications['university_name'];
                                 $year             = $qualitifications['year'];
                             ?>
-                                <div class="row dark-border dpt-20 dpb-25">
+                                <div class="row dark-border dpt-20 dpb-25 tpb-30 tpt-30">
                                     <div class="col-lg-5 col-12">
-                                        <div class="satoshi-regular font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $degree_name; ?></div>
+                                        <div class="satoshi-regular font16 leading25_6 res-font14 res-leading24_6 text-black tpb-10"><?php echo $degree_name; ?></div>
                                     </div>
                                     <div class="col-lg-3 col-6 offset-lg-1">
                                         <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $university_name; ?></div>
@@ -505,7 +505,7 @@
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                        <div class="row dark-border dpt-20 dpb-25">
+                        <div class="row dark-border dpt-20 dpb-25 tpb-30 tpt-30">
                             <div class="col-lg-5">
                                 <div class="satoshi-regular font16 leading25_6 text-black">
                                     <?php echo $other_content; ?>
@@ -719,7 +719,7 @@
                                                         <div class="image-faq-areas dpt-80 dpb-30 tpt-25 ">
 
                                                             <?php if ($area_title) : ?>
-                                                                <div class="tk-ivypresto-display fw-lighter font26 res-font18 res-leading20_4 text-49484F dmb-5">
+                                                                <div class="tk-ivypresto-display fw-lighter font26 res-font18 res-leading20_4 text-49484F dmb-5 tmb-10">
                                                                     <?php echo esc_html($area_title); ?>
                                                                 </div>
                                                             <?php endif; ?>
@@ -921,7 +921,7 @@
                                         <div class="tk-ivypresto-display font32 leading43 res-font25 res-leading32 fst-italic text-49484F dmb-30 tmb-25 pe-lg-3">
                                             <?php echo $overview; ?>
                                         </div>
-                                        <div class="satoshi-regular fornt14 leading19_2 space1 text-49484F dmb-45"> <?php echo $name; ?></div>
+                                        <div class="satoshi-regular font14 leading19_2 res-leading14 space1 text-49484F dmb-45"> <?php echo $name; ?></div>
                                     </div>
                                 </div>
                         <?php endforeach;
@@ -1014,7 +1014,7 @@
             $main_title = get_sub_field('main_title');
             $philosophy_group = get_sub_field('philosophy_group');
         ?>
-            <section class="philosophy-block-section bg-49484F dpt-90 dpb-170 tpb-80">
+            <section class="philosophy-block-section bg-49484F dpt-90 dpb-170 tpt-75 tpb-80">
                 <div class="container">
 
                     <?php if (!empty($main_title)): ?>
@@ -1031,7 +1031,7 @@
                                 $image = $philosophy['image'];
                         ?>
 
-                                <div class="philosophy-card tmb-50">
+                                <div class="philosophy-card tpb-50">
                                     <?php if (!empty($image)): ?>
                                         <div class="philosophy-icon text-center dmb-20">
                                             <img class="h-100 object-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
@@ -1077,7 +1077,7 @@
                             <div class="tk-ivypresto-display fw-lighter font60 leading44_2 res-font30 res-leading34_2 text-white dmb-20 tmb-10">
                                 <?php echo $sub_title; ?>
                             </div>
-                            <div class="satoshi-regular font16 leading22 res-font14 text-white dmb-15">
+                            <div class="satoshi-regular font16 leading22 res-font14 text-white dmb-15 tmb-0">
                                 <?php echo $sub_hero_description; ?>
 
                             </div>
