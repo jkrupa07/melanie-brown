@@ -1,3 +1,14 @@
-<svg width="24" height="9" viewBox="0 0 24 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.5 4.21875H23.06M23.06 4.21875L19.6577 7.9375M23.06 4.21875L19.6577 0.5" stroke="#494850" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="arrow-svg"
+    viewBox="0 0 26 8"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    shape-rendering="crispEdges">
+
+    <path d="M1 4H25
+           M25 4L21 7
+           M25 4L21 1"
+        stroke="currentColor"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
 </svg>

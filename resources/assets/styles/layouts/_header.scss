@@ -1,5 +1,6 @@
 header {
     z-index: 99999;
+    padding-block: 35px;
 
     .header-logo {
         width: 305px;
@@ -101,6 +102,8 @@ header {
     }
 
     @include media-breakpoint-down(lg) {
+        padding-block: 30px;
+
         .navigation {
             position: absolute;
             top: 0px;

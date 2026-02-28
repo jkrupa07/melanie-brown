@@ -10,20 +10,20 @@ $category_left_content = get_field('category_left_content');
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
 
                 <div class="col-lg-7 col-12">
-                    <div class="tk-ivypresto-display fw-lighter font70 leading71_8 res-font30 res-leading40_8 text-white text-capitalize dmb-20 tmb-10">
+                    <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font30 res-leading40_8 text-white text-capitalize dmb-20 tmb-10">
                         <?php echo get_the_title(); ?>
                     </div>
-                    <div class="satoshi-regular font18 leading27 res-font14 res-leading22 tmb-25 text-white">
+                    <div class="satoshi-regular font14 leading22 tmb-25 text-white">
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
                 <div class="col-lg-4 col-12 d-flex align-items-end justify-content-lg-end">
                     <a href="/treatment" class="btnB link-btn back-btn satoshi-regular font14 space1 res-font12 text-white d-flex align-items-center text-decoration-none transition">
-                        <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
-                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                        <div class="back-btn-arrow d-flex align-items-center me-2 transition">
+                            <img class="prev-arrow w-100 transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                         </div>
                         Back to treatments
                     </a>
@@ -33,9 +33,8 @@ $category_left_content = get_field('category_left_content');
     </div>
 </section>
 
-<div class="spacing dpt-150 tpt-80"></div>
 <?php if (!empty($category_left_content)): ?>
-    <section class="category-section">
+    <section class="category-section dpt-150 dpb-160 tpt-80">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 tmb-70">
@@ -69,15 +68,17 @@ $category_left_content = get_field('category_left_content');
                     ?>
 
                         <div class="category-item row align-items-center justify-content-center ps-lg-3">
-                            <div class="col-md-3 tmb-20">
-                                <div class="category-image radius3 overflow-hidden">
-                                    <?php echo get_the_post_thumbnail($post_id, 'large', [
-                                        'class' => 'w-100 h-100 object-cover'
-                                    ]); ?>
+                            <div class="col-md-3 pe-3 tmb-20">
+                                <div class="col-11">
+                                    <div class="category-image radius3 overflow-hidden">
+                                        <?php echo get_the_post_thumbnail($post_id, 'large', [
+                                            'class' => 'w-100 h-100 object-cover'
+                                        ]); ?>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-9">
-                                <div class="category-content ps-md-4">
+                                <div class="category-content ps-2">
                                     <div class="satoshi-regular font20 leading32 text-black dmb-5">
                                         <?php echo esc_html($post_object->post_title); ?>
                                     </div>
@@ -103,5 +104,3 @@ $category_left_content = get_field('category_left_content');
             </div>
     </section>
 <?php endif; ?>
-
-<div class="spacing dpt-160 tpt-120"></div>
