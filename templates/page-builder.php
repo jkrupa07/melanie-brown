@@ -89,52 +89,52 @@
                     <div class="col-11 mx-auto">
                         <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s"">
                             <?php if ($media_select == 'image' && $media_direction == 'left'): ?>
-                                <div class="col-lg-4">
-                                    <div class="left-image">
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                            <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
-                                <div class="col-lg-5 ms-lg-4 me-auto left-image radius3 overflow-hidden dmb-25">
-                                    <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
-                                        src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
-                                </div>
-                            <?php endif; ?>
-                            <div class="col-lg-6 pe-lg-5">
-                                <?php if (!empty($title)): ?>
-                                    <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
-                                        <?php echo $title; ?>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if (!empty($title)): ?>
-                                    <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
-                                        <?php echo $description; ?> </div>
-                                <?php endif; ?>
-                                <?php if (!empty($link)): ?>
-                                    <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
-                                        <?php echo $link['title']; ?>
-                                        <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
-                                        </div>
-                                    </a>
-                                <?php endif; ?>
+                                <div class=" col-lg-4">
+                            <div class="left-image">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                             </div>
-                            <?php if ($media_select == 'image' && $media_direction == 'right'): ?>
-                                <div class="col-lg-4 offset-1">
-                                    <div class="left-image">
-                                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                            <?php if ($media_select == 'video' && $media_direction == 'right'): ?>
-                                <div class="col-lg-5 left-image radius3 overflow-hidden">
-                                    <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
-                                        src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
-                                </div>
-                            <?php endif; ?>
                         </div>
+                    <?php endif; ?>
+                    <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
+                        <div class="col-lg-5 ms-lg-4 me-auto left-image radius3 overflow-hidden dmb-25">
+                            <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
+                                src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-lg-6 pe-lg-5">
+                        <?php if (!empty($title)): ?>
+                            <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
+                                <?php echo $title; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($title)): ?>
+                            <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
+                                <?php echo $description; ?> </div>
+                        <?php endif; ?>
+                        <?php if (!empty($link)): ?>
+                            <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                                <?php echo $link['title']; ?>
+                                <div class="btn-arrow ms-2 transition">
+                                    <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
+                                </div>
+                            </a>
+                        <?php endif; ?>
                     </div>
+                    <?php if ($media_select == 'image' && $media_direction == 'right'): ?>
+                        <div class="col-lg-4 offset-1">
+                            <div class="left-image">
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($media_select == 'video' && $media_direction == 'right'): ?>
+                        <div class="col-lg-5 left-image radius3 overflow-hidden">
+                            <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
+                                src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
+                        </div>
+                    <?php endif; ?>
+                    </div>
+                </div>
                 </div>
             </section>
 
@@ -182,51 +182,51 @@
             <section class="faq-section dark-bg-faq bg-7E7C8B dpt-95 dpb-90">
                 <div class="container">
                     <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s"">
-                        <div class="col-lg-3">
-                            <?php if (!empty($left_content['title'])): ?>
-                                <div class="tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-white fw-lighter dmb-25">
-                                    <?php echo $left_content['title']; ?>
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!empty($left_content['title'])): ?>
-                                <div class="satoshi-regular font14 leading22 text-white dmb-25 pe-lg-0 pe-5">
-                                    <?php echo $left_content['content']; ?>
-                                </div>
-                            <?php endif; ?>
+                        <div class=" col-lg-3">
+                        <?php if (!empty($left_content['title'])): ?>
+                            <div class="tk-ivypresto-display font42 leading44_2 res-font35 res-leading40_2 text-white fw-lighter dmb-25">
+                                <?php echo $left_content['title']; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($left_content['title'])): ?>
+                            <div class="satoshi-regular font14 leading22 text-white dmb-25 pe-lg-0 pe-5">
+                                <?php echo $left_content['content']; ?>
+                            </div>
+                        <?php endif; ?>
 
-                            <a href="<?php echo $left_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition tmb-60">
-                                <?php echo $left_content['link']['title']; ?>
-                                <div class="btn-arrow ms-2 transition">
-                                    <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
-                                </div>
-                            </a>
-                        </div>
+                        <a href="<?php echo $left_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition tmb-60">
+                            <?php echo $left_content['link']['title']; ?>
+                            <div class="btn-arrow ms-2 transition">
+                                <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="col-lg-8 offset-lg-1">
-                            <div class="category-faq">
-                                <?php if (!empty($right_content)):
-                                    foreach ($right_content as $contents):
-                                        $title = $contents['title'];
-                                        $content = $contents['content'];
-                                ?>
-                                        <div class="closet-item white-border bg-268a85">
-                                            <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dmb-35 dmt-30 tmb-20 tmt-25">
-                                                <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
-                                                <div class="icon-bg d-flex justify-content-center align-items-center">
-                                                    <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
-                                                </div>
-                                            </div>
-                                            <div class="closet-content ">
-                                                <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white pb-lg-4 dmb-75 tmb-30">
-                                                    <?php echo $content; ?>
-                                                </div>
+                    <div class="col-lg-8 offset-lg-1">
+                        <div class="category-faq">
+                            <?php if (!empty($right_content)):
+                                foreach ($right_content as $contents):
+                                    $title = $contents['title'];
+                                    $content = $contents['content'];
+                            ?>
+                                    <div class="closet-item white-border bg-268a85">
+                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dmb-35 dmt-30 tmb-20 tmt-25">
+                                            <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
+                                            <div class="icon-bg d-flex justify-content-center align-items-center">
+                                                <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
                                             </div>
                                         </div>
-                                <?php endforeach;
-                                endif; ?>
-                            </div>
+                                        <div class="closet-content ">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white pb-lg-4 dmb-75 tmb-30">
+                                                <?php echo $content; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php endforeach;
+                            endif; ?>
                         </div>
                     </div>
+                </div>
                 </div>
             </section>
 
@@ -443,32 +443,32 @@
                 <div class="container">
                     <div class="tk-ivypresto-display fw-lighter font41 leading44_2 res-font35 text-494850 dpb-25 tmb-45 wow animated animate__fadeInUp" data-wow-duration="1.5s"><?php echo $main_title; ?></div>
                     <div class="wow animated animate__fadeInUp" data-wow-duration="1.5s">
-                    <?php if ($qualitifications_group): ?>
-                        <?php foreach ($qualitifications_group as $qualitifications):
-                            $degree_name     = $qualitifications['degree_name'];
-                            $university_name  = $qualitifications['university_name'];
-                            $year             = $qualitifications['year'];
-                        ?>
-                            <div class="row dark-border dpt-20 dpb-25">
-                                <div class="col-lg-5 col-12">
-                                    <div class="satoshi-regular font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $degree_name; ?></div>
+                        <?php if ($qualitifications_group): ?>
+                            <?php foreach ($qualitifications_group as $qualitifications):
+                                $degree_name     = $qualitifications['degree_name'];
+                                $university_name  = $qualitifications['university_name'];
+                                $year             = $qualitifications['year'];
+                            ?>
+                                <div class="row dark-border dpt-20 dpb-25">
+                                    <div class="col-lg-5 col-12">
+                                        <div class="satoshi-regular font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $degree_name; ?></div>
+                                    </div>
+                                    <div class="col-lg-3 col-6 offset-lg-1">
+                                        <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $university_name; ?></div>
+                                    </div>
+                                    <div class="col-lg-3 col-6 text-end">
+                                        <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $year; ?></div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-3 col-6 offset-lg-1">
-                                    <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $university_name; ?></div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                        <div class="row dark-border dpt-20 dpb-25">
+                            <div class="col-lg-5">
+                                <div class="satoshi-regular font16 leading25_6 text-black">
+                                    <?php echo $other_content; ?>
                                 </div>
-                                <div class="col-lg-3 col-6 text-end">
-                                    <div class="satoshi-light font16 leading25_6 res-font14 res-leading24_6 text-black"><?php echo $year; ?></div>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    <div class="row dark-border dpt-20 dpb-25">
-                        <div class="col-lg-5">
-                            <div class="satoshi-regular font16 leading25_6 text-black">
-                                <?php echo $other_content; ?>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </section>
@@ -481,9 +481,9 @@
 
             <section class="center-content-section">
                 <div class="container">
-                    <div class="col-lg-5 mx-auto wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
+                    <div class="col-xl-5 col-lg-8 col-12 mx-auto wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty(($title))): ?>
-                            <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-49484F text-center dmb-25">
+                            <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-49484F text-capitalize text-center dmb-25">
                                 <?php echo $title; ?>
                             </div>
                         <?php endif; ?>
@@ -514,25 +514,19 @@
 
             <?php if (!empty($filter_price_card) || !empty($filter_selection)) : ?>
 
-                <!-- ===================== -->
-                <!-- STICKY BAR -->
-                <!-- ===================== -->
-
-                <div class="sticky-bar-section position-fixed bottom-0 w-100 bg-49484F73 z-3">
-                    <div class="container">
-                        <div class="sticky-bar-wraper col-lg-10 mx-auto d-flex justify-content-center overflow-auto">
+                <div class="sticky-bar-section col-lg-10 mx-auto position-fixed bottom-0 w-100 bg-49484F73 z-3">
+                    <div class="container px-p-0">
+                        <div class="sticky-bar-wraper  d-flex justify-content-center overflow-auto">
 
                             <?php
                             $price_index = 0;
-
-                            // FILTER PRICE CARD TITLES
                             if (!empty($filter_price_card)) :
                                 foreach ($filter_price_card as $card) :
                                     if (!empty($card['title'])) :
                             ?>
-                                        <div class="item px-2">
+                                        <div class="item px-lg-2 me-2 py-lg-3 py-2">
                                             <button
-                                                class="faq-trigger"
+                                                class="faq-trigger satoshi-regular  font14 leading22_4 res-font12 res-leading20_4 text-nowrap text-F1DDD3 border-0 bg-transparent"
                                                 data-target="price-card-<?php echo $price_index; ?>">
                                                 <?php echo esc_html($card['title']); ?>
                                             </button>
@@ -543,15 +537,13 @@
                                 endforeach;
                             endif;
 
-
-                            // FILTER SELECTION POSTS
                             if (!empty($filter_selection)) :
                                 foreach ($filter_selection as $post_id) :
                                     $post_id = is_object($post_id) ? $post_id->ID : $post_id;
                                     ?>
-                                    <div class="item px-2">
+                                    <div class="item px-lg-2 me-2 py-lg-3 py-2">
                                         <button
-                                            class="faq-trigger"
+                                            class="faq-trigger satoshi-regular  font14 leading22_4 res-font12 res-leading20_4 text-nowrap text-F1DDD3 border-0 bg-transparent"
                                             data-target="post-<?php echo esc_attr($post_id); ?>">
                                             <?php echo esc_html(get_the_title($post_id)); ?>
                                         </button>
@@ -564,63 +556,61 @@
                         </div>
                     </div>
                 </div>
+                <div class="consultation-card">
+                    <div class="container">
+                        <?php
+                        $consultation_index = 0;
 
+                        if (!empty($filter_price_card)) :
+                            foreach ($filter_price_card as $item) :
 
-                <!-- ===================== -->
-                <!-- FILTER PRICE CARDS -->
-                <!-- ===================== -->
+                                $title   = $item['title'];
+                                $price   = $item['price'];
+                                $content = $item['content'];
+                        ?>
 
-                <?php
-                $consultation_index = 0;
+                                <div class="consultation-card-wrapper col-lg-10 col-12 dpb-70 tpb-40 mx-auto dpt-35 dpb-20 dmb-95 tmb-40"
+                                    id="price-card-<?php echo esc_attr($consultation_index); ?>">
 
-                if (!empty($filter_price_card)) :
-                    foreach ($filter_price_card as $item) :
+                                    <div class="d-flex align-items-center justify-content-between dmb-25">
 
-                        $title   = $item['title'];
-                        $price   = $item['price'];
-                        $content = $item['content'];
-                ?>
+                                        <?php if (!empty($title)) : ?>
+                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading22 text-capitalize text-49484F">
+                                                <?php echo esc_html($title); ?>
+                                            </div>
+                                        <?php endif; ?>
 
-                        <div class="consultation-card-wrapper col-10 mx-auto dmb-95"
-                            id="price-card-<?php echo esc_attr($consultation_index); ?>">
+                                        <?php if (!empty($price)) : ?>
+                                            <div class="satoshi-regular font22 leading38_4 text-494850 res-font22 res-leading22">
+                                                <?php echo esc_html($price); ?>
+                                            </div>
+                                        <?php endif; ?>
 
-                            <div class="d-flex align-items-center justify-content-between dpt-35 dpb-20">
-
-                                <?php if (!empty($title)) : ?>
-                                    <div class="tk-ivypresto-display fw-lighter font32 leading28_8 text-49484F">
-                                        <?php echo esc_html($title); ?>
                                     </div>
-                                <?php endif; ?>
 
-                                <?php if (!empty($price)) : ?>
-                                    <div class="satoshi-regular font22 leading38_4 text-494850">
-                                        <?php echo esc_html($price); ?>
-                                    </div>
-                                <?php endif; ?>
+                                    <?php if (!empty($content)) : ?>
+                                        <div class="consultation-card-content col-lg-10 col-12">
+                                            <div class="satoshi-regular font14 leading22 res-font12 res-leading20 text-494850">
+                                                <?php echo wp_kses_post($content); ?>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
 
-                            </div>
-
-                            <?php if (!empty($content)) : ?>
-                                <div class="consultation-card-content dpb-70 col-10">
-                                    <div class="satoshi-regular font14 leading22 text-494850 dpb-20">
-                                        <?php echo wp_kses_post($content); ?>
-                                    </div>
                                 </div>
-                            <?php endif; ?>
 
-                        </div>
-
-                <?php
-                        $consultation_index++;
-                    endforeach;
-                endif;
-                ?>
+                        <?php
+                                $consultation_index++;
+                            endforeach;
+                        endif;
+                        ?>
+                    </div>
+                </div>
 
                 <?php if (!empty($filter_selection)) : ?>
 
                     <section class="image-faq-section">
                         <div class="container">
-                            <div class="col-lg-10 col-11 mx-auto">
+                            <div class="col-lg-10 col-12 mx-auto">
                                 <div class="image-faq">
 
                                     <?php foreach ($filter_selection as $post_id) :
@@ -635,40 +625,36 @@
                                         <div class="closet-item dmb-20"
                                             id="post-<?php echo esc_attr($post_id); ?>">
 
-                                            <!-- HEADER -->
                                             <div class="closet-header d-flex align-items-center justify-content-between cursor-pointer">
 
-                                                <div class="closet-header-title tk-ivypresto-display fw-lighter font32 leading28_8 text-black">
+                                                <div class="closet-header-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading22_6 text-black">
                                                     <?php echo esc_html(get_the_title($post_id)); ?>
                                                 </div>
 
-                                                <div class="icon-bg">
+                                                <div class="icon-bg d-flex align-items-center">
                                                     <img
                                                         src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg"
                                                         alt="Accordion Icon">
                                                 </div>
                                             </div>
-
-
-                                            <!-- CONTENT -->
-                                            <div class="closet-content hero-style-content">
+                                            <div class="closet-content hero-style-content bg-000000A">
 
                                                 <?php if ($image) : ?>
                                                     <div class="image-faq-hero position-relative overflow-hidden">
-
+                                                        <div class="image-faq-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
                                                         <div class="faq-img">
                                                             <img src="<?php echo esc_url($image); ?>"
                                                                 alt="<?php echo esc_attr(get_the_title($post_id)); ?>"
-                                                                class="w-100">
+                                                                class="w-100 h-100 object-cover">
                                                         </div>
 
-                                                        <div class="image-faq-hero-content position-absolute bottom-0 w-100 px-lg-5 px-3">
+                                                        <div class="image-faq-hero-content position-absolute bottom-0 dmb-60 tmb-20 w-100 px-lg-5 px-3">
 
-                                                            <div class="tk-ivypresto-display fw-lighter font32 text-white dmb-25">
+                                                            <div class="tk-ivypresto-display fw-lighter font32 res-font22 res-leading24_6 text-white text-capitalize dmb-25 tmb-10">
                                                                 <?php echo esc_html(get_the_title($post_id)); ?>
                                                             </div>
 
-                                                            <div class="satoshi-regular font14 text-white">
+                                                            <div class="satoshi-regular font14 res-font12 res-leading16 text-white">
                                                                 <?php echo wp_kses_post($content); ?>
                                                             </div>
 
@@ -686,16 +672,16 @@
                                                         $price_group  = $area['price_group'] ?? [];
                                                     ?>
 
-                                                        <div class="image-faq-areas dpt-90 dpb-30">
+                                                        <div class="image-faq-areas dpt-90 dpb-30 tpt-25 mx-lg-5 mx-3">
 
                                                             <?php if ($area_title) : ?>
-                                                                <div class="tk-ivypresto-display fw-lighter font26 text-49484F dmb-5">
+                                                                <div class="tk-ivypresto-display fw-lighter font26 res-font18 res-leading20_4 text-49484F dmb-5">
                                                                     <?php echo esc_html($area_title); ?>
                                                                 </div>
                                                             <?php endif; ?>
 
                                                             <?php if ($area_content) : ?>
-                                                                <div class="satoshi-regular font14 text-666666">
+                                                                <div class="satoshi-regular font14 res-font12 res-leading16 text-666666 tmb-10">
                                                                     <?php echo esc_html($area_content); ?>
                                                                 </div>
                                                             <?php endif; ?>
@@ -709,11 +695,11 @@
                                                                     $price_content = $price['content'] ?? '';
                                                                 ?>
 
-                                                                    <div class="area d-flex justify-content-between py-2">
-                                                                        <div class="satoshi-regular font20 text-49484F">
+                                                                    <div class="area d-flex justify-content-between py-lg-3 py-2">
+                                                                        <div class="satoshi-regular font20 leading32 res-font16 res-leading28_8 text-49484F text-capitalize">
                                                                             <?php echo esc_html($price_title); ?>
                                                                         </div>
-                                                                        <div class="satoshi-regular font22 text-49484F">
+                                                                        <div class="satoshi-regular font22 leading38_4 text-49484F res-font16 res-leading28_8">
                                                                             <?php echo esc_html($price_content); ?>
                                                                         </div>
                                                                     </div>
@@ -986,7 +972,7 @@
         ?>
             <section class="philosophy-block-section bg-49484F dpt-90 dpb-170 tpb-80">
                 <div class="container">
-                
+
                     <?php if (!empty($main_title)): ?>
                         <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dpb-90 tpb-60 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                             <?php echo $main_title; ?>

@@ -1,8 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 export class App {
   init() {
     this.setupScrollAnimation();
@@ -10,17 +8,32 @@ export class App {
   }
 
   setupScrollAnimation() {
-    const cards = document.querySelectorAll(".experience-card");
+    // const cards = gsap.utils.toArray(".experience-card");
 
-    cards.forEach((card, i) => {
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top 200px",           // when the top of the card hits 32px from top
-        end: () => `+=${card.offsetHeight + 50}`, // duration of pin scroll
-        pin: true,                   // pin the card
-        pinSpacing: false,           // removes extra space
-        id: `card-${i + 1}`,
-        markers: false               // set true for debugging
+    // cards.forEach((card, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: card,
+    //     start: "top 150px",        // adjust depending on header height
+    //     end: "+=100%",             // each card scrolls one viewport height
+    //     pin: true,
+    //     pinSpacing: false,
+    //     scrub: false,
+    //     markers: true
+    //   });
+    // });
+    gsap.registerPlugin(ScrollTrigger);
+
+    const cards = gsap.utils.toArray(".experience-card");
+
+    cards.forEach((card, index) => {
+      gsap.to(card, {
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 120px",
+          end: "bottom 120px",
+          scrub: true,
+        }
       });
     });
   }

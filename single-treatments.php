@@ -21,7 +21,7 @@ $category_left_content = get_field('category_left_content');
                     </div>
                 </div>
                 <div class="col-lg-4 col-12 d-flex align-items-end justify-content-lg-end">
-                    <a href="/treatment" class="btnB link-btn satoshi-regular font14 space1 res-font12 text-white d-flex align-items-center text-decoration-none transition">
+                    <a href="/treatment" class="btnB link-btn back-btn satoshi-regular font14 space1 res-font12 text-white d-flex align-items-center text-decoration-none transition">
                         <div class="btn-arrow back-btn-arrow d-flex align-items-center me-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                         </div>

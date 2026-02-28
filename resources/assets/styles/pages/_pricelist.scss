@@ -1,10 +1,5 @@
 .sticky-bar-section {
-    padding: 11px 27px;
     backdrop-filter: blur(4px);
-
-    .item {
-        height: 40px;
-    }
 }
 
 .consultation-card {
@@ -13,6 +8,12 @@
         padding-left: 41px;
         padding-right: 41px;
         border: 1px solid rgba($color: $color-000000, $alpha: 0.1);
+
+        @include media-breakpoint-down(lg) {
+
+            padding-left: 16px;
+            padding-right: 16px;
+        }
     }
 }
 
@@ -39,6 +40,10 @@
                 padding: 40px;
                 position: relative;
 
+                @include media-breakpoint-down(lg) {
+                    padding: 16px;
+                }
+
                 .closet-header-title {
                     transition: opacity 0.3s ease;
                 }
@@ -59,15 +64,16 @@
                     }
                 }
             }
-
-            @include media-breakpoint-down(lg) {
-                padding: 15px;
-            }
         }
 
         .closet-content {
             transform: translateY(-110px);
             margin-bottom: -110px;
+
+            @include media-breakpoint-down(lg) {
+                transform: translateY(-55px);
+                margin-bottom: -55px;
+            }
         }
 
 
@@ -75,7 +81,7 @@
             &:last-child {
                 padding-bottom: 230px !important;
 
-                @include media-breakpoint-down(lg){
+                @include media-breakpoint-down(lg) {
                     padding-bottom: 50px !important;
                 }
             }
@@ -87,6 +93,10 @@
 
             .faq-img {
                 height: 430px;
+
+                @include media-breakpoint-down(lg) {
+                    height: 280px;
+                }
             }
 
             .image-faq-hero-layer {
