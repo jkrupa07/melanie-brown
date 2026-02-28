@@ -235,16 +235,16 @@
             $right_content = get_sub_field('right_content');
         ?>
 
-            <section class="sticky-content-section h-100">
+            <section class="sticky-content-section overflow-hidden h-vh">
 
-                <div class="row wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                <div class="row h-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <?php if (!empty($left_content)): ?>
 
-                        <div class="col-lg-6">
-                            <div class="left-content position-relative bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
+                        <div class="col-lg-6 position-relative h-100">
+                            <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
 
-                                <div class="image-wrapper position-relative d-flex align-items-center col-lg-5 mx-auto my-auto">
-                                    <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
+                                <div class="image-wrapper position -relative d-flex align-items-center col-lg-6 mx-auto ">
+                                    <!-- <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div> -->
                                     <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
                                 </div>
                                 <div class="text-wrapper w-100 position-absolute top-left-center">
@@ -256,9 +256,9 @@
                         </div>
                     <?php endif; ?>
                     <div class="col-lg-6 bg-7E7C8B">
-                        <div class="right-scroll-content position-relative">
+                        <div class="right-scroll-content h-100 position-relative overflow-hidden">
                             <div class="inner-content-layer position-absolute bottom-0 start-0 w-100"></div>
-                            <div class="inner-content position-sticky overflow-y-auto">
+                            <div class="inner-content h-100 overflow- hidden">
                                 <?php if (!empty($right_content)):
                                     foreach ($right_content as $contents):
                                         $image = $contents['image'];
@@ -266,7 +266,28 @@
                                         $description = $contents['description'];
                                 ?>
 
-                                        <div class="content-item col-lg-8 col-11 mx-auto dmt-105 dmb-130 tmt-65 tmb-65 ">
+                                        <div class="content-item col-lg-8 col-11 mx-auto dpt-105 dpb-130 tpt-65 tpb-65 ">
+                                            <div class="content-img text-center">
+                                                <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
+                                            </div>
+                                            <div
+                                                class="content-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 text-center">
+                                                <?php echo $title; ?>
+                                            </div>
+                                            <div class="content-desc satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
+                                                <?php echo $description; ?>
+                                            </div>
+                                        </div>
+                                <?php endforeach;
+                                endif; ?>
+                                <?php if (!empty($right_content)):
+                                    foreach ($right_content as $contents):
+                                        $image = $contents['image'];
+                                        $title = $contents['title'];
+                                        $description = $contents['description'];
+                                ?>
+
+                                        <div class="content-item col-lg-8 col-11 mx-auto dpt-105 dpb-130 tmt-65 tmb-65 ">
                                             <div class="content-img text-center">
                                                 <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
                                             </div>

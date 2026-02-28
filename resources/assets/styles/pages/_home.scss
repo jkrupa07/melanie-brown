@@ -21,13 +21,13 @@
 .sticky-content-section {
 
     .left-content {
-        height: 742px;
+        // height: 742px;
         display: flex;
         align-items: center;
 
-        @include media-breakpoint-down(lg) {
-            height: 375px;
-        }
+        // @include media-breakpoint-down(lg) {
+        //     height: 375px;
+        // }
 
         .image-wrapper {
             height: 474px;
@@ -44,6 +44,12 @@
     }
 
     .right-scroll-content {
+        // height: 742px;
+
+        //     @include media-breakpoint-down(lg) {
+        //         height: 375px;
+        //     }
+
         .inner-content-layer {
             height: 100px;
             background: linear-gradient(180deg, rgba(126, 124, 139, 0.13), rgba(126, 124, 139, 1));
@@ -56,13 +62,7 @@
         }
 
         .inner-content {
-            height: 742px;
-            // overscroll-behavior: contain;
-
-            @include media-breakpoint-down(lg) {
-                height: 375px;
-            }
-
+            
             .content-item {
                 .content-img img {
                     @include media-breakpoint-down(lg) {
@@ -74,7 +74,7 @@
                 &:first-child {
                     margin-top: 80px;
                     @include media-breakpoint-down(lg) {
-                        margin-top: 0;
+                        margin-top: 200px;
                     }
                 }
 

@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export class App {
   init() {
@@ -21,7 +22,7 @@ export class App {
     //     markers: true
     //   });
     // });
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
 
     const cards = gsap.utils.toArray(".experience-card");
 
@@ -38,17 +39,31 @@ export class App {
     });
   }
   stickyContentScroll() {
-    const innerContent = document.querySelector(".inner-content");
 
-ScrollTrigger.create({
-  trigger: innerContent,
-  start: "top 200px",
-  end: () => innerContent.scrollHeight - innerContent.offsetHeight + window.innerHeight,
-  pin: ".sticky-content-section",  // pin container, not the inner scroll
-  scrub: true,
-  anticipatePin: 1,
-  markers: true,
-});
+    const sections = document.querySelectorAll(".sticky-content-section");
+
+    sections.forEach((section) => {
+
+      const inner = section.querySelector(".inner-content");
+      if (!inner) return;
+
+      const scrollAmount = inner.scrollHeight - section.offsetHeight;
+
+      gsap.to(inner, {
+        y: -scrollAmount,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top +100px",
+          end: () => "bottom +100px",
+          scrub: true,
+          pin: true,
+          pinSpacing: true,   // important
+          markers: true,
+          invalidateOnRefresh: true
+        }
+      });
+
+    });
   }
-
 }
