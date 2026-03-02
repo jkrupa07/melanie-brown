@@ -4,14 +4,16 @@
     .sub-hero-layer {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.2));
     }
-     @include media-breakpoint-down(lg) {
-            height: 403px;
-        }
+
+    @include media-breakpoint-down(lg) {
+        height: 403px;
+    }
 }
 
 .left-right-image-section {
     .left-right-image {
         height: 655px;
+
         @include media-breakpoint-down(lg) {
             height: 404px;
         }
@@ -30,10 +32,11 @@
 
     padding-left: 38px;
     padding-right: 38px;
+
     @include media-breakpoint-down(lg) {
-          padding-left:0px;
-    padding-right:0px;
-        }
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 
     .logo-item {
         height: 108px;
@@ -46,6 +49,18 @@
 }
 
 .philosophy-block-section {
+    @include media-breakpoint-down(lg) {
+
+        .philosophy-cards {
+            .philosophy-card {
+
+                &:first-child {
+                    padding-top: 35px;
+                }
+            }
+        }
+    }
+
     .philosophy-icon {
         height: 80px;
     }

@@ -27,6 +27,10 @@
         }
     }
 
+    @include media-breakpoint-down(lg) {
+        height: 375px;
+    }
+
     .left-content {
         display: flex;
         align-items: center;
