@@ -68,8 +68,8 @@ $category_left_content = get_field('category_left_content');
                     ?>
 
                         <div class="category-item row align-items-center justify-content-center ps-lg-3">
-                            <div class="col-md-3 col-12 pe-lg-3 tmb-20">
-                                <div class="col-lg-11 col-12">
+                            <div class="col-md-3 pe-3 tmb-20">
+                                <div class="col-11">
                                     <div class="category-image radius3 overflow-hidden">
                                         <?php echo get_the_post_thumbnail($post_id, 'large', [
                                             'class' => 'w-100 h-100 object-cover'
