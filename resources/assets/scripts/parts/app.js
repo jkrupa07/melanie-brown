@@ -9,7 +9,6 @@ export class App {
   }
 
   setupScrollAnimation() {
-
     const cards = gsap.utils.toArray(".experience-card");
 
     cards.forEach((card, index) => {
@@ -59,4 +58,5 @@ export class App {
     });
 
   }
+
 }
