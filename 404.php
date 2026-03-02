@@ -1,25 +1,27 @@
+<?php
+/**
+ * The template for displaying 404 pages (Not Found)
+ */
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2 text-center">
+?>
 
-        <h1 class=" text-center">We're sorry - something has gone wrong.</h1>
+<section class="error-404 not-found dpt-120 h-vh d-flex align-items-center dpb-120 text-center">
+    <div class="container">
 
-          <p class="bold">What could have caused this?</p>
-          <p >
-            Well, something technical went wrong on our site.<br>
-            We might have removed the page.<br>
-            Or the link you clicked might be old and does not work anymore.<br>
-            Or you might have accidentally typed the wrong URL in the address bar.
-          </p>
-          <p class="bold">What can you do?</p>
-          <p>
-            We could take you back to the <strong><a href="/"> home page</a></strong>.<br>
-          </p>
+        <div class="font80 leading90 dmb-20">404</div>
+
+        <div class="font32 leading40 dmb-20">
+            <?php esc_html_e( 'Page Not Found', 'your-theme-textdomain' ); ?>
+        </div>
+
+        <div class="font18 leading28 dmb-40">
+            <?php esc_html_e( 'Sorry, the page you are looking for does not exist or has been moved.', 'your-theme-textdomain' ); ?>
+        </div>
+
+        <a href="<?php echo esc_url( home_url('/') ); ?>" 
+           class="btnB link-btn">
+            <?php esc_html_e( 'Back to Home', 'your-theme-textdomain' ); ?>
+        </a>
 
     </div>
-  </div>
-
-
-
-
-
+</section>

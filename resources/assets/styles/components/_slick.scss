@@ -42,6 +42,18 @@
     }
 }
 
+.logo-slider-wrapper {
+    .slick-list {
+        margin-left: -40px;
+        margin-right: -40px;
+
+        .slick-slide {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}
+
 .testimonial-slider-section {
     .slick-list {
         overflow: visible;

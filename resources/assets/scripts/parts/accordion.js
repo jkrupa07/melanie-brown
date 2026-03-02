@@ -1,88 +1,129 @@
 export class Accordion {
     init() {
+        this.ImageAccordion();
         this.Accordion();
     }
+    ImageAccordion() {
+
+        $(document).ready(function () {
+
+            const $items = $('.image-item');
+            const $sticky = $('.sticky-bar-section');
+
+            $('.image-content').hide();
+
+            // -----------------------------
+            // Open first item by default
+            // -----------------------------
+            if ($items.length) {
+                const $first = $items.first();
+                $first.addClass('active');
+                $first.find('.image-header').addClass('active');
+                $first.find('.image-content').show();
+            }
+
+            // -----------------------------
+            // Accordion Click
+            // -----------------------------
+            $('.image-header').on('click', function () {
+
+                const $header = $(this);
+                const $item = $header.closest('.image-item');
+                const $content = $item.find('.image-content');
+
+                // If already active → do nothing (strict accordion)
+                if ($header.hasClass('active')) return;
+
+                // Close all
+                $('.image-item.active')
+                    .removeClass('active')
+                    .find('.image-header')
+                    .removeClass('active')
+                    .end()
+                    .find('.image-content')
+                    .stop(true, true)
+                    .slideUp(300);
+
+                // Open clicked
+                $item.addClass('active');
+                $header.addClass('active');
+
+                $content
+                    .stop(true, true)
+                    .slideDown(300);
+
+            });
+
+            // -----------------------------
+            // FAQ Trigger Scroll
+            // -----------------------------
+            $('.faq-trigger').on('click', function () {
+
+                const targetId = $(this).data('target');
+                const $target = $('#' + targetId);
+
+                if (!$target.length) return;
+
+                const stickyHeight = $sticky.length ? $sticky.outerHeight(true) : 0;
+
+                function scrollToTarget() {
+                    $('html, body')
+                        .stop(true, true)
+                        .animate({
+                            scrollTop: $target.offset().top - stickyHeight - 50
+                        }, 500);
+                }
+
+                // If target is accordion item
+                if ($target.hasClass('image-item')) {
+
+                    const $header = $target.find('.image-header');
+                    const $content = $target.find('.image-content');
+
+                    // Already open → just scroll
+                    if ($header.hasClass('active')) {
+                        scrollToTarget();
+                        return;
+                    }
+
+                    // Close currently open
+                    $('.image-item.active')
+                        .removeClass('active')
+                        .find('.image-header')
+                        .removeClass('active')
+                        .end()
+                        .find('.image-content')
+                        .stop(true, true)
+                        .slideUp(300);
+
+                    // Open target
+                    $target.addClass('active');
+                    $header.addClass('active');
+
+                    // Wait until animation COMPLETELY finishes
+                    $content
+                        .stop(true, true)
+                        .slideDown(300)
+                        .promise()
+                        .done(function () {
+
+                            // Let browser recalc layout before scroll
+                            setTimeout(function () {
+                                scrollToTarget();
+                            }, 50);
+
+                        });
+
+                } else {
+                    scrollToTarget();
+                }
+
+            });
+
+        });
+    }
+
     Accordion() {
-
-        // $(document).ready(function () {
-
-        //     $('.closet-item').each(function () {
-
-        //         const $container = $(this).parent();
-
-        //         $container.find('.closet-item').each(function (index) {
-
-        //             const $header = $(this).find('.closet-header');
-        //             const $content = $(this).find('.closet-content');
-
-        //             if (index === 0) {
-        //                 $header.addClass('active');
-        //                 $(this).addClass('active'); // ✅ add this
-        //                 $content.show();
-        //             } else {
-        //                 $content.hide();
-        //             }
-
-        //         });
-
-        //     });
-
-        //     $('.closet-header').on('click', function () {
-
-        //         const $this = $(this);
-        //         const $parent = $this.closest('.closet-item');
-        //         const $container = $parent.parent();
-        //         const $content = $this.next('.closet-content');
-
-        //         if ($this.hasClass('active')) {
-
-        //             $content.stop(true, true).slideUp(300, function () {
-        //                 $this.removeClass('active');
-        //                 $parent.removeClass('active'); // ✅ remove here
-        //             });
-
-        //         } else {
-
-        //             $container.find('.closet-header.active')
-        //                 .removeClass('active')
-        //                 .next('.closet-content')
-        //                 .stop(true, true)
-        //                 .slideUp(300)
-        //                 .closest('.closet-item') // ✅ go up
-        //                 .removeClass('active');   // ✅ remove active from others
-
-        //             $this.addClass('active');
-        //             $parent.addClass('active'); // ✅ add here
-        //             $content.stop(true, true).slideDown(300);
-
-        //         }
-
-        //     });
-
-        //     $('.faq-trigger').on('click', function () {
-
-        //         const targetId = $(this).data('target');
-        //         const $targetItem = $('#' + targetId);
-
-        //         if ($targetItem.length) {
-
-        //             if ($targetItem.hasClass('closet-item')) {
-        //                 const $targetHeader = $targetItem.find('.closet-header');
-
-        //                 if (!$targetHeader.hasClass('active')) {
-        //                     $targetHeader.trigger('click');
-        //                 }
-        //             }
-
-        //             $('html, body').animate({
-        //                 scrollTop: $targetItem.offset().top - 200
-        //             }, 600);
-        //         }
-
-        //     });
-
-        // });
-
         $(document).ready(function () {
             // Open the first child by default
             $('.closet-header').first().addClass('active').next('.closet-content').slideDown();
@@ -93,6 +134,5 @@ export class Accordion {
                 $('.closet-header').not(this).removeClass('active').next('.closet-content').slideUp();
             });
         });
-
     }
 }
