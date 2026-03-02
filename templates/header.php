@@ -45,7 +45,7 @@ $header_button = get_field('header_button', 'option');
                     </ul>
 
                 </nav>
-                <div class="menu-toggle col-6 position-relative d-lg-none d-flex justify-content-end">
+                <div class="menu-toggle col-3 position-relative d-lg-none d-flex justify-content-end">
                     <div class="burger-menu d-block">
                         <img src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-burger-menu.svg" alt="Burger-menu">
                     </div>

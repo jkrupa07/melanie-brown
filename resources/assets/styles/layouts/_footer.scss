@@ -1,10 +1,14 @@
 .get-in-touch-block-section {
     .bg-img {
-        height: 447px;
+        height: 634px;
+        opacity: 10%;
+        top: -205px !important;
+        right: -111px !important;
 
         @include media-breakpoint-down(lg) {
-            height: 250px;
-            right: -50px !important;
+            height: 234px;
+            right: -74px !important;
+            top: -24px !important;
         }
     }
 }

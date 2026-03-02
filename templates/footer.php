@@ -15,7 +15,7 @@ $site_by = get_field('site_by', 'option');
 
     <section class="get-in-touch-block-section position-relative overflow-hidden bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
         <div class="bg-img position-absolute top-0 end-0">
-            <img class="h-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/light-brand-bg.svg" alt="">
+            <img class="h-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/light-brand.svg" alt="">
         </div>
         <div class="container">
             <div class="col-lg-10 col-11 mx-auto">
@@ -152,7 +152,7 @@ $site_by = get_field('site_by', 'option');
                                             for ($j = $start; $j < $end; $j++):
                                                 $link = $footer_link[$j]['link'];
                                             ?>
-                                                <li class="dmb-20">
+                                                <li class="dmb-15 tmb-20">
                                                     <a href="<?php echo $link['url']; ?>"
                                                         target="<?php echo ($link['target'] == '_blank') ? '_blank' : ''; ?>"
                                                         class="tk-ivypresto-display fw-lighter font16 leading28 text-decoration-none text-white text-capitalize">

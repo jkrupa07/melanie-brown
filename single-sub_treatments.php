@@ -23,7 +23,7 @@ $faq_group = get_field("faq_group");
                     </div>
                 </div>
                 <div class="col-4 d-flex align-items-end justify-content-end">
-                    <a href="#" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                         Back to treatments
                         <div class="btn-arrow ms-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
@@ -161,7 +161,7 @@ $faq_group = get_field("faq_group");
 <?php endif; ?>
 
 <?php if (!empty($about_treatment_card['card_group'])): ?>
-    <section class="treatment-experience-section position-relative dpt-135 dpb-230 tpt-75">
+    <section class="treatment-experience-section position-relative dpt-135 dpb-230 tpt-75 tpb-105">
         <div class="container">
             <div class="col-lg-6 mx-auto dmb-60 tmb-35">
                 <div class="col-lg-7 col-12 mx-auto tk-ivypresto-display font42 leading44_2 res-font25 res-leading35 text-center fw-lighter text-494850">
@@ -180,7 +180,7 @@ $faq_group = get_field("faq_group");
                             $title       = $card_groups['title'] ?? '';
                             $description = $card_groups['description'] ?? '';
                     ?>
-                            <div class="experience-card position-sticky bg-F1DDD3 radius3 dpt-40 dpb-70 dpt-30 dpb-30 px-lg-5 px-3 dmb-20">
+                            <div class="experience-card position-sticky bg-F1DDD3 radius3 dpt-40 dpb-70 dpt-30 tpb-30 px-lg-5 px-3 dmb-20">
                                 <?php if (!empty($title)): ?>
                                     <div class="tk-ivypresto-display d-flex font32 leading28_8 res-font25 res-leading25_8 fw-lighter text-49484F dmb-55 tmb-25">
                                         <div class="fst-italic font32 leading28_8 res-font25 res-leading25_8 text-999999 me-2">

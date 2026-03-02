@@ -369,7 +369,7 @@
                                                     <?php the_title(); ?>
                                                 </div>
 
-                                                <div class="treatment-description col-lg-8 col-11 satoshi-regular font14 leading19 text-49484F mb-3">
+                                                <div class="treatment-description col-11 satoshi-regular font14 leading19 text-49484F mb-3">
                                                     <?php echo wp_trim_words(get_the_content(), 20); ?>
                                                 </div>
 
@@ -490,7 +490,7 @@
                                 </div>
                             <?php endforeach; ?>
                         <?php endif; ?>
-                        <div class="row dark-border dpt-20 dpb-25 tpb-30 tpt-30">
+                        <div class="row dark-border dpt-20 dpb-25 tpb-0 tpt-30">
                             <div class="col-lg-5">
                                 <div class="satoshi-regular font16 leading25_6 text-black">
                                     <?php echo $other_content; ?>
@@ -960,14 +960,14 @@
                         </div>
                     </div>
 
-                    <div class="treatment-journey-slider d-lg-flex wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
+                    <div class="treatment-journey-block row wow animate__animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty($journey_group)):
                             $i = 01;
                             foreach ($journey_group as $journey):
                                 $title = $journey['title'];
                                 $content = $journey['content'];
                         ?>
-                                <div class="treatment-journey tmb-70">
+                                <div class="treatment-journey col-3 dmb-30 tmb-70">
                                     <div class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center dpb-20 text-white text-capitalize pb-3">
                                         <em class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center text-999999 d-inline-flex me-1"><?php echo  0 . $i; ?></em>
                                         <?php echo $title; ?>
