@@ -11,7 +11,7 @@ $faq_group = get_field("faq_group");
 
     <div class="hero-content position-absolute bottom-0 dmb-65 w-100">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
 
                 <div class="col-7">
                     <div class="tk-ivypresto-display fw-lighter font70 leading71_8 text-white dmb-20">
@@ -22,11 +22,11 @@ $faq_group = get_field("faq_group");
                     </div>
                 </div>
                 <div class="col-4 d-flex align-items-end justify-content-end">
-                    <a href="#" class="btnA link-btn satoshi-regular font14 space1 text-white d-flex align-items-end text-decoration-none transition">
-                        <div class="btn-arrow pe-2 transition">
+                    <a href="#" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
+                        Back to treatments
+                        <div class="btn-arrow ms-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                         </div>
-                        Back to treatments
                     </a>
                 </div>
             </div>
@@ -257,18 +257,18 @@ $faq_group = get_field("faq_group");
                                 $title = $row['title'];
                                 $description = $row['description'];
                         ?>
-                                <div class="closet-item dark-border bg-268a85">
-                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30">
+                                <div class="closet-item dark-border bg-268a85 dpb-30 dpt-30">
+                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between ">
                                         <?php if (!empty($row['title'])): ?>
                                             <div class="satoshi-regular font20 leading32 text-black">
                                                 <?php echo $row['title']; ?>
                                             </div>
                                         <?php endif; ?>
-                                        <div class="icon-bg d-flex justify-content-center align-items-center"><img class="transition" src="assets/images/accordion-plus.svg" alt=""></div>
+                                        <div class="icon-bg d-flex justify-content-center align-items-center"><img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt=""></div>
                                     </div>
-                                    <div class="closet-content dpb-75">
+                                    <div class="closet-content dpt-25 dpb-45">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 text-black pb-4">
+                                            <div class="satoshi-light font16 leading25_6 text-black">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>
