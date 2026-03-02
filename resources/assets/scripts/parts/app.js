@@ -58,8 +58,7 @@ export class App {
           end: () => "bottom +60px",
           scrub: true,
           pin: true,
-          pinSpacing: true,   // important
-          markers: true,
+          pinSpacing: true,   
           invalidateOnRefresh: true
         }
       });

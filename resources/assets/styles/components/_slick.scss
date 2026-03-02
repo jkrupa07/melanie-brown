@@ -107,6 +107,16 @@ footer {
             padding-right: 7px;
         }
     }
+    @include media-breakpoint-down(lg) {
+            margin-left: -3px !important;
+            margin-right: -3px !important;
+
+            .slick-slide {
+                padding-left: 3px !important;
+                padding-right: 3px !important;
+            }
+
+        }
 
     .footer-slider-image {
         height: 208px;

@@ -29,9 +29,9 @@
         display: flex;
         align-items: center;
 
-        // @include media-breakpoint-down(lg) {
-        //     height: 375px;
-        // }
+        @include media-breakpoint-down(lg) {
+            height: 375px;
+        }
 
         .image-wrapper {
             height: 474px;
@@ -76,10 +76,10 @@
 
 
                 &:first-child {
-                    margin-top: 80px;
+                    margin-top: 200px;
 
                     @include media-breakpoint-down(lg) {
-                        margin-top: 200px;
+                        margin-top: 80px;
                     }
                 }
 
