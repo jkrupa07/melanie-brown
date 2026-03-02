@@ -152,11 +152,11 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($media_direction == 'left'): ?>
-                            <div class="col-lg-5 col-12 order-1 pe-lg-2 left-right-image tmb-25">
+                            <div class="col-lg-5 col-12 pe-lg-2 left-right-image tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                             </div>
                         <?php endif; ?>
-                        <div class="col-lg-6 col-12 order-2 pe-lg-1">
+                        <div class="col-lg-6 col-12 pe-lg-1">
                             <?php if (!empty($title)): ?>
                                 <div class="left-right-title col-lg-9 tk-ivypresto-display font42 leading44_2 res-font25 res-leading30 fw-lighter text-494850 dmb-20 tmb-15">
                                     <?php echo $title; ?>
@@ -212,7 +212,7 @@
                                     $content = $contents['content'];
                             ?>
                                     <div class="closet-item white-border bg-268a85">
-                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25 transition">
+                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25">
                                             <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                             <div class="icon-bg d-flex justify-content-center align-items-center">
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
