@@ -27,10 +27,6 @@
         }
     }
 
-    @include media-breakpoint-down(lg) {
-        height: 375px;
-    }
-
     .left-content {
         display: flex;
         align-items: center;
@@ -66,8 +62,6 @@
 
     .right-scroll-content {
 
-
-
         .inner-content {
 
             .content-item {
@@ -79,7 +73,7 @@
 
 
                 &:first-child {
-                    margin-top: 200px;
+                    margin-top: 80px;
 
                     @include media-breakpoint-down(lg) {
                         margin-top: 70px;

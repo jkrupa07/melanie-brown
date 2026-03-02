@@ -104,7 +104,3 @@ function create_sub_treatment_cpt()
 }
 
 add_action('init', 'create_sub_treatment_cpt');
-
-add_filter('wpcf7_form_elements', function($content) {
-    return str_replace('<form ', '<form autocomplete="random-' . wp_rand() . '" ', $content);
-});
