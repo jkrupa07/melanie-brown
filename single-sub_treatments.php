@@ -22,17 +22,11 @@ $faq_group = get_field("faq_group");
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
-                <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
-                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 leading14 d-none d-lg-flex justify-content-center align-items-center text-decoration-none transition">
+                <div class="col-4 d-flex align-items-end justify-content-end">
+                    <a href="#" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                         Back to treatments
                         <div class="btn-arrow ms-2 transition">
-                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
-                        </div>
-                    </a>
-                    <a href="/treatment" class="btnA white-border-btn res-white-btn satoshi-regular font14 space1 d-lg-none d-flex align-items-center text-decoration-none transition">
-                        Back to treatments
-                        <div class="btn-arrow back-btn-arrow d-flex align-items-center ms-2 transition">
-                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                            <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="">
                         </div>
                     </a>
                 </div>
@@ -266,20 +260,18 @@ $faq_group = get_field("faq_group");
                                 $title = $row['title'];
                                 $description = $row['description'];
                         ?>
-                                <div class="closet-item dark-border bg-268a85">
-                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between pe-2 pe-lg-4 me-lg-2 dpb-35 dpt-30 tpt-25 tpb-20">
+                                <div class="closet-item dark-border bg-268a85 dpb-30 dpt-30">
+                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between ">
                                         <?php if (!empty($row['title'])): ?>
                                             <div class="col-lg-12 col-10 satoshi-regular font20 leading32 res-font18 res-leading26 text-black">
                                                 <?php echo $row['title']; ?>
                                             </div>
                                         <?php endif; ?>
-                                        <div class="icon-bg d-flex justify-content-center align-items-center">
-                                            <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Arrow Icon">
-                                        </div>
+                                        <div class="icon-bg d-flex justify-content-center align-items-center"><img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt=""></div>
                                     </div>
-                                    <div class="closet-content dpb-50">
+                                    <div class="closet-content dpt-25 dpb-45">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22 text-black pb-4 pe-5">
+                                            <div class="satoshi-light font16 leading25_6 text-black">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>

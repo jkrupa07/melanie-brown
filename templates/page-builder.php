@@ -211,17 +211,17 @@
                                     $title = $contents['title'];
                                     $content = $contents['content'];
                             ?>
-                                    <div class="closet-item white-border bg-268a85">
+                                    <div class="closet-item white-border bg-268a85 dpb-30 dpt-30 tpb-25 tpt-25">
                                         <div class="closet-header">
-                                            <div class="space d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25 transition">
+                                            <div class="d-flex align-items-center cursor-pointer justify-content-between  transition">
                                             <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                             <div class="icon-bg d-flex justify-content-center align-items-center">
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
                                             </div>
                                             </div>
                                         </div>
-                                        <div class="closet-content opacity-0">
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 dpb-50 tpb-30 text-white">
+                                        <div class="closet-content dpt-15 tpb-10 dpb-20">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6  text-white">
                                                 <?php echo $content; ?>
                                             </div>
                                         </div>

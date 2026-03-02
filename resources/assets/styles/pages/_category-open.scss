@@ -30,17 +30,21 @@
     display: none;
   }
 
-  .closet-item:last-child {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  .closet-item {
+    &:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
   }
 
   &.dark-bg-faq {
-    .closet-item:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
+    .closet-item {
+      &:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-    .closet-item:first-child {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      &:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
     }
 
     .icon-bg {
