@@ -31,7 +31,7 @@
 
                     <!-- youtube -->
                     <iframe class="w-100 h-100 object-cover"
-                        src="https://www.youtube.com/embed/<?php echo esc_attr($youtube); ?>"
+                        src="https://www.youtube.com/embed/<?php echo esc_attr($youtube); ?>&autoplay=1&loop=1&background=1&controls=0&rel=0&mute=1"
                         frameborder="0"
                         allowfullscreen>
                     </iframe>
@@ -56,19 +56,19 @@
                             <div class="satoshi-regular font18 leading27 res-font16 res-leading20 text-white dmb-30 pe-lg-0 pe-sm-3">
                                 <?php if (!empty($hero_description)): ?>
                                     <?php echo $hero_description; ?>
-                                </div>
-                            <?php endif; ?>
-                            <?php if (!empty($hero_link)): ?>
-                                <div class="">
-                                    <a class="btnA bg-AF9064-btn d-inline-flex satoshi-regular font14 space1 leading14 justify-content-center align-items-center text-decoration-none transition"
-                                        href="<?php echo $hero_link['url']; ?>">
-                                        <?php echo $hero_link['title']; ?>
-                                        <div class="btn-arrow d-flex align-items-end ms-2">
-                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
-                                        </div>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($hero_link)): ?>
+                            <div class="">
+                                <a class="btnA bg-AF9064-btn d-inline-flex satoshi-regular font14 space1 leading14 justify-content-center align-items-center text-decoration-none transition"
+                                    href="<?php echo $hero_link['url']; ?>">
+                                    <?php echo $hero_link['title']; ?>
+                                    <div class="btn-arrow d-flex align-items-end ms-2">
+                                        <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <?php if (!empty($link)): ?>
                         <a href="<?php echo $link['url']; ?>" class="btnA border-494850-btn satoshi-regular font14 space1 leading14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                             <?php echo $link['title']; ?>
-                          
+
                             <div class="btn-arrow d-flex align-items-center ms-2 transition">
                                 <img class="w-100 " src="<?php echo get_template_directory_uri(); ?>/templates/icons/grey-btn-arrow.svg" alt="Arrow Icon">
                             </div>
@@ -215,8 +215,8 @@
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
                                             </div>
                                         </div>
-                                        <div class="closet-content dpt-15 dpb-50 tpb-30">
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-white">
+                                        <div class="closet-content">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 dpt-15 dpb-50 tpb-30 text-white">
                                                 <?php echo $content; ?>
                                             </div>
                                         </div>
@@ -344,7 +344,7 @@
                                             <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
                                         </div>
                                     </a>
-                                    
+
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -648,7 +648,6 @@
                         ?>
                     </div>
                 </div>
-
                 <?php if (!empty($filter_selection)) : ?>
 
                     <section class="image-faq-section">
@@ -665,12 +664,12 @@
                                         $standard_areas = get_field('treatment_standard_area', $post_id);
                                     ?>
 
-                                        <div class="closet-item radius3 dmb-20"
+                                        <div class="image-item radius3 dmb-20"
                                             id="post-<?php echo esc_attr($post_id); ?>">
 
-                                            <div class="closet-header d-flex align-items-center justify-content-between cursor-pointer">
+                                            <div class="image-header d-flex align-items-center justify-content-between cursor-pointer">
 
-                                                <div class="closet-header-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading22_6 text-black">
+                                                <div class="image-header-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading22_6 text-black">
                                                     <?php echo esc_html(get_the_title($post_id)); ?>
                                                 </div>
 
@@ -681,7 +680,7 @@
                                                         alt="Accordion Icon">
                                                 </div>
                                             </div>
-                                            <div class="closet-content hero-style-content bg-000000A">
+                                            <div class="image-content hero-style-content bg-000000A">
 
                                                 <?php if ($image) : ?>
                                                     <div class="image-faq-hero position-relative overflow-hidden">
@@ -761,7 +760,6 @@
                                             </div>
 
                                         </div>
-
                                     <?php endforeach; ?>
 
                                 </div>
@@ -772,7 +770,6 @@
                 <?php endif; ?>
 
             <?php endif; ?>
-
 
             <!-- END -->
 
@@ -948,7 +945,7 @@
                         foreach ($slider_group as $image_grp):
                             $image = $image_grp['image'];
                     ?>
-                            <div class="logo-item">
+                            <div class="logo-item d-flex justify-content-center">
                                 <img class="h-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
                             </div>
                     <?php endforeach;
@@ -1121,36 +1118,43 @@
                                             <?php echo $information_content['link_text']; ?>
                                         </div>
                                     <?php endif; ?>
-
-                                    <a href="<?php echo $information_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition dmt-30">
-                                        <?php echo $information_content['link']['title'] ?>
-                                        <div class="btn-arrow ms-2 transition">
-                                            <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                                    <?php if (!empty($information_content['link'])): ?>
+                                        <a href="<?php echo $information_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition dmt-30">
+                                            <?php echo $information_content['link']['title'] ?>
+                                            <div class="btn-arrow ms-2 transition">
+                                                <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
+                                            </div>
+                                        </a>
+                                    <?php endif; ?>
+                                    <?php if (!empty($information_content['contact_no'])): ?>
+                                        <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Contact</div>
+                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
+                                            Phone:
+                                            <a href="tel:<?php echo $information_content['contact_no']; ?>" class="satoshi-regular font14 leading22 text-FFFFFFB2 text-decoration-none">
+                                                <?php echo $information_content['contact_no']; ?>
+                                            </a>
                                         </div>
-                                    </a>
-
-                                    <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Contact</div>
-                                    <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
-                                        Phone:
-                                        <a href="tel:<?php echo $information_content['contact_no']; ?>" class="satoshi-regular font14 leading22 text-FFFFFFB2 text-decoration-none">
-                                            <?php echo $information_content['contact_no']; ?>
-                                        </a>
-                                    </div>
-                                    <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
-                                        Email:
-                                        <a class="satoshi-regular font14 leading22 text-FFFFFFB2 text-decoration-none" href="mailto:<?php echo $information_content['email']; ?>">
-                                            <?php echo $information_content['email']; ?>
-                                        </a>
-                                    </div>
-
-                                    <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Clinic Hours</div>
-                                    <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
-                                        <?php echo $information_content['clinic_hours']; ?>
-                                    </div>
-                                    <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Parking</div>
-                                    <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
-                                        <?php echo $information_content['other_information']; ?>
-                                    </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($information_content['email'])): ?>
+                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
+                                            Email:
+                                            <a class="satoshi-regular font14 leading22 text-FFFFFFB2 text-decoration-none" href="mailto:<?php echo $information_content['email']; ?>">
+                                                <?php echo $information_content['email']; ?>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($information_content['clinic_hours'])): ?>
+                                        <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Clinic Hours</div>
+                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
+                                            <?php echo $information_content['clinic_hours']; ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (!empty($information_content['other_information'])): ?>
+                                        <div class="satoshi-regular font20 leading32 text-white dmt-30 dmb-10">Parking</div>
+                                        <div class="satoshi-regular font14 leading22 text-FFFFFFB2">
+                                            <?php echo $information_content['other_information']; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         <?php endif; ?>

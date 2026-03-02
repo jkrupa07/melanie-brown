@@ -54,7 +54,6 @@ export class Plugins {
     });
   }
 
-
   FooterSlider() {
     $('.footer-slider').slick({
       slidesToShow: 6,
@@ -73,15 +72,17 @@ export class Plugins {
 
   LogoSlider() {
     $('.logo-slider-wrapper').slick({
+      dots: false,
+      arrows: false,
+      infinite: true,
+      speed: 7000,
       slidesToShow: 7,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 3000,
       cssEase: 'linear',
-      arrows: false,
-      dots: false,
-      infinite: true,
+      pauseOnHover: false,
+      pauseOnFocus: false,
       responsive: [
         { breakpoint: 1024, settings: { slidesToShow: 4 } },
         { breakpoint: 768, settings: { slidesToShow: 3 } },

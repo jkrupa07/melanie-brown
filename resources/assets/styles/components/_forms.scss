@@ -10,7 +10,9 @@ input {
     }
   }
 }
+
 textarea {
+  height: 150px;
   border: none;
   border-bottom: 1px solid $color-E0E0E0;
 
@@ -19,6 +21,7 @@ textarea {
     opacity: 0.3;
   }
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }

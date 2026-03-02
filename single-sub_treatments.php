@@ -15,7 +15,7 @@ $faq_group = get_field("faq_group");
             <div class="row justify-content-between">
 
                 <div class="col-lg-6 col-12">
-                    <div class="col-lg-10 col-9 tk-ivypresto-display fw-lighter font60 leading61_8 res-font30 res-leading35 text-white dmb-20">
+                    <div class="col-lg-10 col-9 tk-ivypresto-display fw-lighter font60 leading61_8 res-font30 res-leading35 text-white dmb-20 tmb-10">
                         <?php echo get_the_title(); ?>
                     </div>
                     <div class="satoshi-regular font14 leading22 text-white tmb-25">
@@ -23,7 +23,7 @@ $faq_group = get_field("faq_group");
                     </div>
                 </div>
                 <div class="col-lg-4 col-10 d-flex align-items-end justify-content-lg-end">
-                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 leading14 d-lg-flex justify-content-center align-items-center text-decoration-none transition">
+                    <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 space1 leading14 d-none d-lg-flex justify-content-center align-items-center text-decoration-none transition">
                         Back to treatments
                         <div class="btn-arrow ms-2 transition">
                             <img class="prev-arrow w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">
@@ -42,7 +42,7 @@ $faq_group = get_field("faq_group");
 </section>
 <?php if (!empty($sub_treatment_group)): ?>
 
-    <section class="treatments-cards-section dpt-135">
+    <section class="treatments-cards-section dpt-135 tpt-175">
         <div class="container">
 
             <div class="col-lg-6 col-12 mx-auto align-items-center dmb-60 tmb-45">
@@ -269,7 +269,7 @@ $faq_group = get_field("faq_group");
                                 <div class="closet-item dark-border bg-268a85">
                                     <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between pe-2 pe-lg-4 me-lg-2 dpb-35 dpt-30 tpt-25 tpb-20">
                                         <?php if (!empty($row['title'])): ?>
-                                            <div class="satoshi-regular font20 leading32 res-font18 res-leading26 text-black">
+                                            <div class="col-lg-12 col-10 satoshi-regular font20 leading32 res-font18 res-leading26 text-black">
                                                 <?php echo $row['title']; ?>
                                             </div>
                                         <?php endif; ?>

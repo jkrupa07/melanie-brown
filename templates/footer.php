@@ -14,6 +14,9 @@ $site_by = get_field('site_by', 'option');
 <?php if (is_single() || $consultation_content_selection === 'yes') : ?>
 
     <section class="get-in-touch-block-section position-relative bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
+        <div class="bg-img h-100 position-absolute top-0 end-0">
+            <img class="h-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/light-brand-bg.svg" alt="">
+        </div>
         <div class="container">
             <div class="col-lg-10 col-11 mx-auto">
 
@@ -50,7 +53,7 @@ $site_by = get_field('site_by', 'option');
     </section>
 <?php endif; ?>
 
-<footer class="footer dpt-100 tpt-70 bg-49484F overflow-hidden">
+<footer class="footer position-relative dpt-100 tpt-70 bg-49484F overflow-hidden">
     <div class="container">
         <?php if (!empty($follow_by)): ?>
             <div class="d-flex flex-lg-row flex-column dmb-55 tmb-25">
@@ -87,7 +90,7 @@ $site_by = get_field('site_by', 'option');
             </div>
         </div>
 
-        <div class="row justify-content-between align-items-start dpt-50 dpb-50 tpb-40">
+        <div class="row justify-content-between align-items-start dpt-50 dpb-50 tpb-40 white-border">
 
             <div class="col-xl-5 col-lg-6">
                 <div class="row justify-content-between tmb-45">
@@ -190,7 +193,7 @@ $site_by = get_field('site_by', 'option');
 
         </div>
 
-        <div class="row justify-content-between dpt-25 dpb-25 tpt-30 tpb-40 white-top-border1">
+        <div class="row justify-content-between dpt-25 dpb-25 tpt-30 tpb-40">
             <?php if (!empty($footer_left_content)): ?>
                 <div class="col-md-6">
                     <div class="helvetica-medium res-font12 res-leading28 font14 leading28 text-999999 text-lg-start text-center text-capitalize">

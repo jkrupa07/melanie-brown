@@ -30,14 +30,14 @@
             }
         }
 
-        .closet-item {
+        .image-item {
             border: 1px solid rgba(0, 0, 0, 0.1);
 
             &.active {
                 border: none !important;
             }
 
-            .closet-header {
+            .image-header {
                 padding: 40px;
                 position: relative;
 
@@ -45,7 +45,7 @@
                     padding: 16px;
                 }
 
-                .closet-header-title {
+                .image-header-title {
                     transition: opacity 0.3s ease;
                 }
 
@@ -56,7 +56,7 @@
 
 
 
-                    .closet-header-title {
+                    .image-header-title {
                         opacity: 0;
                         visibility: hidden;
                     }
@@ -69,7 +69,7 @@
             }
         }
 
-        .closet-content {
+        .image-content {
             transform: translateY(-110px);
             margin-bottom: -110px;
 
