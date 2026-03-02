@@ -123,16 +123,55 @@ export class Accordion {
         });
     }
 
-    Accordion() {
-        $(document).ready(function () {
-            // Open the first child by default
-            $('.closet-header').first().addClass('active').next('.closet-content').slideDown();
+    // Accordion() {
+    //     $(document).ready(function () {
+    //         // Open the first child by default
+    //         $('.closet-header').first().addClass('active').next('.closet-content').slideDown();
 
-            // Handle click events for closet headers
-            $('.closet-header').click(function () {
-                $(this).toggleClass('active').next('.closet-content').slideToggle();
-                $('.closet-header').not(this).removeClass('active').next('.closet-content').slideUp();
-            });
+    //         // Handle click events for closet headers
+    //         $('.closet-header').click(function () {
+    //             $(this).toggleClass('active').next('.closet-content').slideToggle();
+    //             $('.closet-header').not(this).removeClass('active').next('.closet-content').slideUp();
+    //         });
+    //     });
+    // }
+
+    Accordion() {
+    $(document).ready(function () {
+
+        // Hide all content
+        $('.closet-content').hide();
+
+        // Open first item
+        const firstHeader = $('.closet-header').first();
+        firstHeader.addClass('active');
+        firstHeader.next('.closet-content')
+            .show()
+            .addClass('show-fade');
+
+        // Click handler
+        $('.closet-header').click(function () {
+
+            const content = $(this).next('.closet-content');
+
+            if ($(this).hasClass('active')) {
+
+                $(this).removeClass('active');
+                content.removeClass('show-fade').slideUp();
+
+            } else {
+
+                $('.closet-header').removeClass('active');
+                $('.closet-content')
+                    .removeClass('show-fade')
+                    .slideUp();
+
+                $(this).addClass('active');
+                content.slideDown(function () {
+                    content.addClass('show-fade');
+                });
+            }
         });
-    }
+    });
+}
 }

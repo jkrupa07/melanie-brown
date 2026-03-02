@@ -11,11 +11,23 @@
 
     .closet-header {
       &.active {
+        .space {
+          padding-bottom: 15px;
+        }
 
         .icon-bg img {
           transform: rotate(45deg);
         }
       }
+    }
+
+    // .closet-content {
+    //   opacity: 0;
+    //   transition: opacity 0.3s ease;
+    // }
+
+    .closet-content.show-fade {
+      opacity: 1 !important;
     }
   }
 
@@ -31,6 +43,7 @@
     .closet-item:last-child {
       border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+
     .closet-item:first-child {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
     }

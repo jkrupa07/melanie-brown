@@ -89,7 +89,7 @@
 
             <section class="left-right-media-section bg-F1DDD3">
                 <div class="container">
-                    <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s"">
+                    <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
                             <?php if ($media_select == 'image' && $media_direction == 'left'): ?>
                                 <div class=" col-lg-4">
                         <div class="left-image">
@@ -103,14 +103,14 @@
                             src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
                     </div>
                 <?php endif; ?>
-                <div class="col-lg-6 ps-3 pe-lg-5">
+                <div class="col-lg-6 ps-lg-3 pe-lg-5">
                     <?php if (!empty($title)): ?>
                         <div class="tk-ivypresto-display font42 leading44_2 res-font25 res-leading35_2 fw-lighter text-494850 dmb-15">
                             <?php echo $title; ?>
                         </div>
                     <?php endif; ?>
                     <?php if (!empty($title)): ?>
-                        <div class="satoshi-regular col-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
+                        <div class="satoshi-regular col-lg-11 font14 leading22 res-font14 res-leading22 text-494850 dmb-20">
                             <?php echo $description; ?> </div>
                     <?php endif; ?>
                     <?php if (!empty($link)): ?>
@@ -212,14 +212,16 @@
                                     $content = $contents['content'];
                             ?>
                                     <div class="closet-item white-border bg-268a85">
-                                        <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25 transition">
+                                        <div class="closet-header">
+                                            <div class="space d-flex align-items-center cursor-pointer justify-content-between dpb-35 dpt-30 tpb-20 tpt-25 transition">
                                             <div class="satoshi-regular font20 leading32 res-font18 res-leading22 text-white"><?php echo $title; ?></div>
                                             <div class="icon-bg d-flex justify-content-center align-items-center">
                                                 <img class="transition" src="<?php echo get_template_directory_uri(); ?>/templates/icons/accordion-plus.svg" alt="Accordion Icon">
                                             </div>
+                                            </div>
                                         </div>
-                                        <div class="closet-content">
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 dpt-15 dpb-50 tpb-30 text-white">
+                                        <div class="closet-content opacity-0">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 dpb-50 tpb-30 text-white">
                                                 <?php echo $content; ?>
                                             </div>
                                         </div>
@@ -1002,20 +1004,20 @@
                 <div class="container">
 
                     <?php if (!empty($main_title)): ?>
-                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dpb-90 tpb-60 wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                        <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font35 res-leading40_8 text-white text-center dpb-55                          tpb-60 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                             <?php echo $main_title; ?>
                         </div>
                     <?php endif; ?>
 
-                    <div class="philosophy-cards d-lg-flex align-items-center justify-content-around wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                    <div class="philosophy-cards row wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if (!empty($philosophy_group)):
                             foreach ($philosophy_group as $philosophy):
                                 $title = $philosophy['title'];
                                 $content = $philosophy['content'];
                                 $image = $philosophy['image'];
                         ?>
-
-                                <div class="philosophy-card tpb-50">
+                                <div class="col-lg-3 col-md-6 col-12">
+                                <div class="philosophy-card dpt-35 tpb-50">
                                     <?php if (!empty($image)): ?>
                                         <div class="philosophy-icon text-center dmb-20">
                                             <img class="h-100 object-cover" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
@@ -1027,6 +1029,7 @@
                                     <div class="satoshi-regular font14 leading19 text-white text-center mx-auto col-10">
                                         <?php echo $content; ?>
                                     </div>
+                                </div>
                                 </div>
                         <?php endforeach;
                         endif; ?>

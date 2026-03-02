@@ -10,8 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 import "../../node_modules/wow.js"
 import WOW from 'wow.js';
 
-import flatpickr from "flatpickr";
-
 import { App } from "./parts/app.js";
 import { Plugins } from "./parts/plugins.js";
 import { Parts } from "./parts/parts.js";
@@ -73,10 +71,4 @@ jQuery(document).ready(function ($) {
     once: true,
     mobile: true,
   }).init();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  flatpickr(".date-picker", {
-    dateFormat: "Y-m-d",
-  });
 });
