@@ -601,7 +601,7 @@
                                 <div class="consultation-card-wrapper col-lg-10 col-12 dpb-70 tpb-40 mx-auto dpt-35 dpb-20 dmb-95 tmb-40"
                                     id="price-card-<?php echo esc_attr($consultation_index); ?>">
 
-                                    <div class="d-flex align-items-center justify-content-between dmb-25">
+                                    <div class="d-flex align -items-center justify-content-between dmb-25">
 
                                         <?php if (!empty($title)) : ?>
                                             <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading22 text-capitalize text-49484F">
