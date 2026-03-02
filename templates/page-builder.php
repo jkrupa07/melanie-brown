@@ -152,11 +152,11 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($media_direction == 'left'): ?>
-                            <div class="col-lg-5 col-12 order-1 pe-lg-2 left-right-image tmb-25">
+                            <div class="col-lg-5 col-12 pe-lg-2 left-right-image tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                             </div>
                         <?php endif; ?>
-                        <div class="col-lg-6 col-12 order-2 pe-lg-1">
+                        <div class="col-lg-6 col-12 pe-lg-1">
                             <?php if (!empty($title)): ?>
                                 <div class="left-right-title col-lg-9 tk-ivypresto-display font42 leading44_2 res-font25 res-leading30 fw-lighter text-494850 dmb-20 tmb-15">
                                     <?php echo $title; ?>
