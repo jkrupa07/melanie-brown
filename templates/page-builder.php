@@ -236,7 +236,7 @@
             $right_content = get_sub_field('right_content');
         ?>
 
-            <section class="sticky-content-section overflow-hidden h-vh">
+            <section class="sticky-content-section transition overflow-hidden h-vh">
 
                 <div class="row h-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
                     <?php if (!empty($left_content)): ?>
@@ -352,7 +352,7 @@
                         </div>
                     </div>
 
-                    <div class="explore-treatment-slider col-lg-12 col-10 order-2 order-lg-3 tmb-70">
+                    <div class="explore-treatment-slider col-lg-11 col-10 order-2 order-lg-3 tmb-70">
 
                         <?php if ($slider_select === 'all') : ?>
 

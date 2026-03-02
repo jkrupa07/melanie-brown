@@ -152,7 +152,7 @@ $site_by = get_field('site_by', 'option');
                                             for ($j = $start; $j < $end; $j++):
                                                 $link = $footer_link[$j]['link'];
                                             ?>
-                                                <li class="tmb-20">
+                                                <li class="dmb-20">
                                                     <a href="<?php echo $link['url']; ?>"
                                                         target="<?php echo ($link['target'] == '_blank') ? '_blank' : ''; ?>"
                                                         class="tk-ivypresto-display fw-lighter font16 leading28 text-decoration-none text-white text-capitalize">
