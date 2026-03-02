@@ -31,8 +31,9 @@
 
                     <!-- youtube -->
                     <iframe class="w-100 h-100 object-cover"
-                        src="https://www.youtube.com/embed/<?php echo esc_attr($youtube); ?>&autoplay=1&loop=1&background=1&controls=0&rel=0&mute=1"
+                        src="https://www.youtube.com/embed/<?php echo esc_attr($youtube); ?>?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=<?php echo esc_attr($youtube); ?>"
                         frameborder="0"
+                        allow="autoplay; fullscreen"
                         allowfullscreen>
                     </iframe>
 
@@ -40,8 +41,10 @@
 
                     <?php if ($media_type == 'vimeo' && !empty($vimeo)) : ?>
                         <iframe class="w-100 h-100 object-cover"
-                            src="<?php echo $vimeo; ?>?autoplay=1&loop=1&background=1&controls=0&rel=0&mute=1"
-                            allow="autoplay" allowfullscreen>
+                            src="https://player.vimeo.com/video/<?php echo esc_attr($vimeo); ?>?autoplay=1&loop=1&muted=1&background=1&title=0&byline=0&portrait=0"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen>
                         </iframe>
                     <?php endif; ?>
                 </div>
@@ -95,7 +98,7 @@
                     </div>
                 <?php endif; ?>
                 <?php if ($media_select == 'video' && $media_direction == 'left'): ?>
-                    <div class="col-lg-5 mx-auto pe-5 left-image radius3 overflow-hidden dmb-25">
+                    <div class="col-lg-5 mx-auto pe-lg-5 left-image radius3 overflow-hidden dmb-25">
                         <video class="w-100 h-100 object-cover" autoplay loop muted playsinline data-wf-ignore="true" preload="none"
                             src="<?php echo $video['url']; ?>" data-object-fit="cover"></video>
                     </div>
@@ -236,11 +239,11 @@
 
             <section class="sticky-content-section overflow-hidden h-vh">
 
-                <div class="row h-100 wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                <div class="sticky-content-wrapper row">
                     <?php if (!empty($left_content)): ?>
 
-                        <div class="col-lg-6 position-relative h-100">
-                            <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-0 tpb-0">
+                        <div class="col-lg-6 col-12 position-relative h-100">
+                            <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-60 tpb-60">
 
                                 <div class="image-wrapper position -relative d-flex align-items-center col-lg-6 mx-auto ">
                                     <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
@@ -254,10 +257,11 @@
                             </div>
                         </div>
                     <?php endif; ?>
-                    <div class="col-lg-6 bg-7E7C8B">
+                    <div class="col-lg-6 col-12 bg-7E7C8B position-relative">
+                        <div class="inner-content-layer position-fixed end-0 w-50"></div>
                         <div class="right-scroll-content h-100 position-relative overflow-hidden">
-                            <div class="inner-content-layer position-absolute bottom-0 start-0 w-100"></div>
                             <div class="inner-content h-100 overflow- hidden">
+
                                 <?php if (!empty($right_content)):
                                     foreach ($right_content as $contents):
                                         $image = $contents['image'];
@@ -265,28 +269,7 @@
                                         $description = $contents['description'];
                                 ?>
 
-                                        <div class="content-item col-lg-8 col-11 mx-auto dpt-105 dpb-130 tpt-65 tpb-65 ">
-                                            <div class="content-img text-center">
-                                                <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
-                                            </div>
-                                            <div
-                                                class="content-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 text-center">
-                                                <?php echo $title; ?>
-                                            </div>
-                                            <div class="content-desc satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
-                                                <?php echo $description; ?>
-                                            </div>
-                                        </div>
-                                <?php endforeach;
-                                endif; ?>
-                                <?php if (!empty($right_content)):
-                                    foreach ($right_content as $contents):
-                                        $image = $contents['image'];
-                                        $title = $contents['title'];
-                                        $description = $contents['description'];
-                                ?>
-
-                                        <div class="content-item col-lg-8 col-11 mx-auto dpt-105 dpb-130 tmt-65 tmb-65 ">
+                                        <div class="content-item col-xl-8 col-lg-10 col-11 mx-auto dpt-200 dpb-130 tpt-65 tpb-65 ">
                                             <div class="content-img text-center">
                                                 <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
                                             </div>
@@ -553,6 +536,7 @@
 
             $filter_selection  = get_sub_field('filter_selection');
             $filter_price_card = get_sub_field('filter_price_card');
+            $about_treatments = get_field('about_treatments');
         ?>
 
             <?php if (!empty($filter_price_card) || !empty($filter_selection)) : ?>
@@ -662,6 +646,7 @@
                                         $image          = get_the_post_thumbnail_url($post_id, 'large');
                                         $content        = get_post_field('post_content', $post_id);
                                         $standard_areas = get_field('treatment_standard_area', $post_id);
+                                        $about_treatments = get_field('about_treatments', $post_id);
                                     ?>
 
                                         <div class="image-item radius3 dmb-20"
@@ -692,15 +677,17 @@
                                                         </div>
 
                                                         <div class="image-faq-hero-content position-absolute bottom-0 dmb-60 tmb-20 w-100 px-lg-5 px-3">
+                                                            <div class="col-md-10 col-11">
+                                                                <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading24_6 text-white text-capitalize dmb-20 tmb-10">
+                                                                    <?php echo esc_html(get_the_title($post_id)); ?>
+                                                                </div>
 
-                                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font22 res-leading24_6 text-white text-capitalize dmb-20 tmb-10">
-                                                                <?php echo esc_html(get_the_title($post_id)); ?>
+                                                                <div class="position-relative read-more-wrapper satoshi-regular font14 leading22 res-font12 res-leading16 text-white">
+                                                                    <div class="col-md-10 col-12 pe-3 faq-content transition" data-max-length="360">
+                                                                        <?php echo esc_html($about_treatments); ?>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-
-                                                            <div class="satoshi-regular font14 leading22 res-font12 res-leading16 text-white">
-                                                                <?php echo wp_kses_post($content); ?>
-                                                            </div>
-
                                                         </div>
                                                     </div>
                                                 <?php endif; ?>
@@ -816,7 +803,7 @@
                                 while ($the_query->have_posts()) : $the_query->the_post();
                             ?>
 
-                                    <div class="col-lg-4 treatment-card dmb-110 tmb-45">
+                                    <div class="col-lg-4 col-md-6 col-12 treatment-card dmb-110 tmb-45">
                                         <a href="<?php the_permalink(); ?>" class="text-decoration-none">
                                             <div class="treatment-image dmb-25">
                                                 <?php if (has_post_thumbnail()) : ?>
@@ -939,7 +926,7 @@
         <?php elseif (get_row_layout() == 'logo_slider_section'):
             $slider_group = get_sub_field('slider_group');
         ?>
-            <section class="logo-slider-section">
+            <section class="logo-slider-section overflow-hidden">
                 <div class="logo-slider-wrapper">
                     <?php if (!empty($slider_group)):
                         foreach ($slider_group as $image_grp):

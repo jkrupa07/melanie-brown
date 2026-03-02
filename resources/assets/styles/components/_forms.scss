@@ -2,7 +2,7 @@ input {
   &.light-input {
     border: none;
     border-bottom: 1px solid $color-E0E0E0;
-    border-radius: 0%;
+    border-radius: 0px !important;
 
     &::placeholder {
       color: $color-FFFFFF;
@@ -15,6 +15,7 @@ textarea {
   height: 150px;
   border: none;
   border-bottom: 1px solid $color-E0E0E0;
+  border-radius: 0px !important;
 
   &::placeholder {
     color: $color-FFFFFF;

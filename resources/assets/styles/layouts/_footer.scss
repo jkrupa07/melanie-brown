@@ -1,6 +1,11 @@
 .get-in-touch-block-section {
     .bg-img {
         height: 447px;
+
+        @include media-breakpoint-down(lg) {
+            height: 250px;
+            right: -50px !important;
+        }
     }
 }
 
