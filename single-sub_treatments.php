@@ -7,7 +7,7 @@ $about_treatment_card = get_field("about_treatment_card");
 $faq_group = get_field("faq_group");
 ?>
 <section class="category-hero-section sub-category-hero-section position-relative">
-    <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
+    <!-- <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div> -->
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="Hero Image" class="w-100 h-100 object-cover">
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">
@@ -42,7 +42,7 @@ $faq_group = get_field("faq_group");
 </section>
 <?php if (!empty($sub_treatment_group)): ?>
 
-    <section class="treatments-cards-section dpt-135 tpt-175">
+    <section class="treatments-cards-section dpt-135 tpt-75">
         <div class="container">
 
             <div class="col-lg-6 col-12 mx-auto align-items-center dmb-60 tmb-45">
@@ -128,7 +128,7 @@ $faq_group = get_field("faq_group");
                     ?>
                         <div class="timeline-item white-border dpt-20 dpb-25 tpt-25 tpb-25">
                             <?php if (!empty($title)): ?>
-                                <div class="tk-ivypresto-display fw-lighter font26 leading28_8 res-font22 res-leading25_8 text-white dmb-20 tmb-15"><?php echo $title; ?></div>
+                                <div class="tk-ivypresto-display fw-lighter font26 leading28_8 res-font22 res-leading25_8 text-white dmb-5 tmb-15"><?php echo $title; ?></div>
                             <?php endif; ?>
                             <?php if (!empty($content)): ?>
                                 <div class="satoshi-regular font14 leading19 text-white pe-3 pe-lg-0">

@@ -9,20 +9,6 @@ export class App {
   }
 
   setupScrollAnimation() {
-    // const cards = gsap.utils.toArray(".experience-card");
-
-    // cards.forEach((card, i) => {
-    //   ScrollTrigger.create({
-    //     trigger: card,
-    //     start: "top 150px",        // adjust depending on header height
-    //     end: "+=100%",             // each card scrolls one viewport height
-    //     pin: true,
-    //     pinSpacing: false,
-    //     scrub: false,
-    //     markers: true
-    //   });
-    // });
-    // gsap.registerPlugin(ScrollTrigger);
 
     const cards = gsap.utils.toArray(".experience-card");
 
@@ -49,20 +35,28 @@ export class App {
 
       const scrollAmount = inner.scrollHeight - section.offsetHeight;
 
+      if (scrollAmount <= 0) return;
+
+      const isMobile = window.innerWidth < 992;
+
       gsap.to(inner, {
         y: -scrollAmount,
         ease: "none",
         scrollTrigger: {
           trigger: section,
           start: "top +60px",
-          end: () => "bottom +60px",
+          end: isMobile
+            ? `+=${scrollAmount}`   // 🔥 mobile uses real scroll distance
+            : "bottom +60px",       // 🔥 desktop stays EXACT same
           scrub: true,
           pin: true,
-          pinSpacing: true,   
+          pinSpacing: true,
+          markers: false,
           invalidateOnRefresh: true
         }
       });
 
     });
+
   }
 }

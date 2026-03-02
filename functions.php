@@ -105,36 +105,6 @@ function create_sub_treatment_cpt()
 
 add_action('init', 'create_sub_treatment_cpt');
 
-function melanie_enqueue_flatpickr() {
-
-    wp_enqueue_style(
-        'flatpickr-css',
-        get_stylesheet_directory_uri() . '/assets/css/flatpickr.min.css',
-        array(),
-        '4.6.13'
-    );
-
-    wp_enqueue_script(
-        'flatpickr-js',
-        get_stylesheet_directory_uri() . '/assets/js/flatpickr.min.js',
-        array(),
-        '4.6.13',
-        true
-    );
-
-    wp_add_inline_script('flatpickr-js', "
-        function initDatePicker() {
-            if (document.querySelector('.date-picker')) {
-                flatpickr('.date-picker', {
-                    dateFormat: 'Y-m-d',
-                    minDate: 'today'
-                });
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', initDatePicker);
-        document.addEventListener('wpcf7mailsent', initDatePicker);
-        document.addEventListener('wpcf7invalid', initDatePicker);
-    ");
-}
-add_action('wp_enqueue_scripts', 'melanie_enqueue_flatpickr');
+add_filter('wpcf7_form_elements', function($content) {
+    return str_replace('<form ', '<form autocomplete="random-' . wp_rand() . '" ', $content);
+});

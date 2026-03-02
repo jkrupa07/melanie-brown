@@ -28,7 +28,7 @@
     padding-right: 36px;
   }
 
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991px) {
     margin-left: -12px;
     margin-right: -12px;
 

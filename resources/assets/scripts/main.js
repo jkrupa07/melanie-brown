@@ -57,6 +57,9 @@ $(function () {
 
   window.header = new Header();
   window.header.init();
+
+  window.truncate = new Truncate();
+  window.truncate.init();
 });
 
 // ===========================================================================

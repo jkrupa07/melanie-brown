@@ -13,15 +13,15 @@ $site_by = get_field('site_by', 'option');
 ?>
 <?php if (is_single() || $consultation_content_selection === 'yes') : ?>
 
-    <section class="get-in-touch-block-section position-relative bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
-        <div class="bg-img h-100 position-absolute top-0 end-0">
+    <section class="get-in-touch-block-section position-relative overflow-hidden bg-AF9064 dpt-110 dpb-110 tpt-75 tpb-75">
+        <div class="bg-img position-absolute top-0 end-0">
             <img class="h-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/light-brand-bg.svg" alt="">
         </div>
         <div class="container">
             <div class="col-lg-10 col-11 mx-auto">
 
                 <?php if (! empty($consultation_content['title'])) : ?>
-                    <div class="tk-ivypresto-display font50 leading71_2 res-font30 res-leading40 fw-lighter text-white text-center dmb-25">
+                    <div class="tk-ivypresto-display font50 leading71_2 res-font30 res-leading40 fw-lighter text-white text-center dmb-25 tmb-15">
                         <?php echo esc_html($consultation_content['title']); ?>
                     </div>
                 <?php endif; ?>
@@ -111,7 +111,7 @@ $site_by = get_field('site_by', 'option');
                             <?php if (!empty($contact_no)): ?>
                                 <div class="tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                     Phone:
-                                    <a href="tel:<?php echo $contact_no; ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
+                                    <a href="tel:<?php echo $contact_no; ?>" target="_blank" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                         <?php echo $contact_no; ?>
                                     </a>
                                 </div>
@@ -119,7 +119,7 @@ $site_by = get_field('site_by', 'option');
                             <?php if (!empty($email)): ?>
                                 <div class="tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                     Email:
-                                    <a href="mailto:<?php echo esc_attr($email); ?>" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
+                                    <a href="mailto:<?php echo esc_attr($email); ?>" target="_blank" class="text-decoration-none tk-ivypresto-display fw-lighter font18 leading38 res-font16 res-leading30 text-white">
                                         <?php echo esc_html($email); ?>
                                     </a>
                                 </div>
@@ -177,7 +177,7 @@ $site_by = get_field('site_by', 'option');
                                 $url = $media_content['url'];
                         ?>
                                 <div class="">
-                                    <a href="<?php echo $url; ?>">
+                                    <a href="<?php echo $url; ?>" target="_blank">
                                         <div class="media-bg d-flex justify-content-center align-items-center rounded-circle me-2">
                                             <div class="media-img d-flex justify-content-center align-items-center">
                                                 <img class="h-100" src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>">
@@ -197,7 +197,7 @@ $site_by = get_field('site_by', 'option');
             <?php if (!empty($footer_left_content)): ?>
                 <div class="col-md-6">
                     <div class="helvetica-medium res-font12 res-leading28 font14 leading28 text-999999 text-lg-start text-center text-capitalize">
-                        <?php echo $footer_left_content; ?>
+                    © <?php echo current_time('Y'); ?>   <?php echo $footer_left_content; ?>
                     </div>
                 </div>
             <?php endif; ?>
