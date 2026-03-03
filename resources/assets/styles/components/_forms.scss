@@ -26,3 +26,8 @@ textarea {
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(1);
 }
+
+.wpcf7 form .wpcf7-response-output {
+  padding: 0.2em 1em;
+  border: 2px solid transparent !important;
+}

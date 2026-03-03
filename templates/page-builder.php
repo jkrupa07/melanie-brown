@@ -244,17 +244,19 @@
                 <div class="two-panel-pin h-vh overflow-hidden">
                     <div class="row">
                         <div class="col-lg-6 bg-49484F position-relative">
-                            <?php if (!empty($left_content)) : 
+                            <?php if (!empty($left_content)) :
                                 $image = $left_content['image'];
                                 $title = $left_content['title'];
-                                ?>
+                            ?>
                                 <div class="two-panel w-100 h-vh position-relative d-flex align-items-center">
                                     <div class="two-panel-img col-6 mx-auto position-relative">
+                                        <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
+
                                         <img src="<?php echo $image['url']; ?>" alt="two-panel-img" class="w-100 h-100 object-cover" />
                                     </div>
                                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                         <?php if (!empty($title)) : ?>
-                                            <div class="col-lg-9 col-7 mx-auto tk-ivypresto-display fw-lighter font60 leading61_8 res-font25 res-leading30_8 text-white text-center">
+                                            <div class="col-lg-9 col-10 mx-auto tk-ivypresto-display fw-lighter font60 leading61_8 res-font40 res-leading45_8 text-white text-center">
                                                 <?php echo $title; ?>
                                             </div>
                                         <?php endif; ?>
@@ -264,6 +266,7 @@
                         </div>
                         <div class="col-lg-6 bg-7E7C8B">
                             <div class="two-panel w-100 h-vh position-relative">
+                                    <div class="inner-content-layer position-fixed bottom-0 end-0 w-50"></div>
                                 <div class="two-panel-scroll position-absolute top-0 start-0 w-100 h-100 overflow-hidden tpb-350 tpt-30 dpt-80">
                                     <div class="two-panel-card-group col-md-9 px-md-3 px-3 mx-auto tpb-350 dpb-200">
                                         <?php if (!empty($right_content)) :
@@ -271,7 +274,7 @@
                                                 $image = $right['image'];
                                                 $title = $right['title'];
                                                 $description = $right['description'];
-                                            ?>
+                                        ?>
                                                 <div class="two-panel-card tpt-35 tpb-25 dpt-85 dpb-80 radius20 tmb-20 dmb-30">
                                                     <div class="d-flex justify-content-center">
                                                         <div class="two-panel-icon d-inline-flex">
@@ -284,12 +287,12 @@
                                                         </div>
                                                     <?php endif; ?>
                                                     <?php if (!empty($description)) : ?>
-                                                         <div class="satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
+                                                        <div class="satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
                                                             <?php echo $description; ?>
                                                         </div>
                                                     <?php endif; ?>
                                                 </div>
-                                            <?php endforeach;
+                                        <?php endforeach;
                                         endif; ?>
                                     </div>
                                 </div>
@@ -550,9 +553,9 @@
 
             <?php if (!empty($filter_price_card) || !empty($filter_selection)) : ?>
 
-                <div class="sticky-bar-section col-lg-10 mx-auto position-fixed bottom-0 w-100 bg-49484F73 z-3">
+                <div class="sticky-bar-section col-lg-10 col-12 ps-2 mx-auto overflow-auto position-fixed bottom-0 w-100 bg-49484F73 z-3">
                     <div class="container px-p-0">
-                        <div class="sticky-bar-wraper  d-flex justify-content-center overflow-auto">
+                        <div class="sticky-bar-wraper d-inline-flex w-100  d-lg-flex overflow-auto justify-content-md-center ">
 
                             <?php
                             $price_index = 0;
@@ -560,7 +563,7 @@
                                 foreach ($filter_price_card as $card) :
                                     if (!empty($card['title'])) :
                             ?>
-                                        <div class="item px-lg-2 me-2 py-lg-3 py-2">
+                                        <div class="item px-2 px-lg-2 me- 2 py-lg-3 py-2">
                                             <button
                                                 class="faq-trigger satoshi-regular  font14 leading22_4 res-font12 res-leading20_4 text-nowrap text-F1DDD3 border-0 bg-transparent"
                                                 data-target="price-card-<?php echo $price_index; ?>">
