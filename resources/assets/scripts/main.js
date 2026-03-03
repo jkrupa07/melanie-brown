@@ -62,6 +62,7 @@ $(function () {
 
   window.truncate = new Truncate();
   window.truncate.init();
+
 });
 
 // ===========================================================================
@@ -73,8 +74,4 @@ jQuery(document).ready(function ($) {
     once: true,
     mobile: true,
   }).init();
-});
-flatpickr(".date-picker", {
-  dateFormat: "Y-m-d",
-  minDate: "today"
 });
