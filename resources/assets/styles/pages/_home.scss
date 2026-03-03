@@ -18,77 +18,40 @@
     }
 }
 
-.sticky-content-section {
-    .sticky-content-wrapper {
-        height: 100%;
+.two-panel-section {
+    min-height: 100vh;
 
-        @include media-breakpoint-down(lg) {
-            height: auto;
+    .two-panel {
+        @include media-breakpoint-down(lg){
+            height: 375px;
         }
-    }
 
-    .left-content {
-        display: flex;
-        align-items: center;
-
-
-        .image-wrapper {
+        .two-panel-img {
             height: 474px;
 
-            @include media-breakpoint-down(lg) {
-                height: 262px;
-                width: 204px;
+            @include media-breakpoint-down(md) {
+                height: 262px !important;
             }
-        }
 
-        .image-layer {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2));
-        }
-    }
+            .two-panel-card {
+                padding-left: 58px;
+                padding-right: 58px;
 
-    .inner-content-layer {
-        height: 100px;
-        background: linear-gradient(180deg, rgba(126, 124, 139, 0.13), rgba(126, 124, 139, 1));
-        pointer-events: none;
-        z-index: 1;
-        bottom: 60px;
+                @include media-breakpoint-down(md) {
+                    padding-left: 20px;
+                    padding-right: 20px;
 
-        @include media-breakpoint-down(lg) {
-            height: 80px;
-            width: 100% !important;
-            left: 0 !important;
-        }
-    }
-
-    .right-scroll-content {
-
-        .inner-content {
-
-            .content-item {
-                .content-img img {
-                    @include media-breakpoint-down(lg) {
-                        height: 52px;
-                    }
                 }
-
-
-                &:first-child {
-                    margin-top: 80px;
-
-                    @include media-breakpoint-down(lg) {
-                        margin-top: 70px;
-                    }
-                }
-
-                &:last-child {
-                    margin-bottom: 80px;
-
-                    @include media-breakpoint-down(lg) {
-                        margin-bottom: 0;
+                &:last-child{   
+                    @include media-breakpoint-down(md) {
+                        padding-bottom: 350px;
                     }
                 }
             }
-        }
 
+            .two-panel-scroll {
+                max-height: 100%;
+            }
+        }
     }
 }
