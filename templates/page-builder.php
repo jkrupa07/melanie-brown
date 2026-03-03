@@ -93,7 +93,7 @@
                 <div class="container">
                     <div class="row align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($media_select == 'image' && $media_direction == 'left'): ?>
-                            <div class=" col-lg-4">
+                            <div class="col-lg-5 mx-auto pe-lg-5 left-image radius3 overflow-hidden dmb-25">
                                 <div class="left-image">
                                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                                 </div>
@@ -126,7 +126,7 @@
                             <?php endif; ?>
                         </div>
                         <?php if ($media_select == 'image' && $media_direction == 'right'): ?>
-                            <div class="col-lg-4 offset-1">
+                            <div class="col-lg-5 mx-auto pe-lg-5 left-image radius3 overflow-hidden dmb-25">
                                 <div class="left-image">
                                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
                                 </div>
@@ -254,7 +254,7 @@
                                     </div>
                                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                                         <?php if (!empty($title)) : ?>
-                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 tpt-15 text-center">
+                                            <div class="col-lg-9 col-7 mx-auto tk-ivypresto-display fw-lighter font60 leading61_8 res-font25 res-leading30_8 text-white text-center">
                                                 <?php echo $title; ?>
                                             </div>
                                         <?php endif; ?>

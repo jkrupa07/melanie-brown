@@ -71,13 +71,13 @@ export class App {
       gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top top",
+          start: "top 95px",
           end: () => "+=" + getScrollAmount(),
           scrub: true,
           pin: pinWrap,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          markers: true,
+          markers: false,
         },
       })
       .to(scrollContent, {
