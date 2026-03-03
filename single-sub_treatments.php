@@ -271,7 +271,7 @@ $faq_group = get_field("faq_group");
                                     </div>
                                     <div class="closet-content dpt-25 dpb-45">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-black">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 pe-2 text-black">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>

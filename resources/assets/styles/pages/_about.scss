@@ -22,7 +22,13 @@
     &.bg-49484F {
 
         .left-right-wrapper {
-            flex-direction: column !important;
+
+            flex-direction: row !important;
+
+            @include media-breakpoint-down(lg) {
+                flex-direction: column !important;
+            }
+
         }
 
         .left-right-title,
