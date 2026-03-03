@@ -66,7 +66,7 @@ $site_by = get_field('site_by', 'option');
             </div>
         <?php endif; ?>
 
-        <div class="footer-slider">
+        <div class="footer-slider overflow-hidden">
             <div class="footer-slider-image">
                 <img class="w-100 h-100 object-cover" src="<?php echo get_template_directory_uri(); ?>/templates/icons/footer1.jpg" alt="Footer Logo">
             </div>

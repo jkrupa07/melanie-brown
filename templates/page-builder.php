@@ -240,59 +240,64 @@
             $left_content = get_sub_field('left_content');
             $right_content = get_sub_field('right_content');
         ?>
-
-            <section class="sticky-content-section overflow-hidden h-vh">
-
-                <div class="sticky-content-wrapper row">
-                    <?php if (!empty($left_content)): ?>
-
-                        <div class="col-lg-6 col-12 position-relative h-100">
-                            <div class="left-content d-flex align-items-center h-100 overflow-hidden bg-49484F dpt-135 dpb-135 tpt-60 tpb-60">
-
-                                <div class="image-wrapper position-relative d-flex align-items-center col-lg-6 mx-auto ">
-                                    <div class="image-layer position-absolute top-0 start-0 w-100 h-100"></div>
-                                    <img src="<?php echo $left_content['image']['url']; ?>" class="w-100 h-100 object-cover" alt="<?php echo $left_content['image']['title']; ?>">
-                                </div>
-                                <div class="text-wrapper w-100 position-absolute top-left-center">
-                                    <div class="tk-ivypresto-display fw-lighter font60 leading61_8 res-font40 res-leading45_8 text-white text-center col-lg-8 mx-auto">
-                                        <?php echo $left_content['title']; ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                    <div class="col-lg-6 col-12 bg-7E7C8B position-relative">
-                        <div class="inner-content-layer position-fixed end-0 w-50"></div>
-                        <div class="right-scroll-content h-100 position-relative overflow-hidden">
-                            <div class="inner-content h-100 overflow- hidden">
-
-                                <?php if (!empty($right_content)):
-                                    foreach ($right_content as $contents):
-                                        $image = $contents['image'];
-                                        $title = $contents['title'];
-                                        $description = $contents['description'];
+            <section class="two-panel-section position-relative">
+                <div class="two-panel-pin h-vh overflow-hidden">
+                    <div class="row">
+                        <div class="col-lg-6 bg-49484F position-relative">
+                            <?php if (!empty($left_content)) : 
+                                $image = $left_content['image'];
+                                $title = $left_content['title'];
                                 ?>
-
-                                        <div class="content-item col-xl-8 col-lg-10 col-11 mx-auto dpt-200 dpb-130 tpt-65 tpb-65 ">
-                                            <div class="content-img text-center">
-                                                <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title']; ?>">
-                                            </div>
-                                            <div
-                                                class="content-title tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 tpt-15 text-center">
+                                <div class="two-panel w-100 h-vh position-relative d-flex align-items-center">
+                                    <div class="two-panel-img col-6 mx-auto position-relative">
+                                        <img src="<?php echo $image['url']; ?>" alt="two-panel-img" class="w-100 h-100 object-cover" />
+                                    </div>
+                                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                                        <?php if (!empty($title)) : ?>
+                                            <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 tpt-15 text-center">
                                                 <?php echo $title; ?>
                                             </div>
-                                            <div class="content-desc satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
-                                                <?php echo $description; ?>
-                                            </div>
-                                        </div>
-                                <?php endforeach;
-                                endif; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-lg-6 bg-7E7C8B">
+                            <div class="two-panel w-100 h-vh position-relative">
+                                <div class="two-panel-scroll position-absolute top-0 start-0 w-100 h-100 overflow-hidden tpb-350 tpt-30 dpt-80">
+                                    <div class="two-panel-card-group col-md-9 px-md-3 px-3 mx-auto tpb-350 dpb-200">
+                                        <?php if (!empty($right_content)) :
+                                            foreach ($right_content as $right) :
+                                                $image = $right['image'];
+                                                $title = $right['title'];
+                                                $description = $right['description'];
+                                            ?>
+                                                <div class="two-panel-card tpt-35 tpb-25 dpt-85 dpb-80 radius20 tmb-20 dmb-30">
+                                                    <div class="d-flex justify-content-center">
+                                                        <div class="two-panel-icon d-inline-flex">
+                                                            <img src="<?php echo $image['url']; ?>" alt="two-panel-img" class="w-100 h-100 object-cover" />
+                                                        </div>
+                                                    </div>
+                                                    <?php if (!empty($title)) : ?>
+                                                        <div class="tk-ivypresto-display fw-lighter font32 leading28_8 res-font25 res-leading30_8 text-white dpt-30 tpt-15 text-center">
+                                                            <?php echo $title; ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                    <?php if (!empty($description)) : ?>
+                                                         <div class="satoshi-regular font14 leading19 text-white dpt-20 text-center px-lg-3 px-lg-4 px-1">
+                                                            <?php echo $description; ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endforeach;
+                                        endif; ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
         <?php elseif (get_row_layout() == 'treatment_slider_section'):
 
             $slider_select     = get_sub_field('slider_select');
@@ -1111,7 +1116,8 @@
                                         </div>
                                     <?php endif; ?>
                                     <?php if (!empty($information_content['link'])): ?>
-                                        <a href="<?php echo $information_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition dmt-30">
+                                        <a href="<?php echo $information_content['link']['url']; ?>" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition dmt-30"
+                                            target="<?php echo $information_content["link"] == "_blank" ? "_blank" : ""; ?>">
                                             <?php echo $information_content['link']['title'] ?>
                                             <div class="btn-arrow ms-2 transition">
                                                 <img class="w-100" src="<?php echo get_template_directory_uri(); ?>/templates/icons/white-arrow.svg" alt="Arrow Icon">

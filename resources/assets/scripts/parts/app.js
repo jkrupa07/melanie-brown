@@ -24,38 +24,72 @@ export class App {
     });
   }
   stickyContentScroll() {
+  function PanelAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
 
-    const sections = document.querySelectorAll(".sticky-content-section");
+  const section = document.querySelector(".two-panel-section");
+  if (!section) return;
 
-    sections.forEach((section) => {
+  const pinWrap = section.querySelector(".two-panel-pin");
+  const scrollContent = section.querySelector(".two-panel-card-group");
 
-      const inner = section.querySelector(".inner-content");
-      if (!inner) return;
+  ScrollTrigger.matchMedia({
 
-      const scrollAmount = inner.scrollHeight - section.offsetHeight;
+    // 🖥 Desktop
+    "(min-width: 992px)": function () {
 
-      if (scrollAmount <= 0) return;
+      function getScrollAmount() {
+        return scrollContent.scrollHeight - pinWrap.clientHeight;
+      }
 
-      const isMobile = window.innerWidth < 992;
-
-      gsap.to(inner, {
-        y: -scrollAmount,
-        ease: "none",
+      gsap.timeline({
         scrollTrigger: {
           trigger: section,
-          start: "top +60px",
-          end: isMobile
-            ? `+=${scrollAmount}`   // 🔥 mobile uses real scroll distance
-            : "bottom +60px",       // 🔥 desktop stays EXACT same
+          start: "top top",
+          end: () => "+=" + getScrollAmount(),
           scrub: true,
-          pin: true,
+          pin: pinWrap,
           pinSpacing: true,
+          invalidateOnRefresh: true,
           markers: false,
-          invalidateOnRefresh: true
-        }
+        },
+      })
+      .to(scrollContent, {
+        y: () => -getScrollAmount(),
+        ease: "none",
       });
+    },
 
-    });
+    // 📱 Mobile
+    "(max-width: 991px)": function () {
+
+      function getScrollAmount() {
+        // Slightly longer scroll so last card fully shows
+        return scrollContent.scrollHeight - pinWrap.clientHeight + 200;
+      }
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => "+=" + getScrollAmount(),
+          scrub: true,
+          pin: pinWrap,
+          pinSpacing: true,
+          invalidateOnRefresh: true,
+          markers: true,
+        },
+      })
+      .to(scrollContent, {
+        y: () => -getScrollAmount(),
+        ease: "none",
+      });
+    }
+
+  });
+}
+
+window.addEventListener("load", PanelAnimation);
 
   }
 
