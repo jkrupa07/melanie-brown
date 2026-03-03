@@ -21,6 +21,10 @@
 
     &.bg-49484F {
 
+        .left-right-wrapper {
+            flex-direction: column !important;
+        }
+
         .left-right-title,
         .left-right-description {
             color: $white !important;

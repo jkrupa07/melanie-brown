@@ -83,8 +83,14 @@
         .image-faq-areas {
             padding-left: 41px;
             padding-right: 41px;
-            
-            
+
+            @include media-breakpoint-down(lg) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+
+
             &:last-child {
                 padding-bottom: 230px !important;
 

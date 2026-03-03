@@ -152,7 +152,7 @@
 
             <section class="left-right-image-section <?php echo ($background_color == "bg-49484F") ? 'bg-49484F' : 'bg-F1DDD3'; ?>">
                 <div class="container">
-                    <div class="row justify-content-between align-items-center wow animated animate__fadeInUp" data-wow-duration="1.5s">
+                    <div class="row left-right-wrapper flex-lg-row justify-content-between align-items-center flex-column-reverse wow animated animate__fadeInUp" data-wow-duration="1.5s">
                         <?php if ($media_direction == 'left'): ?>
                             <div class="col-lg-5 col-12 pe-lg-2 left-right-image tmb-25">
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['title']; ?>" class="w-100 h-100 object-cover radius3">
@@ -969,7 +969,7 @@
                                 $title = $journey['title'];
                                 $content = $journey['content'];
                         ?>
-                                <div class="treatment-journey col-3 dmb-30 tmb-70">
+                                <div class="treatment-journey col-lg-3 dmb-30 tmb-70">
                                     <div class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center dpb-20 text-white text-capitalize pb-3">
                                         <em class="tk-ivypresto-display font32 leading28_8 fw-lighter text-center text-999999 d-inline-flex me-1"><?php echo  0 . $i; ?></em>
                                         <?php echo $title; ?>

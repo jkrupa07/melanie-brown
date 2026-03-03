@@ -10,6 +10,11 @@
     }
 
     .closet-header {
+      padding-right: 30px;
+       @include media-breakpoint-down(lg) {
+      padding-right: 0;
+    }
+
       &.active {
         .space {
           padding-bottom: 15px;
@@ -27,6 +32,12 @@
   }
 
   .closet-content {
+    padding-right: 30px;
+
+    @include media-breakpoint-down(lg) {
+      padding-right: 0;
+    }
+
     display: none;
   }
 
