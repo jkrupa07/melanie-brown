@@ -7,7 +7,7 @@ $about_treatment_card = get_field("about_treatment_card");
 $faq_group = get_field("faq_group");
 ?>
 <section class="category-hero-section sub-category-hero-section position-relative">
-    <!-- <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div> -->
+    <div class="category-hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
     <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="Hero Image" class="w-100 h-100 object-cover">
 
     <div class="hero-content position-absolute bottom-0 dmb-65 tmb-30 w-100">
@@ -22,7 +22,7 @@ $faq_group = get_field("faq_group");
                         <?php echo get_the_content(); ?>
                     </div>
                 </div>
-                <div class="col-4 d-flex align-items-end justify-content-end">
+                <div class="col-lg-4 d-flex align-items-end justify-content-lg-end justify-content-start">
                     <a href="/treatment" class="btnA white-border-btn satoshi-regular font14 d-inline-flex justify-content-center align-items-center text-decoration-none transition">
                         Back to treatments
                         <div class="btn-arrow ms-2 transition">
@@ -47,7 +47,7 @@ $faq_group = get_field("faq_group");
                 <?php endif; ?>
 
                 <?php if (!empty($sub_treatment_description)): ?>
-                    <div class="right-description satoshi-regular font14 leading22 text-center text-666666 pe-lg-4">
+                    <div class="right-description satoshi-regular font14 leading22 text-center text-666666 px-lg-4">
                         <?php echo $sub_treatment_description; ?>
                     </div>
                 <?php endif; ?>
@@ -261,7 +261,7 @@ $faq_group = get_field("faq_group");
                                 $description = $row['description'];
                         ?>
                                 <div class="closet-item dark-border bg-268a85 dpb-30 dpt-30">
-                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between ">
+                                    <div class="closet-header d-flex align-items-center cursor-pointer justify-content-between">
                                         <?php if (!empty($row['title'])): ?>
                                             <div class="col-lg-12 col-10 satoshi-regular font20 leading32 res-font18 res-leading26 text-black">
                                                 <?php echo $row['title']; ?>
@@ -271,7 +271,7 @@ $faq_group = get_field("faq_group");
                                     </div>
                                     <div class="closet-content dpt-25 dpb-45">
                                         <?php if (!empty($row['description'])): ?>
-                                            <div class="satoshi-light font16 leading25_6 text-black">
+                                            <div class="satoshi-light font16 leading25_6 res-font14 res-leading22_6 text-black">
                                                 <?php echo $row['description']; ?>
                                             </div>
                                         <?php endif; ?>

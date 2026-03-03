@@ -74,7 +74,7 @@ export class Accordion {
                         });
 
                         // Wait until scroll finishes (approximate using setTimeout)
-                        if (callback) setTimeout(callback, 500); // adjust 300ms if needed
+                        if (callback) setTimeout(callback, 500); // adjust ms if needed
                     });
                 }
 
@@ -82,7 +82,11 @@ export class Accordion {
                     const $header = $target.find('.image-header');
                     const $content = $target.find('.image-content');
 
-                    if ($header.hasClass('active')) return; // already open
+                    // already open then scroll to target
+                    if ($header.hasClass('active')) {
+                        scrollToTarget();
+                        return;
+                    }
 
                     // Close currently open
                     $('.image-item.active')
