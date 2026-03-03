@@ -16,7 +16,7 @@
             $hero_description = get_sub_field('hero_description');
             $hero_link = get_sub_field('hero_link');
         ?>
-            <section class="hero-section position-relative h-vh overflow-hidden">
+            <section class="hero-section main-hero-section position-relative h-vh overflow-hidden">
 
                 <div class="hero-layer position-absolute top-0 start-0 w-100 h-100"></div>
                 <div class="position-relative h-100">
