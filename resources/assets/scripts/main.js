@@ -4,8 +4,10 @@ import "bootstrap/dist/js/bootstrap";
 
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
+
+import flatpickr from "flatpickr";
+import "../../node_modules/flatpickr/dist/flatpickr.js";
 
 import "../../node_modules/wow.js"
 import WOW from 'wow.js';
@@ -60,6 +62,7 @@ $(function () {
 
   window.truncate = new Truncate();
   window.truncate.init();
+
 });
 
 // ===========================================================================
